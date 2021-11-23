@@ -1,0 +1,39 @@
+grammar com.ufrn.atad.Atad with org.eclipse.xtext.common.Terminals
+
+generate atad "http://www.ufrn.com/atad/Atad"
+
+DeclaraComando:
+	comandos+=Quando*
+	acoes+=AdicaoComando*
+	verificacao+=ComandosValidadores*;
+	
+Clicar:
+	'clicar' 'em';
+
+Navegar:
+	'navegar'
+;
+
+Escrever:
+	'escrever'
+;
+
+ComandosAcao:
+	Clicar|Navegar|Escrever	
+;
+
+Verifique:
+	'Verifique' 'que'
+;
+
+ComandosValidadores:
+	Verifique
+;
+
+AdicaoComando:
+	'E' ComandosAcao
+;
+
+Quando: 
+	'Quando' ComandosAcao
+;
