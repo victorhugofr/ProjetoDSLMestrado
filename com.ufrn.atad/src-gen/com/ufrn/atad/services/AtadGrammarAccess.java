@@ -66,12 +66,15 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClicarKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cEmKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Clicar:
-		//    'clicar' 'em';
+		//    'clicar' 'em' name=STRING
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'clicar' 'em'
+		//'clicar' 'em' name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'clicar'
@@ -79,30 +82,60 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//'em'
 		public Keyword getEmKeyword_1() { return cEmKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 	}
 	public class NavegarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Navegar");
-		private final Keyword cNavegarKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNavegarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Navegar:
-		//    'navegar'
+		//    'navegar' name=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//'navegar' name=STRING
+		public Group getGroup() { return cGroup; }
+		
 		//'navegar'
-		public Keyword getNavegarKeyword() { return cNavegarKeyword; }
+		public Keyword getNavegarKeyword_0() { return cNavegarKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
 	public class EscreverElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Escrever");
-		private final Keyword cEscreverKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEscreverKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Escrever:
-		//    'escrever'
+		//    'escrever' name=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//'escrever' name=STRING
+		public Group getGroup() { return cGroup; }
+		
 		//'escrever'
-		public Keyword getEscreverKeyword() { return cEscreverKeyword; }
+		public Keyword getEscreverKeyword_0() { return cEscreverKeyword_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
 	public class ComandosAcaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosAcao");
@@ -133,20 +166,28 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVerifiqueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cQueKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Verifique:
-		//    'verifique' 'que'
+		//    'Verifique' 'que' name=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'verifique' 'que'
+		//'Verifique' 'que' name=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'verifique'
+		//'Verifique'
 		public Keyword getVerifiqueKeyword_0() { return cVerifiqueKeyword_0; }
 		
 		//'que'
 		public Keyword getQueKeyword_1() { return cQueKeyword_1; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
 	}
 	public class ComandosValidadoresElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosValidadores");
@@ -272,7 +313,8 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Clicar:
-	//    'clicar' 'em';
+	//    'clicar' 'em' name=STRING
+	//;
 	public ClicarElements getClicarAccess() {
 		return pClicar;
 	}
@@ -282,7 +324,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Navegar:
-	//    'navegar'
+	//    'navegar' name=STRING
 	//;
 	public NavegarElements getNavegarAccess() {
 		return pNavegar;
@@ -293,7 +335,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Escrever:
-	//    'escrever'
+	//    'escrever' name=STRING
 	//;
 	public EscreverElements getEscreverAccess() {
 		return pEscrever;
@@ -315,7 +357,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Verifique:
-	//    'verifique' 'que'
+	//    'Verifique' 'que' name=STRING
 	//;
 	public VerifiqueElements getVerifiqueAccess() {
 		return pVerifique;

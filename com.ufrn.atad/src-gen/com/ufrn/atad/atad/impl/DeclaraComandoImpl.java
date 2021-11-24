@@ -3,18 +3,25 @@
  */
 package com.ufrn.atad.atad.impl;
 
+import com.ufrn.atad.atad.AdicaoComando;
 import com.ufrn.atad.atad.AtadPackage;
+import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
+import com.ufrn.atad.atad.Quando;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,34 +41,34 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements DeclaraComando
 {
   /**
-   * The cached value of the '{@link #getComandos() <em>Comandos</em>}' attribute list.
+   * The cached value of the '{@link #getComandos() <em>Comandos</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getComandos()
    * @generated
    * @ordered
    */
-  protected EList<String> comandos;
+  protected EList<Quando> comandos;
 
   /**
-   * The cached value of the '{@link #getAcoes() <em>Acoes</em>}' attribute list.
+   * The cached value of the '{@link #getAcoes() <em>Acoes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAcoes()
    * @generated
    * @ordered
    */
-  protected EList<String> acoes;
+  protected EList<AdicaoComando> acoes;
 
   /**
-   * The cached value of the '{@link #getVerificacao() <em>Verificacao</em>}' attribute list.
+   * The cached value of the '{@link #getVerificacao() <em>Verificacao</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getVerificacao()
    * @generated
    * @ordered
    */
-  protected EList<String> verificacao;
+  protected EList<ComandosValidadores> verificacao;
 
   /**
    * <!-- begin-user-doc -->
@@ -90,11 +97,11 @@ public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<String> getComandos()
+  public EList<Quando> getComandos()
   {
     if (comandos == null)
     {
-      comandos = new EDataTypeEList<String>(String.class, this, AtadPackage.DECLARA_COMANDO__COMANDOS);
+      comandos = new EObjectContainmentEList<Quando>(Quando.class, this, AtadPackage.DECLARA_COMANDO__COMANDOS);
     }
     return comandos;
   }
@@ -105,11 +112,11 @@ public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<String> getAcoes()
+  public EList<AdicaoComando> getAcoes()
   {
     if (acoes == null)
     {
-      acoes = new EDataTypeEList<String>(String.class, this, AtadPackage.DECLARA_COMANDO__ACOES);
+      acoes = new EObjectContainmentEList<AdicaoComando>(AdicaoComando.class, this, AtadPackage.DECLARA_COMANDO__ACOES);
     }
     return acoes;
   }
@@ -120,13 +127,33 @@ public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<String> getVerificacao()
+  public EList<ComandosValidadores> getVerificacao()
   {
     if (verificacao == null)
     {
-      verificacao = new EDataTypeEList<String>(String.class, this, AtadPackage.DECLARA_COMANDO__VERIFICACAO);
+      verificacao = new EObjectContainmentEList<ComandosValidadores>(ComandosValidadores.class, this, AtadPackage.DECLARA_COMANDO__VERIFICACAO);
     }
     return verificacao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AtadPackage.DECLARA_COMANDO__COMANDOS:
+        return ((InternalEList<?>)getComandos()).basicRemove(otherEnd, msgs);
+      case AtadPackage.DECLARA_COMANDO__ACOES:
+        return ((InternalEList<?>)getAcoes()).basicRemove(otherEnd, msgs);
+      case AtadPackage.DECLARA_COMANDO__VERIFICACAO:
+        return ((InternalEList<?>)getVerificacao()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -162,15 +189,15 @@ public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements 
     {
       case AtadPackage.DECLARA_COMANDO__COMANDOS:
         getComandos().clear();
-        getComandos().addAll((Collection<? extends String>)newValue);
+        getComandos().addAll((Collection<? extends Quando>)newValue);
         return;
       case AtadPackage.DECLARA_COMANDO__ACOES:
         getAcoes().clear();
-        getAcoes().addAll((Collection<? extends String>)newValue);
+        getAcoes().addAll((Collection<? extends AdicaoComando>)newValue);
         return;
       case AtadPackage.DECLARA_COMANDO__VERIFICACAO:
         getVerificacao().clear();
-        getVerificacao().addAll((Collection<? extends String>)newValue);
+        getVerificacao().addAll((Collection<? extends ComandosValidadores>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,27 +244,6 @@ public class DeclaraComandoImpl extends MinimalEObjectImpl.Container implements 
         return verificacao != null && !verificacao.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (comandos: ");
-    result.append(comandos);
-    result.append(", acoes: ");
-    result.append(acoes);
-    result.append(", verificacao: ");
-    result.append(verificacao);
-    result.append(')');
-    return result.toString();
   }
 
 } //DeclaraComandoImpl

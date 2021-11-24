@@ -34,12 +34,18 @@ public class AtadParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComandosAcaoAccess().getAlternatives(), "rule__ComandosAcao__Alternatives");
 			builder.put(grammarAccess.getDeclaraComandoAccess().getGroup(), "rule__DeclaraComando__Group__0");
 			builder.put(grammarAccess.getClicarAccess().getGroup(), "rule__Clicar__Group__0");
+			builder.put(grammarAccess.getNavegarAccess().getGroup(), "rule__Navegar__Group__0");
+			builder.put(grammarAccess.getEscreverAccess().getGroup(), "rule__Escrever__Group__0");
 			builder.put(grammarAccess.getVerifiqueAccess().getGroup(), "rule__Verifique__Group__0");
 			builder.put(grammarAccess.getAdicaoComandoAccess().getGroup(), "rule__AdicaoComando__Group__0");
 			builder.put(grammarAccess.getQuandoAccess().getGroup(), "rule__Quando__Group__0");
 			builder.put(grammarAccess.getDeclaraComandoAccess().getComandosAssignment_0(), "rule__DeclaraComando__ComandosAssignment_0");
 			builder.put(grammarAccess.getDeclaraComandoAccess().getAcoesAssignment_1(), "rule__DeclaraComando__AcoesAssignment_1");
 			builder.put(grammarAccess.getDeclaraComandoAccess().getVerificacaoAssignment_2(), "rule__DeclaraComando__VerificacaoAssignment_2");
+			builder.put(grammarAccess.getClicarAccess().getNameAssignment_2(), "rule__Clicar__NameAssignment_2");
+			builder.put(grammarAccess.getNavegarAccess().getNameAssignment_1(), "rule__Navegar__NameAssignment_1");
+			builder.put(grammarAccess.getEscreverAccess().getNameAssignment_1(), "rule__Escrever__NameAssignment_1");
+			builder.put(grammarAccess.getVerifiqueAccess().getNameAssignment_2(), "rule__Verifique__NameAssignment_2");
 		}
 	}
 	

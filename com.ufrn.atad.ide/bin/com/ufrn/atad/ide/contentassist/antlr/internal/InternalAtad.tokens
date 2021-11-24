@@ -1,11 +1,11 @@
 'E'=17
 'Quando'=18
+'Verifique'=15
 'clicar'=13
 'em'=14
 'escrever'=12
 'navegar'=11
 'que'=16
-'verifique'=15
 RULE_ANY_OTHER=10
 RULE_ID=4
 RULE_INT=5

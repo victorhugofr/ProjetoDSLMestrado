@@ -3,13 +3,22 @@
  */
 package com.ufrn.atad.atad.impl;
 
+import com.ufrn.atad.atad.AdicaoComando;
 import com.ufrn.atad.atad.AtadFactory;
 import com.ufrn.atad.atad.AtadPackage;
+import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.ComandosAcao;
+import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
+import com.ufrn.atad.atad.Escrever;
+import com.ufrn.atad.atad.Navegar;
+import com.ufrn.atad.atad.Quando;
+import com.ufrn.atad.atad.Verifique;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -27,6 +36,62 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   private EClass declaraComandoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass clicarEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass navegarEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass escreverEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass comandosAcaoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass verifiqueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass comandosValidadoresEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass adicaoComandoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass quandoEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -108,9 +173,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getDeclaraComando_Comandos()
+  public EReference getDeclaraComando_Comandos()
   {
-    return (EAttribute)declaraComandoEClass.getEStructuralFeatures().get(0);
+    return (EReference)declaraComandoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -119,9 +184,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getDeclaraComando_Acoes()
+  public EReference getDeclaraComando_Acoes()
   {
-    return (EAttribute)declaraComandoEClass.getEStructuralFeatures().get(1);
+    return (EReference)declaraComandoEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -130,9 +195,119 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getDeclaraComando_Verificacao()
+  public EReference getDeclaraComando_Verificacao()
   {
-    return (EAttribute)declaraComandoEClass.getEStructuralFeatures().get(2);
+    return (EReference)declaraComandoEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getClicar()
+  {
+    return clicarEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNavegar()
+  {
+    return navegarEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEscrever()
+  {
+    return escreverEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComandosAcao()
+  {
+    return comandosAcaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getComandosAcao_Name()
+  {
+    return (EAttribute)comandosAcaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVerifique()
+  {
+    return verifiqueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVerifique_Name()
+  {
+    return (EAttribute)verifiqueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComandosValidadores()
+  {
+    return comandosValidadoresEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAdicaoComando()
+  {
+    return adicaoComandoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getQuando()
+  {
+    return quandoEClass;
   }
 
   /**
@@ -167,9 +342,27 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
 
     // Create classes and their features
     declaraComandoEClass = createEClass(DECLARA_COMANDO);
-    createEAttribute(declaraComandoEClass, DECLARA_COMANDO__COMANDOS);
-    createEAttribute(declaraComandoEClass, DECLARA_COMANDO__ACOES);
-    createEAttribute(declaraComandoEClass, DECLARA_COMANDO__VERIFICACAO);
+    createEReference(declaraComandoEClass, DECLARA_COMANDO__COMANDOS);
+    createEReference(declaraComandoEClass, DECLARA_COMANDO__ACOES);
+    createEReference(declaraComandoEClass, DECLARA_COMANDO__VERIFICACAO);
+
+    clicarEClass = createEClass(CLICAR);
+
+    navegarEClass = createEClass(NAVEGAR);
+
+    escreverEClass = createEClass(ESCREVER);
+
+    comandosAcaoEClass = createEClass(COMANDOS_ACAO);
+    createEAttribute(comandosAcaoEClass, COMANDOS_ACAO__NAME);
+
+    verifiqueEClass = createEClass(VERIFIQUE);
+    createEAttribute(verifiqueEClass, VERIFIQUE__NAME);
+
+    comandosValidadoresEClass = createEClass(COMANDOS_VALIDADORES);
+
+    adicaoComandoEClass = createEClass(ADICAO_COMANDO);
+
+    quandoEClass = createEClass(QUANDO);
   }
 
   /**
@@ -201,12 +394,36 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    clicarEClass.getESuperTypes().add(this.getComandosAcao());
+    navegarEClass.getESuperTypes().add(this.getComandosAcao());
+    escreverEClass.getESuperTypes().add(this.getComandosAcao());
+    comandosAcaoEClass.getESuperTypes().add(this.getAdicaoComando());
+    comandosAcaoEClass.getESuperTypes().add(this.getQuando());
+    verifiqueEClass.getESuperTypes().add(this.getComandosValidadores());
 
     // Initialize classes and features; add operations and parameters
     initEClass(declaraComandoEClass, DeclaraComando.class, "DeclaraComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeclaraComando_Comandos(), ecorePackage.getEString(), "comandos", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeclaraComando_Acoes(), ecorePackage.getEString(), "acoes", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeclaraComando_Verificacao(), ecorePackage.getEString(), "verificacao", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaraComando_Comandos(), this.getQuando(), null, "comandos", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaraComando_Acoes(), this.getAdicaoComando(), null, "acoes", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaraComando_Verificacao(), this.getComandosValidadores(), null, "verificacao", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(clicarEClass, Clicar.class, "Clicar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(navegarEClass, Navegar.class, "Navegar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(escreverEClass, Escrever.class, "Escrever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(comandosAcaoEClass, ComandosAcao.class, "ComandosAcao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComandosAcao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(verifiqueEClass, Verifique.class, "Verifique", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVerifique_Name(), ecorePackage.getEString(), "name", null, 0, 1, Verifique.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(comandosValidadoresEClass, ComandosValidadores.class, "ComandosValidadores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(adicaoComandoEClass, AdicaoComando.class, "AdicaoComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(quandoEClass, Quando.class, "Quando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

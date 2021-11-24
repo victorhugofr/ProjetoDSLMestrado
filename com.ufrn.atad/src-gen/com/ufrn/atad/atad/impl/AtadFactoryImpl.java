@@ -66,6 +66,14 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
     switch (eClass.getClassifierID())
     {
       case AtadPackage.DECLARA_COMANDO: return createDeclaraComando();
+      case AtadPackage.CLICAR: return createClicar();
+      case AtadPackage.NAVEGAR: return createNavegar();
+      case AtadPackage.ESCREVER: return createEscrever();
+      case AtadPackage.COMANDOS_ACAO: return createComandosAcao();
+      case AtadPackage.VERIFIQUE: return createVerifique();
+      case AtadPackage.COMANDOS_VALIDADORES: return createComandosValidadores();
+      case AtadPackage.ADICAO_COMANDO: return createAdicaoComando();
+      case AtadPackage.QUANDO: return createQuando();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -81,6 +89,102 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
   {
     DeclaraComandoImpl declaraComando = new DeclaraComandoImpl();
     return declaraComando;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Clicar createClicar()
+  {
+    ClicarImpl clicar = new ClicarImpl();
+    return clicar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Navegar createNavegar()
+  {
+    NavegarImpl navegar = new NavegarImpl();
+    return navegar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Escrever createEscrever()
+  {
+    EscreverImpl escrever = new EscreverImpl();
+    return escrever;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandosAcao createComandosAcao()
+  {
+    ComandosAcaoImpl comandosAcao = new ComandosAcaoImpl();
+    return comandosAcao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Verifique createVerifique()
+  {
+    VerifiqueImpl verifique = new VerifiqueImpl();
+    return verifique;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComandosValidadores createComandosValidadores()
+  {
+    ComandosValidadoresImpl comandosValidadores = new ComandosValidadoresImpl();
+    return comandosValidadores;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AdicaoComando createAdicaoComando()
+  {
+    AdicaoComandoImpl adicaoComando = new AdicaoComandoImpl();
+    return adicaoComando;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Quando createQuando()
+  {
+    QuandoImpl quando = new QuandoImpl();
+    return quando;
   }
 
   /**

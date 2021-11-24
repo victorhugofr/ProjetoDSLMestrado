@@ -81,6 +81,46 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
         return createDeclaraComandoAdapter();
       }
       @Override
+      public Adapter caseClicar(Clicar object)
+      {
+        return createClicarAdapter();
+      }
+      @Override
+      public Adapter caseNavegar(Navegar object)
+      {
+        return createNavegarAdapter();
+      }
+      @Override
+      public Adapter caseEscrever(Escrever object)
+      {
+        return createEscreverAdapter();
+      }
+      @Override
+      public Adapter caseComandosAcao(ComandosAcao object)
+      {
+        return createComandosAcaoAdapter();
+      }
+      @Override
+      public Adapter caseVerifique(Verifique object)
+      {
+        return createVerifiqueAdapter();
+      }
+      @Override
+      public Adapter caseComandosValidadores(ComandosValidadores object)
+      {
+        return createComandosValidadoresAdapter();
+      }
+      @Override
+      public Adapter caseAdicaoComando(AdicaoComando object)
+      {
+        return createAdicaoComandoAdapter();
+      }
+      @Override
+      public Adapter caseQuando(Quando object)
+      {
+        return createQuandoAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -113,6 +153,126 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclaraComandoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Clicar <em>Clicar</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Clicar
+   * @generated
+   */
+  public Adapter createClicarAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Navegar <em>Navegar</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Navegar
+   * @generated
+   */
+  public Adapter createNavegarAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Escrever <em>Escrever</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Escrever
+   * @generated
+   */
+  public Adapter createEscreverAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.ComandosAcao <em>Comandos Acao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.ComandosAcao
+   * @generated
+   */
+  public Adapter createComandosAcaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Verifique <em>Verifique</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Verifique
+   * @generated
+   */
+  public Adapter createVerifiqueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.ComandosValidadores <em>Comandos Validadores</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.ComandosValidadores
+   * @generated
+   */
+  public Adapter createComandosValidadoresAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.AdicaoComando <em>Adicao Comando</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.AdicaoComando
+   * @generated
+   */
+  public Adapter createAdicaoComandoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Quando <em>Quando</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Quando
+   * @generated
+   */
+  public Adapter createQuandoAdapter()
   {
     return null;
   }

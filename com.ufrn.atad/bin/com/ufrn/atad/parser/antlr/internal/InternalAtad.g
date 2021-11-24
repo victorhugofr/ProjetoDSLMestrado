@@ -137,14 +137,14 @@ ruleDeclaraComando returns [EObject current=null]
 ;
 
 // Entry rule entryRuleClicar
-entryRuleClicar returns [String current=null]:
+entryRuleClicar returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getClicarRule()); }
 	iv_ruleClicar=ruleClicar
-	{ $current=$iv_ruleClicar.current.getText(); }
+	{ $current=$iv_ruleClicar.current; }
 	EOF;
 
 // Rule Clicar
-ruleClicar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleClicar returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -152,72 +152,126 @@ ruleClicar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		kw='clicar'
+		otherlv_0='clicar'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getClicarAccess().getClicarKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getClicarAccess().getClicarKeyword_0());
 		}
-		kw='em'
+		otherlv_1='em'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getClicarAccess().getEmKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getClicarAccess().getEmKeyword_1());
 		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClicarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
 // Entry rule entryRuleNavegar
-entryRuleNavegar returns [String current=null]:
+entryRuleNavegar returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getNavegarRule()); }
 	iv_ruleNavegar=ruleNavegar
-	{ $current=$iv_ruleNavegar.current.getText(); }
+	{ $current=$iv_ruleNavegar.current; }
 	EOF;
 
 // Rule Navegar
-ruleNavegar returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleNavegar returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	kw='navegar'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getNavegarAccess().getNavegarKeyword());
-	}
+	(
+		otherlv_0='navegar'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getNavegarAccess().getNavegarKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getNavegarAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getNavegarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
 ;
 
 // Entry rule entryRuleEscrever
-entryRuleEscrever returns [String current=null]:
+entryRuleEscrever returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getEscreverRule()); }
 	iv_ruleEscrever=ruleEscrever
-	{ $current=$iv_ruleEscrever.current.getText(); }
+	{ $current=$iv_ruleEscrever.current; }
 	EOF;
 
 // Rule Escrever
-ruleEscrever returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleEscrever returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	kw='escrever'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getEscreverAccess().getEscreverKeyword());
-	}
+	(
+		otherlv_0='escrever'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEscreverAccess().getEscreverKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_STRING
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEscreverRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
 ;
 
 // Entry rule entryRuleComandosAcao
-entryRuleComandosAcao returns [String current=null]:
+entryRuleComandosAcao returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getComandosAcaoRule()); }
 	iv_ruleComandosAcao=ruleComandosAcao
-	{ $current=$iv_ruleComandosAcao.current.getText(); }
+	{ $current=$iv_ruleComandosAcao.current; }
 	EOF;
 
 // Rule ComandosAcao
-ruleComandosAcao returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleComandosAcao returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -230,9 +284,7 @@ ruleComandosAcao returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 		}
 		this_Clicar_0=ruleClicar
 		{
-			$current.merge(this_Clicar_0);
-		}
-		{
+			$current = $this_Clicar_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -241,9 +293,7 @@ ruleComandosAcao returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 		}
 		this_Navegar_1=ruleNavegar
 		{
-			$current.merge(this_Navegar_1);
-		}
-		{
+			$current = $this_Navegar_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -252,23 +302,21 @@ ruleComandosAcao returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
 		}
 		this_Escrever_2=ruleEscrever
 		{
-			$current.merge(this_Escrever_2);
-		}
-		{
+			$current = $this_Escrever_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
 // Entry rule entryRuleVerifique
-entryRuleVerifique returns [String current=null]:
+entryRuleVerifique returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getVerifiqueRule()); }
 	iv_ruleVerifique=ruleVerifique
-	{ $current=$iv_ruleVerifique.current.getText(); }
+	{ $current=$iv_ruleVerifique.current; }
 	EOF;
 
 // Rule Verifique
-ruleVerifique returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleVerifique returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -276,28 +324,44 @@ ruleVerifique returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
 	leaveRule();
 }:
 	(
-		kw='verifique'
+		otherlv_0='Verifique'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0());
 		}
-		kw='que'
+		otherlv_1='que'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getVerifiqueAccess().getQueKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getVerifiqueAccess().getQueKeyword_1());
 		}
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getVerifiqueAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVerifiqueRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 
 // Entry rule entryRuleComandosValidadores
-entryRuleComandosValidadores returns [String current=null]:
+entryRuleComandosValidadores returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getComandosValidadoresRule()); }
 	iv_ruleComandosValidadores=ruleComandosValidadores
-	{ $current=$iv_ruleComandosValidadores.current.getText(); }
+	{ $current=$iv_ruleComandosValidadores.current; }
 	EOF;
 
 // Rule ComandosValidadores
-ruleComandosValidadores returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleComandosValidadores returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -309,22 +373,20 @@ ruleComandosValidadores returns [AntlrDatatypeRuleToken current=new AntlrDatatyp
 	}
 	this_Verifique_0=ruleVerifique
 	{
-		$current.merge(this_Verifique_0);
-	}
-	{
+		$current = $this_Verifique_0.current;
 		afterParserOrEnumRuleCall();
 	}
 ;
 
 // Entry rule entryRuleAdicaoComando
-entryRuleAdicaoComando returns [String current=null]:
+entryRuleAdicaoComando returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getAdicaoComandoRule()); }
 	iv_ruleAdicaoComando=ruleAdicaoComando
-	{ $current=$iv_ruleAdicaoComando.current.getText(); }
+	{ $current=$iv_ruleAdicaoComando.current; }
 	EOF;
 
 // Rule AdicaoComando
-ruleAdicaoComando returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleAdicaoComando returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -332,33 +394,30 @@ ruleAdicaoComando returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 	leaveRule();
 }:
 	(
-		kw='E'
+		otherlv_0='E'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
 		}
 		{
 			newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandosAcaoParserRuleCall_1());
 		}
 		this_ComandosAcao_1=ruleComandosAcao
 		{
-			$current.merge(this_ComandosAcao_1);
-		}
-		{
+			$current = $this_ComandosAcao_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
 // Entry rule entryRuleQuando
-entryRuleQuando returns [String current=null]:
+entryRuleQuando returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getQuandoRule()); }
 	iv_ruleQuando=ruleQuando
-	{ $current=$iv_ruleQuando.current.getText(); }
+	{ $current=$iv_ruleQuando.current; }
 	EOF;
 
 // Rule Quando
-ruleQuando returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleQuando returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -366,19 +425,16 @@ ruleQuando returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		kw='Quando'
+		otherlv_0='Quando'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getQuandoAccess().getQuandoKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getQuandoAccess().getQuandoKeyword_0());
 		}
 		{
 			newCompositeNode(grammarAccess.getQuandoAccess().getComandosAcaoParserRuleCall_1());
 		}
 		this_ComandosAcao_1=ruleComandosAcao
 		{
-			$current.merge(this_ComandosAcao_1);
-		}
-		{
+			$current = $this_ComandosAcao_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)

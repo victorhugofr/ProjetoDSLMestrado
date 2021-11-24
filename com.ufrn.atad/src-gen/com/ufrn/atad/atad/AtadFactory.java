@@ -33,6 +33,78 @@ public interface AtadFactory extends EFactory
   DeclaraComando createDeclaraComando();
 
   /**
+   * Returns a new object of class '<em>Clicar</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Clicar</em>'.
+   * @generated
+   */
+  Clicar createClicar();
+
+  /**
+   * Returns a new object of class '<em>Navegar</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Navegar</em>'.
+   * @generated
+   */
+  Navegar createNavegar();
+
+  /**
+   * Returns a new object of class '<em>Escrever</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Escrever</em>'.
+   * @generated
+   */
+  Escrever createEscrever();
+
+  /**
+   * Returns a new object of class '<em>Comandos Acao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comandos Acao</em>'.
+   * @generated
+   */
+  ComandosAcao createComandosAcao();
+
+  /**
+   * Returns a new object of class '<em>Verifique</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verifique</em>'.
+   * @generated
+   */
+  Verifique createVerifique();
+
+  /**
+   * Returns a new object of class '<em>Comandos Validadores</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comandos Validadores</em>'.
+   * @generated
+   */
+  ComandosValidadores createComandosValidadores();
+
+  /**
+   * Returns a new object of class '<em>Adicao Comando</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Adicao Comando</em>'.
+   * @generated
+   */
+  AdicaoComando createAdicaoComando();
+
+  /**
+   * Returns a new object of class '<em>Quando</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Quando</em>'.
+   * @generated
+   */
+  Quando createQuando();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

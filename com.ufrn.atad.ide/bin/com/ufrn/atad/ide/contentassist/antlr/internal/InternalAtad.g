@@ -455,7 +455,7 @@ rule__Verifique__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0()); }
-	'verifique'
+	'Verifique'
 	{ after(grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0()); }
 )
 ;

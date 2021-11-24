@@ -2,11 +2,23 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="atad" nsURI="http://www.ufrn.com/atad/Atad" nsPrefix="atad">
   <eClassifiers xsi:type="ecore:EClass" name="DeclaraComando">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comandos" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="acoes" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="verificacao" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comandos" upperBound="-1"
+        eType="#//Quando" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acoes" upperBound="-1"
+        eType="#//AdicaoComando" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verificacao" upperBound="-1"
+        eType="#//ComandosValidadores" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clicar" eSuperTypes="#//ComandosAcao"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Navegar" eSuperTypes="#//ComandosAcao"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Escrever" eSuperTypes="#//ComandosAcao"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComandosAcao" eSuperTypes="#//AdicaoComando #//Quando">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Verifique" eSuperTypes="#//ComandosValidadores">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComandosValidadores"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AdicaoComando"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Quando"/>
 </ecore:EPackage>

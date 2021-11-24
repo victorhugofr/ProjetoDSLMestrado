@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import com.ufrn.atad.atad.Quando
+import com.ufrn.atad.atad.Navegar
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +18,10 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class AtadGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		fsa.generateFile('Teste.java', 'People to greet: ' + 
+			resource.allContents
+				.filter(Navegar)
+				.map[name]
+				.join(', '))
 	}
 }

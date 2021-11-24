@@ -28,39 +28,39 @@ import org.eclipse.emf.ecore.EObject;
 public interface DeclaraComando extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Comandos</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Comandos</b></em>' containment reference list.
+   * The list contents are of type {@link com.ufrn.atad.atad.Quando}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comandos</em>' attribute list.
+   * @return the value of the '<em>Comandos</em>' containment reference list.
    * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando_Comandos()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getComandos();
+  EList<Quando> getComandos();
 
   /**
-   * Returns the value of the '<em><b>Acoes</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Acoes</b></em>' containment reference list.
+   * The list contents are of type {@link com.ufrn.atad.atad.AdicaoComando}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Acoes</em>' attribute list.
+   * @return the value of the '<em>Acoes</em>' containment reference list.
    * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando_Acoes()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getAcoes();
+  EList<AdicaoComando> getAcoes();
 
   /**
-   * Returns the value of the '<em><b>Verificacao</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Verificacao</b></em>' containment reference list.
+   * The list contents are of type {@link com.ufrn.atad.atad.ComandosValidadores}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Verificacao</em>' attribute list.
+   * @return the value of the '<em>Verificacao</em>' containment reference list.
    * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando_Verificacao()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getVerificacao();
+  EList<ComandosValidadores> getVerificacao();
 
 } // DeclaraComando

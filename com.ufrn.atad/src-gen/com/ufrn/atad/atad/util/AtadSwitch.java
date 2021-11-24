@@ -80,6 +80,74 @@ public class AtadSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AtadPackage.CLICAR:
+      {
+        Clicar clicar = (Clicar)theEObject;
+        T result = caseClicar(clicar);
+        if (result == null) result = caseComandosAcao(clicar);
+        if (result == null) result = caseAdicaoComando(clicar);
+        if (result == null) result = caseQuando(clicar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.NAVEGAR:
+      {
+        Navegar navegar = (Navegar)theEObject;
+        T result = caseNavegar(navegar);
+        if (result == null) result = caseComandosAcao(navegar);
+        if (result == null) result = caseAdicaoComando(navegar);
+        if (result == null) result = caseQuando(navegar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.ESCREVER:
+      {
+        Escrever escrever = (Escrever)theEObject;
+        T result = caseEscrever(escrever);
+        if (result == null) result = caseComandosAcao(escrever);
+        if (result == null) result = caseAdicaoComando(escrever);
+        if (result == null) result = caseQuando(escrever);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.COMANDOS_ACAO:
+      {
+        ComandosAcao comandosAcao = (ComandosAcao)theEObject;
+        T result = caseComandosAcao(comandosAcao);
+        if (result == null) result = caseAdicaoComando(comandosAcao);
+        if (result == null) result = caseQuando(comandosAcao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.VERIFIQUE:
+      {
+        Verifique verifique = (Verifique)theEObject;
+        T result = caseVerifique(verifique);
+        if (result == null) result = caseComandosValidadores(verifique);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.COMANDOS_VALIDADORES:
+      {
+        ComandosValidadores comandosValidadores = (ComandosValidadores)theEObject;
+        T result = caseComandosValidadores(comandosValidadores);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.ADICAO_COMANDO:
+      {
+        AdicaoComando adicaoComando = (AdicaoComando)theEObject;
+        T result = caseAdicaoComando(adicaoComando);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.QUANDO:
+      {
+        Quando quando = (Quando)theEObject;
+        T result = caseQuando(quando);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -96,6 +164,134 @@ public class AtadSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaraComando(DeclaraComando object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Clicar</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Clicar</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseClicar(Clicar object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Navegar</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Navegar</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNavegar(Navegar object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Escrever</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Escrever</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEscrever(Escrever object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comandos Acao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comandos Acao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandosAcao(ComandosAcao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verifique</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verifique</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerifique(Verifique object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comandos Validadores</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comandos Validadores</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComandosValidadores(ComandosValidadores object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Adicao Comando</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Adicao Comando</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAdicaoComando(AdicaoComando object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Quando</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Quando</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQuando(Quando object)
   {
     return null;
   }

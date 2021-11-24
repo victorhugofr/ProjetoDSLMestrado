@@ -8,14 +8,15 @@ DeclaraComando:
 	verificacao+=ComandosValidadores*;
 	
 Clicar:
-	'clicar' 'em';
+	'clicar' 'em' name=STRING
+;
 
 Navegar:
-	'navegar'
+	'navegar' name=STRING
 ;
 
 Escrever:
-	'escrever'
+	'escrever' name=STRING
 ;
 
 ComandosAcao:
@@ -23,7 +24,7 @@ ComandosAcao:
 ;
 
 Verifique:
-	'Verifique' 'que'
+	'Verifique' 'que' name=STRING
 ;
 
 ComandosValidadores:

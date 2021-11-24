@@ -7,9 +7,21 @@
   <genPackages prefix="Atad" basePackage="com.ufrn.atad" disposableProviderFactory="true"
       fileExtensions="atad" ecorePackage="Atad.ecore#/">
     <genClasses ecoreClass="Atad.ecore#//DeclaraComando">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//DeclaraComando/comandos"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//DeclaraComando/acoes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//DeclaraComando/verificacao"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//DeclaraComando/comandos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//DeclaraComando/acoes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//DeclaraComando/verificacao"/>
     </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//Clicar"/>
+    <genClasses ecoreClass="Atad.ecore#//Navegar"/>
+    <genClasses ecoreClass="Atad.ecore#//Escrever"/>
+    <genClasses ecoreClass="Atad.ecore#//ComandosAcao">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//ComandosAcao/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//Verifique">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Verifique/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//ComandosValidadores"/>
+    <genClasses ecoreClass="Atad.ecore#//AdicaoComando"/>
+    <genClasses ecoreClass="Atad.ecore#//Quando"/>
   </genPackages>
 </genmodel:GenModel>
