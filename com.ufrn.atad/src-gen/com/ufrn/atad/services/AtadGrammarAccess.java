@@ -24,42 +24,46 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public class DeclaraComandoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.DeclaraComando");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cComandosAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cComandosQuandoParserRuleCall_0_0 = (RuleCall)cComandosAssignment_0.eContents().get(0);
-		private final Assignment cAcoesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cAcoesAdicaoComandoParserRuleCall_1_0 = (RuleCall)cAcoesAssignment_1.eContents().get(0);
-		private final Assignment cVerificacaoAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVerificacaoComandosValidadoresParserRuleCall_2_0 = (RuleCall)cVerificacaoAssignment_2.eContents().get(0);
+		private final Assignment cComandosAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cComandosComandoParserRuleCall_0 = (RuleCall)cComandosAssignment.eContents().get(0);
 		
 		//DeclaraComando:
-		//    comandos+=Quando*
-		//    acoes+=AdicaoComando*
-		//    verificacao+=ComandosValidadores*;
+		//    comandos+=Comando*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//comandos+=Quando*
-		//acoes+=AdicaoComando*
-		//verificacao+=ComandosValidadores*
-		public Group getGroup() { return cGroup; }
+		//comandos+=Comando*
+		public Assignment getComandosAssignment() { return cComandosAssignment; }
 		
-		//comandos+=Quando*
-		public Assignment getComandosAssignment_0() { return cComandosAssignment_0; }
+		//Comando
+		public RuleCall getComandosComandoParserRuleCall_0() { return cComandosComandoParserRuleCall_0; }
+	}
+	public class ComandoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Comando");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cComandosAcaoParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cComandosValidadoresParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAdicaoComandoParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cQuandoParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//Quando
-		public RuleCall getComandosQuandoParserRuleCall_0_0() { return cComandosQuandoParserRuleCall_0_0; }
+		//Comando:
+		//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//acoes+=AdicaoComando*
-		public Assignment getAcoesAssignment_1() { return cAcoesAssignment_1; }
+		//ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//AdicaoComando
-		public RuleCall getAcoesAdicaoComandoParserRuleCall_1_0() { return cAcoesAdicaoComandoParserRuleCall_1_0; }
-		
-		//verificacao+=ComandosValidadores*
-		public Assignment getVerificacaoAssignment_2() { return cVerificacaoAssignment_2; }
+		//ComandosAcao
+		public RuleCall getComandosAcaoParserRuleCall_0() { return cComandosAcaoParserRuleCall_0; }
 		
 		//ComandosValidadores
-		public RuleCall getVerificacaoComandosValidadoresParserRuleCall_2_0() { return cVerificacaoComandosValidadoresParserRuleCall_2_0; }
+		public RuleCall getComandosValidadoresParserRuleCall_1() { return cComandosValidadoresParserRuleCall_1; }
+		
+		//AdicaoComando
+		public RuleCall getAdicaoComandoParserRuleCall_2() { return cAdicaoComandoParserRuleCall_2; }
+		
+		//Quando
+		public RuleCall getQuandoParserRuleCall_3() { return cQuandoParserRuleCall_3; }
 	}
 	public class ClicarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Clicar");
@@ -139,27 +143,31 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	public class ComandosAcaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosAcao");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cClicarParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cNavegarParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEscreverParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Assignment cComandoAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cComandoAlternatives_0 = (Alternatives)cComandoAssignment.eContents().get(0);
+		private final RuleCall cComandoClicarParserRuleCall_0_0 = (RuleCall)cComandoAlternatives_0.eContents().get(0);
+		private final RuleCall cComandoNavegarParserRuleCall_0_1 = (RuleCall)cComandoAlternatives_0.eContents().get(1);
+		private final RuleCall cComandoEscreverParserRuleCall_0_2 = (RuleCall)cComandoAlternatives_0.eContents().get(2);
 		
 		//ComandosAcao:
-		//    Clicar|Navegar|Escrever
+		//    comando=(Clicar|Navegar|Escrever)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Clicar|Navegar|Escrever
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//comando=(Clicar|Navegar|Escrever)
+		public Assignment getComandoAssignment() { return cComandoAssignment; }
+		
+		//(Clicar|Navegar|Escrever)
+		public Alternatives getComandoAlternatives_0() { return cComandoAlternatives_0; }
 		
 		//Clicar
-		public RuleCall getClicarParserRuleCall_0() { return cClicarParserRuleCall_0; }
+		public RuleCall getComandoClicarParserRuleCall_0_0() { return cComandoClicarParserRuleCall_0_0; }
 		
 		//Navegar
-		public RuleCall getNavegarParserRuleCall_1() { return cNavegarParserRuleCall_1; }
+		public RuleCall getComandoNavegarParserRuleCall_0_1() { return cComandoNavegarParserRuleCall_0_1; }
 		
 		//Escrever
-		public RuleCall getEscreverParserRuleCall_2() { return cEscreverParserRuleCall_2; }
+		public RuleCall getComandoEscreverParserRuleCall_0_2() { return cComandoEscreverParserRuleCall_0_2; }
 	}
 	public class VerifiqueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Verifique");
@@ -191,35 +199,43 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	public class ComandosValidadoresElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosValidadores");
-		private final RuleCall cVerifiqueParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Assignment cVerifiqueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cVerifiqueVerifiqueParserRuleCall_0 = (RuleCall)cVerifiqueAssignment.eContents().get(0);
 		
 		//ComandosValidadores:
-		//    Verifique
+		//    verifique=Verifique
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//verifique=Verifique
+		public Assignment getVerifiqueAssignment() { return cVerifiqueAssignment; }
+		
 		//Verifique
-		public RuleCall getVerifiqueParserRuleCall() { return cVerifiqueParserRuleCall; }
+		public RuleCall getVerifiqueVerifiqueParserRuleCall_0() { return cVerifiqueVerifiqueParserRuleCall_0; }
 	}
 	public class AdicaoComandoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.AdicaoComando");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cComandosAcaoParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cComandoAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cComandoComandosAcaoParserRuleCall_1_0 = (RuleCall)cComandoAssignment_1.eContents().get(0);
 		
 		//AdicaoComando:
-		//    'E' ComandosAcao
+		//    'E' comando=ComandosAcao
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'E' ComandosAcao
+		//'E' comando=ComandosAcao
 		public Group getGroup() { return cGroup; }
 		
 		//'E'
 		public Keyword getEKeyword_0() { return cEKeyword_0; }
 		
+		//comando=ComandosAcao
+		public Assignment getComandoAssignment_1() { return cComandoAssignment_1; }
+		
 		//ComandosAcao
-		public RuleCall getComandosAcaoParserRuleCall_1() { return cComandosAcaoParserRuleCall_1; }
+		public RuleCall getComandoComandosAcaoParserRuleCall_1_0() { return cComandoComandosAcaoParserRuleCall_1_0; }
 	}
 	public class QuandoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Quando");
@@ -244,6 +260,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	
 	private final DeclaraComandoElements pDeclaraComando;
+	private final ComandoElements pComando;
 	private final ClicarElements pClicar;
 	private final NavegarElements pNavegar;
 	private final EscreverElements pEscrever;
@@ -263,6 +280,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pDeclaraComando = new DeclaraComandoElements();
+		this.pComando = new ComandoElements();
 		this.pClicar = new ClicarElements();
 		this.pNavegar = new NavegarElements();
 		this.pEscrever = new EscreverElements();
@@ -301,15 +319,24 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 
 	
 	//DeclaraComando:
-	//    comandos+=Quando*
-	//    acoes+=AdicaoComando*
-	//    verificacao+=ComandosValidadores*;
+	//    comandos+=Comando*;
 	public DeclaraComandoElements getDeclaraComandoAccess() {
 		return pDeclaraComando;
 	}
 	
 	public ParserRule getDeclaraComandoRule() {
 		return getDeclaraComandoAccess().getRule();
+	}
+	
+	//Comando:
+	//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+	//;
+	public ComandoElements getComandoAccess() {
+		return pComando;
+	}
+	
+	public ParserRule getComandoRule() {
+		return getComandoAccess().getRule();
 	}
 	
 	//Clicar:
@@ -346,7 +373,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//ComandosAcao:
-	//    Clicar|Navegar|Escrever
+	//    comando=(Clicar|Navegar|Escrever)
 	//;
 	public ComandosAcaoElements getComandosAcaoAccess() {
 		return pComandosAcao;
@@ -368,7 +395,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//ComandosValidadores:
-	//    Verifique
+	//    verifique=Verifique
 	//;
 	public ComandosValidadoresElements getComandosValidadoresAccess() {
 		return pComandosValidadores;
@@ -379,7 +406,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//AdicaoComando:
-	//    'E' ComandosAcao
+	//    'E' comando=ComandosAcao
 	//;
 	public AdicaoComandoElements getAdicaoComandoAccess() {
 		return pAdicaoComando;

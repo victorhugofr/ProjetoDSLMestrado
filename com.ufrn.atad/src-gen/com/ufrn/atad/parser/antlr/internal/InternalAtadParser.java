@@ -116,64 +116,57 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDeclaraComando"
-    // InternalAtad.g:71:1: ruleDeclaraComando returns [EObject current=null] : ( ( (lv_comandos_0_0= ruleQuando ) )* ( (lv_acoes_1_0= ruleAdicaoComando ) )* ( (lv_verificacao_2_0= ruleComandosValidadores ) )* ) ;
+    // InternalAtad.g:71:1: ruleDeclaraComando returns [EObject current=null] : ( (lv_comandos_0_0= ruleComando ) )* ;
     public final EObject ruleDeclaraComando() throws RecognitionException {
         EObject current = null;
 
         EObject lv_comandos_0_0 = null;
-
-        EObject lv_acoes_1_0 = null;
-
-        EObject lv_verificacao_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:77:2: ( ( ( (lv_comandos_0_0= ruleQuando ) )* ( (lv_acoes_1_0= ruleAdicaoComando ) )* ( (lv_verificacao_2_0= ruleComandosValidadores ) )* ) )
-            // InternalAtad.g:78:2: ( ( (lv_comandos_0_0= ruleQuando ) )* ( (lv_acoes_1_0= ruleAdicaoComando ) )* ( (lv_verificacao_2_0= ruleComandosValidadores ) )* )
+            // InternalAtad.g:77:2: ( ( (lv_comandos_0_0= ruleComando ) )* )
+            // InternalAtad.g:78:2: ( (lv_comandos_0_0= ruleComando ) )*
             {
-            // InternalAtad.g:78:2: ( ( (lv_comandos_0_0= ruleQuando ) )* ( (lv_acoes_1_0= ruleAdicaoComando ) )* ( (lv_verificacao_2_0= ruleComandosValidadores ) )* )
-            // InternalAtad.g:79:3: ( (lv_comandos_0_0= ruleQuando ) )* ( (lv_acoes_1_0= ruleAdicaoComando ) )* ( (lv_verificacao_2_0= ruleComandosValidadores ) )*
-            {
-            // InternalAtad.g:79:3: ( (lv_comandos_0_0= ruleQuando ) )*
+            // InternalAtad.g:78:2: ( (lv_comandos_0_0= ruleComando ) )*
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==18) ) {
+                if ( (LA1_0==11||(LA1_0>=13 && LA1_0<=15)||(LA1_0>=17 && LA1_0<=18)) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalAtad.g:80:4: (lv_comandos_0_0= ruleQuando )
+            	    // InternalAtad.g:79:3: (lv_comandos_0_0= ruleComando )
             	    {
-            	    // InternalAtad.g:80:4: (lv_comandos_0_0= ruleQuando )
-            	    // InternalAtad.g:81:5: lv_comandos_0_0= ruleQuando
+            	    // InternalAtad.g:79:3: (lv_comandos_0_0= ruleComando )
+            	    // InternalAtad.g:80:4: lv_comandos_0_0= ruleComando
             	    {
 
-            	    					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getComandosQuandoParserRuleCall_0_0());
-            	    				
+            	    				newCompositeNode(grammarAccess.getDeclaraComandoAccess().getComandosComandoParserRuleCall_0());
+            	    			
             	    pushFollow(FOLLOW_3);
-            	    lv_comandos_0_0=ruleQuando();
+            	    lv_comandos_0_0=ruleComando();
 
             	    state._fsp--;
 
 
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"comandos",
-            	    						lv_comandos_0_0,
-            	    						"com.ufrn.atad.Atad.Quando");
-            	    					afterParserOrEnumRuleCall();
-            	    				
+            	    				if (current==null) {
+            	    					current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
+            	    				}
+            	    				add(
+            	    					current,
+            	    					"comandos",
+            	    					lv_comandos_0_0,
+            	    					"com.ufrn.atad.Atad.Comando");
+            	    				afterParserOrEnumRuleCall();
+            	    			
 
             	    }
 
@@ -185,107 +178,6 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
             	    break loop1;
                 }
             } while (true);
-
-            // InternalAtad.g:98:3: ( (lv_acoes_1_0= ruleAdicaoComando ) )*
-            loop2:
-            do {
-                int alt2=2;
-                int LA2_0 = input.LA(1);
-
-                if ( (LA2_0==17) ) {
-                    alt2=1;
-                }
-
-
-                switch (alt2) {
-            	case 1 :
-            	    // InternalAtad.g:99:4: (lv_acoes_1_0= ruleAdicaoComando )
-            	    {
-            	    // InternalAtad.g:99:4: (lv_acoes_1_0= ruleAdicaoComando )
-            	    // InternalAtad.g:100:5: lv_acoes_1_0= ruleAdicaoComando
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getAcoesAdicaoComandoParserRuleCall_1_0());
-            	    				
-            	    pushFollow(FOLLOW_4);
-            	    lv_acoes_1_0=ruleAdicaoComando();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"acoes",
-            	    						lv_acoes_1_0,
-            	    						"com.ufrn.atad.Atad.AdicaoComando");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop2;
-                }
-            } while (true);
-
-            // InternalAtad.g:117:3: ( (lv_verificacao_2_0= ruleComandosValidadores ) )*
-            loop3:
-            do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
-
-                if ( (LA3_0==15) ) {
-                    alt3=1;
-                }
-
-
-                switch (alt3) {
-            	case 1 :
-            	    // InternalAtad.g:118:4: (lv_verificacao_2_0= ruleComandosValidadores )
-            	    {
-            	    // InternalAtad.g:118:4: (lv_verificacao_2_0= ruleComandosValidadores )
-            	    // InternalAtad.g:119:5: lv_verificacao_2_0= ruleComandosValidadores
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getVerificacaoComandosValidadoresParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_5);
-            	    lv_verificacao_2_0=ruleComandosValidadores();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"verificacao",
-            	    						lv_verificacao_2_0,
-            	    						"com.ufrn.atad.Atad.ComandosValidadores");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop3;
-                }
-            } while (true);
-
-
-            }
 
 
             }
@@ -306,8 +198,192 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDeclaraComando"
 
 
+    // $ANTLR start "entryRuleComando"
+    // InternalAtad.g:100:1: entryRuleComando returns [EObject current=null] : iv_ruleComando= ruleComando EOF ;
+    public final EObject entryRuleComando() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleComando = null;
+
+
+        try {
+            // InternalAtad.g:100:48: (iv_ruleComando= ruleComando EOF )
+            // InternalAtad.g:101:2: iv_ruleComando= ruleComando EOF
+            {
+             newCompositeNode(grammarAccess.getComandoRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleComando=ruleComando();
+
+            state._fsp--;
+
+             current =iv_ruleComando; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleComando"
+
+
+    // $ANTLR start "ruleComando"
+    // InternalAtad.g:107:1: ruleComando returns [EObject current=null] : (this_ComandosAcao_0= ruleComandosAcao | this_ComandosValidadores_1= ruleComandosValidadores | this_AdicaoComando_2= ruleAdicaoComando | this_Quando_3= ruleQuando ) ;
+    public final EObject ruleComando() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_ComandosAcao_0 = null;
+
+        EObject this_ComandosValidadores_1 = null;
+
+        EObject this_AdicaoComando_2 = null;
+
+        EObject this_Quando_3 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalAtad.g:113:2: ( (this_ComandosAcao_0= ruleComandosAcao | this_ComandosValidadores_1= ruleComandosValidadores | this_AdicaoComando_2= ruleAdicaoComando | this_Quando_3= ruleQuando ) )
+            // InternalAtad.g:114:2: (this_ComandosAcao_0= ruleComandosAcao | this_ComandosValidadores_1= ruleComandosValidadores | this_AdicaoComando_2= ruleAdicaoComando | this_Quando_3= ruleQuando )
+            {
+            // InternalAtad.g:114:2: (this_ComandosAcao_0= ruleComandosAcao | this_ComandosValidadores_1= ruleComandosValidadores | this_AdicaoComando_2= ruleAdicaoComando | this_Quando_3= ruleQuando )
+            int alt2=4;
+            switch ( input.LA(1) ) {
+            case 11:
+            case 13:
+            case 14:
+                {
+                alt2=1;
+                }
+                break;
+            case 15:
+                {
+                alt2=2;
+                }
+                break;
+            case 17:
+                {
+                alt2=3;
+                }
+                break;
+            case 18:
+                {
+                alt2=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // InternalAtad.g:115:3: this_ComandosAcao_0= ruleComandosAcao
+                    {
+
+                    			newCompositeNode(grammarAccess.getComandoAccess().getComandosAcaoParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_ComandosAcao_0=ruleComandosAcao();
+
+                    state._fsp--;
+
+
+                    			current = this_ComandosAcao_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalAtad.g:124:3: this_ComandosValidadores_1= ruleComandosValidadores
+                    {
+
+                    			newCompositeNode(grammarAccess.getComandoAccess().getComandosValidadoresParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_ComandosValidadores_1=ruleComandosValidadores();
+
+                    state._fsp--;
+
+
+                    			current = this_ComandosValidadores_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalAtad.g:133:3: this_AdicaoComando_2= ruleAdicaoComando
+                    {
+
+                    			newCompositeNode(grammarAccess.getComandoAccess().getAdicaoComandoParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_AdicaoComando_2=ruleAdicaoComando();
+
+                    state._fsp--;
+
+
+                    			current = this_AdicaoComando_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalAtad.g:142:3: this_Quando_3= ruleQuando
+                    {
+
+                    			newCompositeNode(grammarAccess.getComandoAccess().getQuandoParserRuleCall_3());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Quando_3=ruleQuando();
+
+                    state._fsp--;
+
+
+                    			current = this_Quando_3;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleComando"
+
+
     // $ANTLR start "entryRuleClicar"
-    // InternalAtad.g:140:1: entryRuleClicar returns [EObject current=null] : iv_ruleClicar= ruleClicar EOF ;
+    // InternalAtad.g:154:1: entryRuleClicar returns [EObject current=null] : iv_ruleClicar= ruleClicar EOF ;
     public final EObject entryRuleClicar() throws RecognitionException {
         EObject current = null;
 
@@ -315,8 +391,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:140:47: (iv_ruleClicar= ruleClicar EOF )
-            // InternalAtad.g:141:2: iv_ruleClicar= ruleClicar EOF
+            // InternalAtad.g:154:47: (iv_ruleClicar= ruleClicar EOF )
+            // InternalAtad.g:155:2: iv_ruleClicar= ruleClicar EOF
             {
              newCompositeNode(grammarAccess.getClicarRule()); 
             pushFollow(FOLLOW_1);
@@ -343,7 +419,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClicar"
-    // InternalAtad.g:147:1: ruleClicar returns [EObject current=null] : (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:161:1: ruleClicar returns [EObject current=null] : (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleClicar() throws RecognitionException {
         EObject current = null;
 
@@ -355,25 +431,25 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:153:2: ( (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:154:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:167:2: ( (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:154:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
-            // InternalAtad.g:155:3: otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:169:3: otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,11,FOLLOW_6); 
+            otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getClicarAccess().getClicarKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_7); 
+            otherlv_1=(Token)match(input,12,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getClicarAccess().getEmKeyword_1());
             		
-            // InternalAtad.g:163:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAtad.g:164:4: (lv_name_2_0= RULE_STRING )
+            // InternalAtad.g:177:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:178:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalAtad.g:164:4: (lv_name_2_0= RULE_STRING )
-            // InternalAtad.g:165:5: lv_name_2_0= RULE_STRING
+            // InternalAtad.g:178:4: (lv_name_2_0= RULE_STRING )
+            // InternalAtad.g:179:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -418,7 +494,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNavegar"
-    // InternalAtad.g:185:1: entryRuleNavegar returns [EObject current=null] : iv_ruleNavegar= ruleNavegar EOF ;
+    // InternalAtad.g:199:1: entryRuleNavegar returns [EObject current=null] : iv_ruleNavegar= ruleNavegar EOF ;
     public final EObject entryRuleNavegar() throws RecognitionException {
         EObject current = null;
 
@@ -426,8 +502,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:185:48: (iv_ruleNavegar= ruleNavegar EOF )
-            // InternalAtad.g:186:2: iv_ruleNavegar= ruleNavegar EOF
+            // InternalAtad.g:199:48: (iv_ruleNavegar= ruleNavegar EOF )
+            // InternalAtad.g:200:2: iv_ruleNavegar= ruleNavegar EOF
             {
              newCompositeNode(grammarAccess.getNavegarRule()); 
             pushFollow(FOLLOW_1);
@@ -454,7 +530,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNavegar"
-    // InternalAtad.g:192:1: ruleNavegar returns [EObject current=null] : (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:206:1: ruleNavegar returns [EObject current=null] : (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleNavegar() throws RecognitionException {
         EObject current = null;
 
@@ -465,21 +541,21 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:198:2: ( (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:199:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:212:2: ( (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:213:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:199:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
-            // InternalAtad.g:200:3: otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:213:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:214:3: otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_7); 
+            otherlv_0=(Token)match(input,13,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNavegarAccess().getNavegarKeyword_0());
             		
-            // InternalAtad.g:204:3: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalAtad.g:205:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:218:3: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:219:4: (lv_name_1_0= RULE_STRING )
             {
-            // InternalAtad.g:205:4: (lv_name_1_0= RULE_STRING )
-            // InternalAtad.g:206:5: lv_name_1_0= RULE_STRING
+            // InternalAtad.g:219:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:220:5: lv_name_1_0= RULE_STRING
             {
             lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -524,7 +600,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEscrever"
-    // InternalAtad.g:226:1: entryRuleEscrever returns [EObject current=null] : iv_ruleEscrever= ruleEscrever EOF ;
+    // InternalAtad.g:240:1: entryRuleEscrever returns [EObject current=null] : iv_ruleEscrever= ruleEscrever EOF ;
     public final EObject entryRuleEscrever() throws RecognitionException {
         EObject current = null;
 
@@ -532,8 +608,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:226:49: (iv_ruleEscrever= ruleEscrever EOF )
-            // InternalAtad.g:227:2: iv_ruleEscrever= ruleEscrever EOF
+            // InternalAtad.g:240:49: (iv_ruleEscrever= ruleEscrever EOF )
+            // InternalAtad.g:241:2: iv_ruleEscrever= ruleEscrever EOF
             {
              newCompositeNode(grammarAccess.getEscreverRule()); 
             pushFollow(FOLLOW_1);
@@ -560,7 +636,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEscrever"
-    // InternalAtad.g:233:1: ruleEscrever returns [EObject current=null] : (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:247:1: ruleEscrever returns [EObject current=null] : (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleEscrever() throws RecognitionException {
         EObject current = null;
 
@@ -571,21 +647,21 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:239:2: ( (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:240:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:253:2: ( (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:254:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:240:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
-            // InternalAtad.g:241:3: otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:254:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:255:3: otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_7); 
+            otherlv_0=(Token)match(input,14,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEscreverAccess().getEscreverKeyword_0());
             		
-            // InternalAtad.g:245:3: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalAtad.g:246:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:259:3: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:260:4: (lv_name_1_0= RULE_STRING )
             {
-            // InternalAtad.g:246:4: (lv_name_1_0= RULE_STRING )
-            // InternalAtad.g:247:5: lv_name_1_0= RULE_STRING
+            // InternalAtad.g:260:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:261:5: lv_name_1_0= RULE_STRING
             {
             lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -630,7 +706,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComandosAcao"
-    // InternalAtad.g:267:1: entryRuleComandosAcao returns [EObject current=null] : iv_ruleComandosAcao= ruleComandosAcao EOF ;
+    // InternalAtad.g:281:1: entryRuleComandosAcao returns [EObject current=null] : iv_ruleComandosAcao= ruleComandosAcao EOF ;
     public final EObject entryRuleComandosAcao() throws RecognitionException {
         EObject current = null;
 
@@ -638,8 +714,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:267:53: (iv_ruleComandosAcao= ruleComandosAcao EOF )
-            // InternalAtad.g:268:2: iv_ruleComandosAcao= ruleComandosAcao EOF
+            // InternalAtad.g:281:53: (iv_ruleComandosAcao= ruleComandosAcao EOF )
+            // InternalAtad.g:282:2: iv_ruleComandosAcao= ruleComandosAcao EOF
             {
              newCompositeNode(grammarAccess.getComandosAcaoRule()); 
             pushFollow(FOLLOW_1);
@@ -666,104 +742,137 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandosAcao"
-    // InternalAtad.g:274:1: ruleComandosAcao returns [EObject current=null] : (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever ) ;
+    // InternalAtad.g:288:1: ruleComandosAcao returns [EObject current=null] : ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) ) ;
     public final EObject ruleComandosAcao() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Clicar_0 = null;
+        EObject lv_comando_0_1 = null;
 
-        EObject this_Navegar_1 = null;
+        EObject lv_comando_0_2 = null;
 
-        EObject this_Escrever_2 = null;
+        EObject lv_comando_0_3 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:280:2: ( (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever ) )
-            // InternalAtad.g:281:2: (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever )
+            // InternalAtad.g:294:2: ( ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) ) )
+            // InternalAtad.g:295:2: ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) )
             {
-            // InternalAtad.g:281:2: (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever )
-            int alt4=3;
+            // InternalAtad.g:295:2: ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) )
+            // InternalAtad.g:296:3: ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) )
+            {
+            // InternalAtad.g:296:3: ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) )
+            // InternalAtad.g:297:4: (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever )
+            {
+            // InternalAtad.g:297:4: (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever )
+            int alt3=3;
             switch ( input.LA(1) ) {
             case 11:
                 {
-                alt4=1;
+                alt3=1;
                 }
                 break;
             case 13:
                 {
-                alt4=2;
+                alt3=2;
                 }
                 break;
             case 14:
                 {
-                alt4=3;
+                alt3=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt3) {
                 case 1 :
-                    // InternalAtad.g:282:3: this_Clicar_0= ruleClicar
+                    // InternalAtad.g:298:5: lv_comando_0_1= ruleClicar
                     {
 
-                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getClicarParserRuleCall_0());
-                    		
+                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoClicarParserRuleCall_0_0());
+                    				
                     pushFollow(FOLLOW_2);
-                    this_Clicar_0=ruleClicar();
+                    lv_comando_0_1=ruleClicar();
 
                     state._fsp--;
 
 
-                    			current = this_Clicar_0;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+                    					}
+                    					set(
+                    						current,
+                    						"comando",
+                    						lv_comando_0_1,
+                    						"com.ufrn.atad.Atad.Clicar");
+                    					afterParserOrEnumRuleCall();
+                    				
 
                     }
                     break;
                 case 2 :
-                    // InternalAtad.g:291:3: this_Navegar_1= ruleNavegar
+                    // InternalAtad.g:314:5: lv_comando_0_2= ruleNavegar
                     {
 
-                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getNavegarParserRuleCall_1());
-                    		
+                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoNavegarParserRuleCall_0_1());
+                    				
                     pushFollow(FOLLOW_2);
-                    this_Navegar_1=ruleNavegar();
+                    lv_comando_0_2=ruleNavegar();
 
                     state._fsp--;
 
 
-                    			current = this_Navegar_1;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+                    					}
+                    					set(
+                    						current,
+                    						"comando",
+                    						lv_comando_0_2,
+                    						"com.ufrn.atad.Atad.Navegar");
+                    					afterParserOrEnumRuleCall();
+                    				
 
                     }
                     break;
                 case 3 :
-                    // InternalAtad.g:300:3: this_Escrever_2= ruleEscrever
+                    // InternalAtad.g:330:5: lv_comando_0_3= ruleEscrever
                     {
 
-                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getEscreverParserRuleCall_2());
-                    		
+                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoEscreverParserRuleCall_0_2());
+                    				
                     pushFollow(FOLLOW_2);
-                    this_Escrever_2=ruleEscrever();
+                    lv_comando_0_3=ruleEscrever();
 
                     state._fsp--;
 
 
-                    			current = this_Escrever_2;
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+                    					}
+                    					set(
+                    						current,
+                    						"comando",
+                    						lv_comando_0_3,
+                    						"com.ufrn.atad.Atad.Escrever");
+                    					afterParserOrEnumRuleCall();
+                    				
 
                     }
                     break;
+
+            }
+
+
+            }
+
 
             }
 
@@ -787,7 +896,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVerifique"
-    // InternalAtad.g:312:1: entryRuleVerifique returns [EObject current=null] : iv_ruleVerifique= ruleVerifique EOF ;
+    // InternalAtad.g:351:1: entryRuleVerifique returns [EObject current=null] : iv_ruleVerifique= ruleVerifique EOF ;
     public final EObject entryRuleVerifique() throws RecognitionException {
         EObject current = null;
 
@@ -795,8 +904,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:312:50: (iv_ruleVerifique= ruleVerifique EOF )
-            // InternalAtad.g:313:2: iv_ruleVerifique= ruleVerifique EOF
+            // InternalAtad.g:351:50: (iv_ruleVerifique= ruleVerifique EOF )
+            // InternalAtad.g:352:2: iv_ruleVerifique= ruleVerifique EOF
             {
              newCompositeNode(grammarAccess.getVerifiqueRule()); 
             pushFollow(FOLLOW_1);
@@ -823,7 +932,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVerifique"
-    // InternalAtad.g:319:1: ruleVerifique returns [EObject current=null] : (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:358:1: ruleVerifique returns [EObject current=null] : (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleVerifique() throws RecognitionException {
         EObject current = null;
 
@@ -835,25 +944,25 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:325:2: ( (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:326:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:364:2: ( (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:365:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:326:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
-            // InternalAtad.g:327:3: otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:365:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:366:3: otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_8); 
+            otherlv_0=(Token)match(input,15,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0());
             		
-            otherlv_1=(Token)match(input,16,FOLLOW_7); 
+            otherlv_1=(Token)match(input,16,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getVerifiqueAccess().getQueKeyword_1());
             		
-            // InternalAtad.g:335:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAtad.g:336:4: (lv_name_2_0= RULE_STRING )
+            // InternalAtad.g:374:3: ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:375:4: (lv_name_2_0= RULE_STRING )
             {
-            // InternalAtad.g:336:4: (lv_name_2_0= RULE_STRING )
-            // InternalAtad.g:337:5: lv_name_2_0= RULE_STRING
+            // InternalAtad.g:375:4: (lv_name_2_0= RULE_STRING )
+            // InternalAtad.g:376:5: lv_name_2_0= RULE_STRING
             {
             lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -898,7 +1007,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComandosValidadores"
-    // InternalAtad.g:357:1: entryRuleComandosValidadores returns [EObject current=null] : iv_ruleComandosValidadores= ruleComandosValidadores EOF ;
+    // InternalAtad.g:396:1: entryRuleComandosValidadores returns [EObject current=null] : iv_ruleComandosValidadores= ruleComandosValidadores EOF ;
     public final EObject entryRuleComandosValidadores() throws RecognitionException {
         EObject current = null;
 
@@ -906,8 +1015,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:357:60: (iv_ruleComandosValidadores= ruleComandosValidadores EOF )
-            // InternalAtad.g:358:2: iv_ruleComandosValidadores= ruleComandosValidadores EOF
+            // InternalAtad.g:396:60: (iv_ruleComandosValidadores= ruleComandosValidadores EOF )
+            // InternalAtad.g:397:2: iv_ruleComandosValidadores= ruleComandosValidadores EOF
             {
              newCompositeNode(grammarAccess.getComandosValidadoresRule()); 
             pushFollow(FOLLOW_1);
@@ -934,32 +1043,51 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandosValidadores"
-    // InternalAtad.g:364:1: ruleComandosValidadores returns [EObject current=null] : this_Verifique_0= ruleVerifique ;
+    // InternalAtad.g:403:1: ruleComandosValidadores returns [EObject current=null] : ( (lv_verifique_0_0= ruleVerifique ) ) ;
     public final EObject ruleComandosValidadores() throws RecognitionException {
         EObject current = null;
 
-        EObject this_Verifique_0 = null;
+        EObject lv_verifique_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:370:2: (this_Verifique_0= ruleVerifique )
-            // InternalAtad.g:371:2: this_Verifique_0= ruleVerifique
+            // InternalAtad.g:409:2: ( ( (lv_verifique_0_0= ruleVerifique ) ) )
+            // InternalAtad.g:410:2: ( (lv_verifique_0_0= ruleVerifique ) )
+            {
+            // InternalAtad.g:410:2: ( (lv_verifique_0_0= ruleVerifique ) )
+            // InternalAtad.g:411:3: (lv_verifique_0_0= ruleVerifique )
+            {
+            // InternalAtad.g:411:3: (lv_verifique_0_0= ruleVerifique )
+            // InternalAtad.g:412:4: lv_verifique_0_0= ruleVerifique
             {
 
-            		newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueParserRuleCall());
-            	
+            				newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiqueParserRuleCall_0());
+            			
             pushFollow(FOLLOW_2);
-            this_Verifique_0=ruleVerifique();
+            lv_verifique_0_0=ruleVerifique();
 
             state._fsp--;
 
 
-            		current = this_Verifique_0;
-            		afterParserOrEnumRuleCall();
-            	
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
+            				}
+            				set(
+            					current,
+            					"verifique",
+            					lv_verifique_0_0,
+            					"com.ufrn.atad.Atad.Verifique");
+            				afterParserOrEnumRuleCall();
+            			
+
+            }
+
+
+            }
+
 
             }
 
@@ -980,7 +1108,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAdicaoComando"
-    // InternalAtad.g:382:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
+    // InternalAtad.g:432:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
     public final EObject entryRuleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
@@ -988,8 +1116,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:382:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
-            // InternalAtad.g:383:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
+            // InternalAtad.g:432:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
+            // InternalAtad.g:433:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
             {
              newCompositeNode(grammarAccess.getAdicaoComandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1016,40 +1144,59 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdicaoComando"
-    // InternalAtad.g:389:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' this_ComandosAcao_1= ruleComandosAcao ) ;
+    // InternalAtad.g:439:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) ;
     public final EObject ruleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject this_ComandosAcao_1 = null;
+        EObject lv_comando_1_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:395:2: ( (otherlv_0= 'E' this_ComandosAcao_1= ruleComandosAcao ) )
-            // InternalAtad.g:396:2: (otherlv_0= 'E' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:445:2: ( (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) )
+            // InternalAtad.g:446:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
             {
-            // InternalAtad.g:396:2: (otherlv_0= 'E' this_ComandosAcao_1= ruleComandosAcao )
-            // InternalAtad.g:397:3: otherlv_0= 'E' this_ComandosAcao_1= ruleComandosAcao
+            // InternalAtad.g:446:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
+            // InternalAtad.g:447:3: otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_9); 
+            otherlv_0=(Token)match(input,17,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
             		
+            // InternalAtad.g:451:3: ( (lv_comando_1_0= ruleComandosAcao ) )
+            // InternalAtad.g:452:4: (lv_comando_1_0= ruleComandosAcao )
+            {
+            // InternalAtad.g:452:4: (lv_comando_1_0= ruleComandosAcao )
+            // InternalAtad.g:453:5: lv_comando_1_0= ruleComandosAcao
+            {
 
-            			newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandosAcaoParserRuleCall_1());
-            		
+            					newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0());
+            				
             pushFollow(FOLLOW_2);
-            this_ComandosAcao_1=ruleComandosAcao();
+            lv_comando_1_0=ruleComandosAcao();
 
             state._fsp--;
 
 
-            			current = this_ComandosAcao_1;
-            			afterParserOrEnumRuleCall();
-            		
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAdicaoComandoRule());
+            					}
+            					set(
+            						current,
+            						"comando",
+            						lv_comando_1_0,
+            						"com.ufrn.atad.Atad.ComandosAcao");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
 
             }
 
@@ -1073,7 +1220,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQuando"
-    // InternalAtad.g:413:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
+    // InternalAtad.g:474:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
     public final EObject entryRuleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1081,8 +1228,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:413:47: (iv_ruleQuando= ruleQuando EOF )
-            // InternalAtad.g:414:2: iv_ruleQuando= ruleQuando EOF
+            // InternalAtad.g:474:47: (iv_ruleQuando= ruleQuando EOF )
+            // InternalAtad.g:475:2: iv_ruleQuando= ruleQuando EOF
             {
              newCompositeNode(grammarAccess.getQuandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1109,7 +1256,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuando"
-    // InternalAtad.g:420:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
+    // InternalAtad.g:481:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
     public final EObject ruleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1121,13 +1268,13 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:426:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
-            // InternalAtad.g:427:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:487:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
+            // InternalAtad.g:488:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
             {
-            // InternalAtad.g:427:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
-            // InternalAtad.g:428:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
+            // InternalAtad.g:488:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:489:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_9); 
+            otherlv_0=(Token)match(input,18,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getQuandoAccess().getQuandoKeyword_0());
             		
@@ -1171,12 +1318,10 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000068002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000028002L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000006E802L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006800L});
 
 }

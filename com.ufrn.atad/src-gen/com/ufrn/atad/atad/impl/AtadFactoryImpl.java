@@ -66,6 +66,7 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
     switch (eClass.getClassifierID())
     {
       case AtadPackage.DECLARA_COMANDO: return createDeclaraComando();
+      case AtadPackage.COMANDO: return createComando();
       case AtadPackage.CLICAR: return createClicar();
       case AtadPackage.NAVEGAR: return createNavegar();
       case AtadPackage.ESCREVER: return createEscrever();
@@ -89,6 +90,18 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
   {
     DeclaraComandoImpl declaraComando = new DeclaraComandoImpl();
     return declaraComando;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Comando createComando()
+  {
+    ComandoImpl comando = new ComandoImpl();
+    return comando;
   }
 
   /**

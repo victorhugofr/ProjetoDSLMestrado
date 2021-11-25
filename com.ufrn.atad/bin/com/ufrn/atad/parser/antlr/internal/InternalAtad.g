@@ -77,62 +77,76 @@ ruleDeclaraComando returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getComandosQuandoParserRuleCall_0_0());
+			{
+				newCompositeNode(grammarAccess.getDeclaraComandoAccess().getComandosComandoParserRuleCall_0());
+			}
+			lv_comandos_0_0=ruleComando
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
 				}
-				lv_comandos_0_0=ruleQuando
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-					}
-					add(
-						$current,
-						"comandos",
-						lv_comandos_0_0,
-						"com.ufrn.atad.Atad.Quando");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getAcoesAdicaoComandoParserRuleCall_1_0());
-				}
-				lv_acoes_1_0=ruleAdicaoComando
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-					}
-					add(
-						$current,
-						"acoes",
-						lv_acoes_1_0,
-						"com.ufrn.atad.Atad.AdicaoComando");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getDeclaraComandoAccess().getVerificacaoComandosValidadoresParserRuleCall_2_0());
-				}
-				lv_verificacao_2_0=ruleComandosValidadores
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDeclaraComandoRule());
-					}
-					add(
-						$current,
-						"verificacao",
-						lv_verificacao_2_0,
-						"com.ufrn.atad.Atad.ComandosValidadores");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
+				add(
+					$current,
+					"comandos",
+					lv_comandos_0_0,
+					"com.ufrn.atad.Atad.Comando");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)*
+;
+
+// Entry rule entryRuleComando
+entryRuleComando returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getComandoRule()); }
+	iv_ruleComando=ruleComando
+	{ $current=$iv_ruleComando.current; }
+	EOF;
+
+// Rule Comando
+ruleComando returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getComandoAccess().getComandosAcaoParserRuleCall_0());
+		}
+		this_ComandosAcao_0=ruleComandosAcao
+		{
+			$current = $this_ComandosAcao_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandoAccess().getComandosValidadoresParserRuleCall_1());
+		}
+		this_ComandosValidadores_1=ruleComandosValidadores
+		{
+			$current = $this_ComandosValidadores_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandoAccess().getAdicaoComandoParserRuleCall_2());
+		}
+		this_AdicaoComando_2=ruleAdicaoComando
+		{
+			$current = $this_AdicaoComando_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandoAccess().getQuandoParserRuleCall_3());
+		}
+		this_Quando_3=ruleQuando
+		{
+			$current = $this_Quando_3.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -279,32 +293,57 @@ ruleComandosAcao returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getComandosAcaoAccess().getClicarParserRuleCall_0());
-		}
-		this_Clicar_0=ruleClicar
-		{
-			$current = $this_Clicar_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getComandosAcaoAccess().getNavegarParserRuleCall_1());
-		}
-		this_Navegar_1=ruleNavegar
-		{
-			$current = $this_Navegar_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getComandosAcaoAccess().getEscreverParserRuleCall_2());
-		}
-		this_Escrever_2=ruleEscrever
-		{
-			$current = $this_Escrever_2.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoClicarParserRuleCall_0_0());
+				}
+				lv_comando_0_1=ruleClicar
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+					}
+					set(
+						$current,
+						"comando",
+						lv_comando_0_1,
+						"com.ufrn.atad.Atad.Clicar");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoNavegarParserRuleCall_0_1());
+				}
+				lv_comando_0_2=ruleNavegar
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+					}
+					set(
+						$current,
+						"comando",
+						lv_comando_0_2,
+						"com.ufrn.atad.Atad.Navegar");
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				{
+					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoEscreverParserRuleCall_0_2());
+				}
+				lv_comando_0_3=ruleEscrever
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
+					}
+					set(
+						$current,
+						"comando",
+						lv_comando_0_3,
+						"com.ufrn.atad.Atad.Escrever");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -368,14 +407,25 @@ ruleComandosValidadores returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	{
-		newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueParserRuleCall());
-	}
-	this_Verifique_0=ruleVerifique
-	{
-		$current = $this_Verifique_0.current;
-		afterParserOrEnumRuleCall();
-	}
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiqueParserRuleCall_0());
+			}
+			lv_verifique_0_0=ruleVerifique
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
+				}
+				set(
+					$current,
+					"verifique",
+					lv_verifique_0_0,
+					"com.ufrn.atad.Atad.Verifique");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
 ;
 
 // Entry rule entryRuleAdicaoComando
@@ -398,14 +448,25 @@ ruleAdicaoComando returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
 		}
-		{
-			newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandosAcaoParserRuleCall_1());
-		}
-		this_ComandosAcao_1=ruleComandosAcao
-		{
-			$current = $this_ComandosAcao_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0());
+				}
+				lv_comando_1_0=ruleComandosAcao
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAdicaoComandoRule());
+					}
+					set(
+						$current,
+						"comando",
+						lv_comando_1_0,
+						"com.ufrn.atad.Atad.ComandosAcao");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

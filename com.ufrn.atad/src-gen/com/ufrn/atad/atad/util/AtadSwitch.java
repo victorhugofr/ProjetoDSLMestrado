@@ -80,13 +80,17 @@ public class AtadSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AtadPackage.COMANDO:
+      {
+        Comando comando = (Comando)theEObject;
+        T result = caseComando(comando);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AtadPackage.CLICAR:
       {
         Clicar clicar = (Clicar)theEObject;
         T result = caseClicar(clicar);
-        if (result == null) result = caseComandosAcao(clicar);
-        if (result == null) result = caseAdicaoComando(clicar);
-        if (result == null) result = caseQuando(clicar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -94,9 +98,6 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Navegar navegar = (Navegar)theEObject;
         T result = caseNavegar(navegar);
-        if (result == null) result = caseComandosAcao(navegar);
-        if (result == null) result = caseAdicaoComando(navegar);
-        if (result == null) result = caseQuando(navegar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -104,9 +105,6 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Escrever escrever = (Escrever)theEObject;
         T result = caseEscrever(escrever);
-        if (result == null) result = caseComandosAcao(escrever);
-        if (result == null) result = caseAdicaoComando(escrever);
-        if (result == null) result = caseQuando(escrever);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -114,8 +112,8 @@ public class AtadSwitch<T> extends Switch<T>
       {
         ComandosAcao comandosAcao = (ComandosAcao)theEObject;
         T result = caseComandosAcao(comandosAcao);
-        if (result == null) result = caseAdicaoComando(comandosAcao);
         if (result == null) result = caseQuando(comandosAcao);
+        if (result == null) result = caseComando(comandosAcao);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -123,7 +121,6 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Verifique verifique = (Verifique)theEObject;
         T result = caseVerifique(verifique);
-        if (result == null) result = caseComandosValidadores(verifique);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -131,6 +128,7 @@ public class AtadSwitch<T> extends Switch<T>
       {
         ComandosValidadores comandosValidadores = (ComandosValidadores)theEObject;
         T result = caseComandosValidadores(comandosValidadores);
+        if (result == null) result = caseComando(comandosValidadores);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -138,6 +136,7 @@ public class AtadSwitch<T> extends Switch<T>
       {
         AdicaoComando adicaoComando = (AdicaoComando)theEObject;
         T result = caseAdicaoComando(adicaoComando);
+        if (result == null) result = caseComando(adicaoComando);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,6 +144,7 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Quando quando = (Quando)theEObject;
         T result = caseQuando(quando);
+        if (result == null) result = caseComando(quando);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,6 +164,22 @@ public class AtadSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeclaraComando(DeclaraComando object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comando</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comando</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComando(Comando object)
   {
     return null;
   }

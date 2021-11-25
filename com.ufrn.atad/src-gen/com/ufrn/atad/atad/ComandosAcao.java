@@ -3,6 +3,7 @@
  */
 package com.ufrn.atad.atad;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,35 +14,35 @@ package com.ufrn.atad.atad;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.ComandosAcao#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.ComandosAcao#getComando <em>Comando</em>}</li>
  * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getComandosAcao()
  * @model
  * @generated
  */
-public interface ComandosAcao extends AdicaoComando, Quando
+public interface ComandosAcao extends Comando, Quando
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Comando</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.ufrn.atad.atad.AtadPackage#getComandosAcao_Name()
-   * @model
+   * @return the value of the '<em>Comando</em>' containment reference.
+   * @see #setComando(EObject)
+   * @see com.ufrn.atad.atad.AtadPackage#getComandosAcao_Comando()
+   * @model containment="true"
    * @generated
    */
-  String getName();
+  EObject getComando();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosAcao#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosAcao#getComando <em>Comando</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Comando</em>' containment reference.
+   * @see #getComando()
    * @generated
    */
-  void setName(String value);
+  void setComando(EObject value);
 
 } // ComandosAcao

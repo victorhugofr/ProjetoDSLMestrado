@@ -3,6 +3,7 @@
  */
 package com.ufrn.atad.atad;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package com.ufrn.atad.atad;
  * @model
  * @generated
  */
-public interface Verifique extends ComandosValidadores
+public interface Verifique extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

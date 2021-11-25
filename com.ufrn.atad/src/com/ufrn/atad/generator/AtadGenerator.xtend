@@ -9,6 +9,13 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import com.ufrn.atad.atad.Quando
 import com.ufrn.atad.atad.Navegar
+import com.ufrn.atad.atad.Escrever
+import com.ufrn.atad.atad.Clicar
+import com.ufrn.atad.atad.Verifique
+import com.ufrn.atad.atad.ComandosAcao
+import com.ufrn.atad.atad.Comando
+import org.eclipse.core.runtime.QualifiedName
+import com.ufrn.atad.atad.AdicaoComando
 
 /**
  * Generates code from your model files on save.
@@ -17,11 +24,19 @@ import com.ufrn.atad.atad.Navegar
  */
 class AtadGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('Teste.java', 'People to greet: ' + 
-			resource.allContents
-				.filter(Navegar)
-				.map[name]
-				.join(', '))
-	}
+	 override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+	 	
+//        for (e : resource.allContents.toIterable.filter(typeof(ComandosAcao))) {
+//            fsa.generateFile("Teste.java", resource.filter)
+//
+//        }
+        for (e : resource.allContents.toIterable) {
+        	if(e instanceof ComandosAcao)
+        	 	fsa.generateFile("Teste.java", e.comando +"<clicou<")
+        	 else if(e instanceof Verifique)
+        	 	fsa.generateFile("Teste.java", e.name+"bla")
+//        	fsa.generateFile("Teste.java",e)
+        }
+    }
+
 }

@@ -33,6 +33,15 @@ public interface AtadFactory extends EFactory
   DeclaraComando createDeclaraComando();
 
   /**
+   * Returns a new object of class '<em>Comando</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comando</em>'.
+   * @generated
+   */
+  Comando createComando();
+
+  /**
    * Returns a new object of class '<em>Clicar</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

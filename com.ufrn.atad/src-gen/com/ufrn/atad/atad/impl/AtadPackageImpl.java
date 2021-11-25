@@ -7,6 +7,7 @@ import com.ufrn.atad.atad.AdicaoComando;
 import com.ufrn.atad.atad.AtadFactory;
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.Comando;
 import com.ufrn.atad.atad.ComandosAcao;
 import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
@@ -36,6 +37,13 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   private EClass declaraComandoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass comandoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -184,20 +192,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EReference getDeclaraComando_Acoes()
+  public EClass getComando()
   {
-    return (EReference)declaraComandoEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getDeclaraComando_Verificacao()
-  {
-    return (EReference)declaraComandoEClass.getEStructuralFeatures().get(2);
+    return comandoEClass;
   }
 
   /**
@@ -217,9 +214,31 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
+  public EAttribute getClicar_Name()
+  {
+    return (EAttribute)clicarEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getNavegar()
   {
     return navegarEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNavegar_Name()
+  {
+    return (EAttribute)navegarEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -239,6 +258,17 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
+  public EAttribute getEscrever_Name()
+  {
+    return (EAttribute)escreverEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getComandosAcao()
   {
     return comandosAcaoEClass;
@@ -250,9 +280,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getComandosAcao_Name()
+  public EReference getComandosAcao_Comando()
   {
-    return (EAttribute)comandosAcaoEClass.getEStructuralFeatures().get(0);
+    return (EReference)comandosAcaoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -294,9 +324,31 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
+  public EReference getComandosValidadores_Verifique()
+  {
+    return (EReference)comandosValidadoresEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAdicaoComando()
   {
     return adicaoComandoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAdicaoComando_Comando()
+  {
+    return (EReference)adicaoComandoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -343,24 +395,29 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     // Create classes and their features
     declaraComandoEClass = createEClass(DECLARA_COMANDO);
     createEReference(declaraComandoEClass, DECLARA_COMANDO__COMANDOS);
-    createEReference(declaraComandoEClass, DECLARA_COMANDO__ACOES);
-    createEReference(declaraComandoEClass, DECLARA_COMANDO__VERIFICACAO);
+
+    comandoEClass = createEClass(COMANDO);
 
     clicarEClass = createEClass(CLICAR);
+    createEAttribute(clicarEClass, CLICAR__NAME);
 
     navegarEClass = createEClass(NAVEGAR);
+    createEAttribute(navegarEClass, NAVEGAR__NAME);
 
     escreverEClass = createEClass(ESCREVER);
+    createEAttribute(escreverEClass, ESCREVER__NAME);
 
     comandosAcaoEClass = createEClass(COMANDOS_ACAO);
-    createEAttribute(comandosAcaoEClass, COMANDOS_ACAO__NAME);
+    createEReference(comandosAcaoEClass, COMANDOS_ACAO__COMANDO);
 
     verifiqueEClass = createEClass(VERIFIQUE);
     createEAttribute(verifiqueEClass, VERIFIQUE__NAME);
 
     comandosValidadoresEClass = createEClass(COMANDOS_VALIDADORES);
+    createEReference(comandosValidadoresEClass, COMANDOS_VALIDADORES__VERIFIQUE);
 
     adicaoComandoEClass = createEClass(ADICAO_COMANDO);
+    createEReference(adicaoComandoEClass, ADICAO_COMANDO__COMANDO);
 
     quandoEClass = createEClass(QUANDO);
   }
@@ -394,34 +451,38 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    clicarEClass.getESuperTypes().add(this.getComandosAcao());
-    navegarEClass.getESuperTypes().add(this.getComandosAcao());
-    escreverEClass.getESuperTypes().add(this.getComandosAcao());
-    comandosAcaoEClass.getESuperTypes().add(this.getAdicaoComando());
+    comandosAcaoEClass.getESuperTypes().add(this.getComando());
     comandosAcaoEClass.getESuperTypes().add(this.getQuando());
-    verifiqueEClass.getESuperTypes().add(this.getComandosValidadores());
+    comandosValidadoresEClass.getESuperTypes().add(this.getComando());
+    adicaoComandoEClass.getESuperTypes().add(this.getComando());
+    quandoEClass.getESuperTypes().add(this.getComando());
 
     // Initialize classes and features; add operations and parameters
     initEClass(declaraComandoEClass, DeclaraComando.class, "DeclaraComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDeclaraComando_Comandos(), this.getQuando(), null, "comandos", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaraComando_Acoes(), this.getAdicaoComando(), null, "acoes", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeclaraComando_Verificacao(), this.getComandosValidadores(), null, "verificacao", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeclaraComando_Comandos(), this.getComando(), null, "comandos", null, 0, -1, DeclaraComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(comandoEClass, Comando.class, "Comando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(clicarEClass, Clicar.class, "Clicar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getClicar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clicar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(navegarEClass, Navegar.class, "Navegar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNavegar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Navegar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(escreverEClass, Escrever.class, "Escrever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEscrever_Name(), ecorePackage.getEString(), "name", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosAcaoEClass, ComandosAcao.class, "ComandosAcao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComandosAcao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandosAcao_Comando(), ecorePackage.getEObject(), null, "comando", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifiqueEClass, Verifique.class, "Verifique", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVerifique_Name(), ecorePackage.getEString(), "name", null, 0, 1, Verifique.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosValidadoresEClass, ComandosValidadores.class, "ComandosValidadores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComandosValidadores_Verifique(), this.getVerifique(), null, "verifique", null, 0, 1, ComandosValidadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(adicaoComandoEClass, AdicaoComando.class, "AdicaoComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAdicaoComando_Comando(), this.getComandosAcao(), null, "comando", null, 0, 1, AdicaoComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quandoEClass, Quando.class, "Quando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

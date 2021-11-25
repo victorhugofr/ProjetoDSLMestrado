@@ -81,6 +81,11 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
         return createDeclaraComandoAdapter();
       }
       @Override
+      public Adapter caseComando(Comando object)
+      {
+        return createComandoAdapter();
+      }
+      @Override
       public Adapter caseClicar(Clicar object)
       {
         return createClicarAdapter();
@@ -153,6 +158,21 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeclaraComandoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Comando <em>Comando</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Comando
+   * @generated
+   */
+  public Adapter createComandoAdapter()
   {
     return null;
   }

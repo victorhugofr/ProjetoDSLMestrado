@@ -3,18 +3,45 @@
  */
 package com.ufrn.atad.atad;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Comandos Validadores</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}</li>
+ * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores()
  * @model
  * @generated
  */
-public interface ComandosValidadores extends EObject
+public interface ComandosValidadores extends Comando
 {
+  /**
+   * Returns the value of the '<em><b>Verifique</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Verifique</em>' containment reference.
+   * @see #setVerifique(Verifique)
+   * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores_Verifique()
+   * @model containment="true"
+   * @generated
+   */
+  Verifique getVerifique();
+
+  /**
+   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Verifique</em>' containment reference.
+   * @see #getVerifique()
+   * @generated
+   */
+  void setVerifique(Verifique value);
+
 } // ComandosValidadores

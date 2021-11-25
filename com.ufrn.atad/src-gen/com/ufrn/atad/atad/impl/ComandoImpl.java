@@ -4,25 +4,27 @@
 package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
-import com.ufrn.atad.atad.Quando;
+import com.ufrn.atad.atad.Comando;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Quando</b></em>'.
+ * An implementation of the model object '<em><b>Comando</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class QuandoImpl extends ComandoImpl implements Quando
+public class ComandoImpl extends MinimalEObjectImpl.Container implements Comando
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected QuandoImpl()
+  protected ComandoImpl()
   {
     super();
   }
@@ -35,7 +37,7 @@ public class QuandoImpl extends ComandoImpl implements Quando
   @Override
   protected EClass eStaticClass()
   {
-    return AtadPackage.Literals.QUANDO;
+    return AtadPackage.Literals.COMANDO;
   }
 
-} //QuandoImpl
+} //ComandoImpl

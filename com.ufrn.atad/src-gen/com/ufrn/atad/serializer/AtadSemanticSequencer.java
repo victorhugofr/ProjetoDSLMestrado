@@ -4,8 +4,11 @@
 package com.ufrn.atad.serializer;
 
 import com.google.inject.Inject;
+import com.ufrn.atad.atad.AdicaoComando;
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.ComandosAcao;
+import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
 import com.ufrn.atad.atad.Escrever;
 import com.ufrn.atad.atad.Navegar;
@@ -36,8 +39,17 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == AtadPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case AtadPackage.ADICAO_COMANDO:
+				sequence_AdicaoComando(context, (AdicaoComando) semanticObject); 
+				return; 
 			case AtadPackage.CLICAR:
 				sequence_Clicar(context, (Clicar) semanticObject); 
+				return; 
+			case AtadPackage.COMANDOS_ACAO:
+				sequence_ComandosAcao(context, (ComandosAcao) semanticObject); 
+				return; 
+			case AtadPackage.COMANDOS_VALIDADORES:
+				sequence_ComandosValidadores(context, (ComandosValidadores) semanticObject); 
 				return; 
 			case AtadPackage.DECLARA_COMANDO:
 				sequence_DeclaraComando(context, (DeclaraComando) semanticObject); 
@@ -58,18 +70,34 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Comando returns AdicaoComando
+	 *     AdicaoComando returns AdicaoComando
+	 *
+	 * Constraint:
+	 *     comando=ComandosAcao
+	 */
+	protected void sequence_AdicaoComando(ISerializationContext context, AdicaoComando semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ADICAO_COMANDO__COMANDO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ADICAO_COMANDO__COMANDO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0(), semanticObject.getComando());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Clicar returns Clicar
-	 *     ComandosAcao returns Clicar
-	 *     AdicaoComando returns Clicar
-	 *     Quando returns Clicar
 	 *
 	 * Constraint:
 	 *     name=STRING
 	 */
 	protected void sequence_Clicar(ISerializationContext context, Clicar semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.CLICAR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.CLICAR__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
@@ -79,14 +107,43 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Comando returns ComandosAcao
+	 *     ComandosAcao returns ComandosAcao
+	 *     Quando returns ComandosAcao
+	 *
+	 * Constraint:
+	 *     (comando=Clicar | comando=Navegar | comando=Escrever)
+	 */
+	protected void sequence_ComandosAcao(ISerializationContext context, ComandosAcao semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Comando returns ComandosValidadores
+	 *     ComandosValidadores returns ComandosValidadores
+	 *
+	 * Constraint:
+	 *     verifique=Verifique
+	 */
+	protected void sequence_ComandosValidadores(ISerializationContext context, ComandosValidadores semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__VERIFIQUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__VERIFIQUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiqueParserRuleCall_0(), semanticObject.getVerifique());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DeclaraComando returns DeclaraComando
 	 *
 	 * Constraint:
-	 *     (
-	 *         (comandos+=Quando* acoes+=AdicaoComando+ verificacao+=ComandosValidadores+) | 
-	 *         (comandos+=Quando* verificacao+=ComandosValidadores+) | 
-	 *         verificacao+=ComandosValidadores+
-	 *     )?
+	 *     comandos+=Comando+
 	 */
 	protected void sequence_DeclaraComando(ISerializationContext context, DeclaraComando semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -96,17 +153,14 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Escrever returns Escrever
-	 *     ComandosAcao returns Escrever
-	 *     AdicaoComando returns Escrever
-	 *     Quando returns Escrever
 	 *
 	 * Constraint:
 	 *     name=STRING
 	 */
 	protected void sequence_Escrever(ISerializationContext context, Escrever semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESCREVER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESCREVER__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
@@ -117,17 +171,14 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Navegar returns Navegar
-	 *     ComandosAcao returns Navegar
-	 *     AdicaoComando returns Navegar
-	 *     Quando returns Navegar
 	 *
 	 * Constraint:
 	 *     name=STRING
 	 */
 	protected void sequence_Navegar(ISerializationContext context, Navegar semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.NAVEGAR__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.NAVEGAR__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getNavegarAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
@@ -138,7 +189,6 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Verifique returns Verifique
-	 *     ComandosValidadores returns Verifique
 	 *
 	 * Constraint:
 	 *     name=STRING

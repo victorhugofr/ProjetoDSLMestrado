@@ -3,10 +3,14 @@
  */
 package com.ufrn.atad.generator;
 
+import com.ufrn.atad.atad.ComandosAcao;
+import com.ufrn.atad.atad.Verifique;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +21,19 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class AtadGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(resource.getAllContents());
+    for (final EObject e : _iterable) {
+      if ((e instanceof ComandosAcao)) {
+        EObject _comando = ((ComandosAcao)e).getComando();
+        String _plus = (_comando + "<clicou<");
+        fsa.generateFile("Teste.java", _plus);
+      } else {
+        if ((e instanceof Verifique)) {
+          String _name = ((Verifique)e).getName();
+          String _plus_1 = (_name + "bla");
+          fsa.generateFile("Teste.java", _plus_1);
+        }
+      }
+    }
   }
 }

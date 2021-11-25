@@ -3,18 +3,45 @@
  */
 package com.ufrn.atad.atad;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Adicao Comando</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link com.ufrn.atad.atad.AdicaoComando#getComando <em>Comando</em>}</li>
+ * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getAdicaoComando()
  * @model
  * @generated
  */
-public interface AdicaoComando extends EObject
+public interface AdicaoComando extends Comando
 {
+  /**
+   * Returns the value of the '<em><b>Comando</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comando</em>' containment reference.
+   * @see #setComando(ComandosAcao)
+   * @see com.ufrn.atad.atad.AtadPackage#getAdicaoComando_Comando()
+   * @model containment="true"
+   * @generated
+   */
+  ComandosAcao getComando();
+
+  /**
+   * Sets the value of the '{@link com.ufrn.atad.atad.AdicaoComando#getComando <em>Comando</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Comando</em>' containment reference.
+   * @see #getComando()
+   * @generated
+   */
+  void setComando(ComandosAcao value);
+
 } // AdicaoComando

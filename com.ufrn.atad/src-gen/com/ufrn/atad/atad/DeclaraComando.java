@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.ufrn.atad.atad.DeclaraComando#getComandos <em>Comandos</em>}</li>
- *   <li>{@link com.ufrn.atad.atad.DeclaraComando#getAcoes <em>Acoes</em>}</li>
- *   <li>{@link com.ufrn.atad.atad.DeclaraComando#getVerificacao <em>Verificacao</em>}</li>
  * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando()
@@ -29,7 +27,7 @@ public interface DeclaraComando extends EObject
 {
   /**
    * Returns the value of the '<em><b>Comandos</b></em>' containment reference list.
-   * The list contents are of type {@link com.ufrn.atad.atad.Quando}.
+   * The list contents are of type {@link com.ufrn.atad.atad.Comando}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Comandos</em>' containment reference list.
@@ -37,30 +35,6 @@ public interface DeclaraComando extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Quando> getComandos();
-
-  /**
-   * Returns the value of the '<em><b>Acoes</b></em>' containment reference list.
-   * The list contents are of type {@link com.ufrn.atad.atad.AdicaoComando}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Acoes</em>' containment reference list.
-   * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando_Acoes()
-   * @model containment="true"
-   * @generated
-   */
-  EList<AdicaoComando> getAcoes();
-
-  /**
-   * Returns the value of the '<em><b>Verificacao</b></em>' containment reference list.
-   * The list contents are of type {@link com.ufrn.atad.atad.ComandosValidadores}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Verificacao</em>' containment reference list.
-   * @see com.ufrn.atad.atad.AtadPackage#getDeclaraComando_Verificacao()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ComandosValidadores> getVerificacao();
+  EList<Comando> getComandos();
 
 } // DeclaraComando

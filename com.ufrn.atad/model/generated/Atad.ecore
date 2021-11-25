@@ -3,22 +3,32 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="atad" nsURI="http://www.ufrn.com/atad/Atad" nsPrefix="atad">
   <eClassifiers xsi:type="ecore:EClass" name="DeclaraComando">
     <eStructuralFeatures xsi:type="ecore:EReference" name="comandos" upperBound="-1"
-        eType="#//Quando" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="acoes" upperBound="-1"
-        eType="#//AdicaoComando" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="verificacao" upperBound="-1"
-        eType="#//ComandosValidadores" containment="true"/>
+        eType="#//Comando" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Clicar" eSuperTypes="#//ComandosAcao"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Navegar" eSuperTypes="#//ComandosAcao"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Escrever" eSuperTypes="#//ComandosAcao"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ComandosAcao" eSuperTypes="#//AdicaoComando #//Quando">
+  <eClassifiers xsi:type="ecore:EClass" name="Comando"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clicar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Verifique" eSuperTypes="#//ComandosValidadores">
+  <eClassifiers xsi:type="ecore:EClass" name="Navegar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComandosValidadores"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AdicaoComando"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Quando"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Escrever">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComandosAcao" eSuperTypes="#//Comando #//Quando">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comando" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Verifique">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComandosValidadores" eSuperTypes="#//Comando">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verifique" eType="#//Verifique"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdicaoComando" eSuperTypes="#//Comando">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comando" eType="#//ComandosAcao"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Quando" eSuperTypes="#//Comando"/>
 </ecore:EPackage>

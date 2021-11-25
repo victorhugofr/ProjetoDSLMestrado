@@ -3,9 +3,11 @@ grammar com.ufrn.atad.Atad with org.eclipse.xtext.common.Terminals
 generate atad "http://www.ufrn.com/atad/Atad"
 
 DeclaraComando:
-	comandos+=Quando*
-	acoes+=AdicaoComando*
-	verificacao+=ComandosValidadores*;
+	comandos+=Comando*;
+	
+Comando:
+	ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+;
 	
 Clicar:
 	'clicar' 'em' name=STRING
@@ -20,19 +22,19 @@ Escrever:
 ;
 
 ComandosAcao:
-	Clicar|Navegar|Escrever	
+	comando=(Clicar|Navegar|Escrever)	
 ;
 
 Verifique:
-	'Verifique' 'que' name=STRING
+	'Verifique' 'que' name=STRING 
 ;
 
 ComandosValidadores:
-	Verifique
+	verifique=Verifique 
 ;
 
 AdicaoComando:
-	'E' ComandosAcao
+	'E' comando=ComandosAcao
 ;
 
 Quando: 
