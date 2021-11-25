@@ -13,7 +13,7 @@ package com.ufrn.atad.atad;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.ComandosValidadores#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores()
@@ -23,25 +23,25 @@ package com.ufrn.atad.atad;
 public interface ComandosValidadores extends Comando
 {
   /**
-   * Returns the value of the '<em><b>Verifique</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Verifique</em>' containment reference.
-   * @see #setVerifique(VerifiquePresente)
-   * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores_Verifique()
-   * @model containment="true"
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores_Name()
+   * @model
    * @generated
    */
-  VerifiquePresente getVerifique();
+  String getName();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}' containment reference.
+   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosValidadores#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Verifique</em>' containment reference.
-   * @see #getVerifique()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setVerifique(VerifiquePresente value);
+  void setName(String value);
 
 } // ComandosValidadores

@@ -50,7 +50,6 @@ public class AtadParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEscreverAccess().getConteudoAssignment_4(), "rule__Escrever__ConteudoAssignment_4");
 			builder.put(grammarAccess.getVerifiquePresenteAccess().getNameAssignment_4(), "rule__VerifiquePresente__NameAssignment_4");
 			builder.put(grammarAccess.getVerifiqueNaoPresenteAccess().getNameAssignment_4(), "rule__VerifiqueNaoPresente__NameAssignment_4");
-			builder.put(grammarAccess.getComandosValidadoresAccess().getVerifiqueAssignment_0(), "rule__ComandosValidadores__VerifiqueAssignment_0");
 			builder.put(grammarAccess.getAdicaoComandoAccess().getComandoAssignment_1(), "rule__AdicaoComando__ComandoAssignment_1");
 		}
 	}

@@ -17,15 +17,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComandosAcao" eSuperTypes="#//Comando #//Quando">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VerifiquePresente">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VerifiqueNaoPresente" eSuperTypes="#//ComandosValidadores">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VerifiquePresente" eSuperTypes="#//ComandosValidadores"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VerifiqueNaoPresente" eSuperTypes="#//ComandosValidadores"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComandosValidadores" eSuperTypes="#//Comando">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="verifique" eType="#//VerifiquePresente"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdicaoComando" eSuperTypes="#//Comando">
     <eStructuralFeatures xsi:type="ecore:EReference" name="comando" eType="#//ComandosAcao"

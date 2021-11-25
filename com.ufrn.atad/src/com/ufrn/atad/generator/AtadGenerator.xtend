@@ -10,6 +10,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import com.ufrn.atad.atad.VerifiquePresente
+import com.ufrn.atad.atad.VerifiqueNaoPresente
 
 /**
  * Generates code from your model files on save.

@@ -522,25 +522,14 @@ ruleComandosValidadores returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0());
-				}
-				lv_verifique_0_0=ruleVerifiquePresente
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
-					}
-					set(
-						$current,
-						"verifique",
-						lv_verifique_0_0,
-						"com.ufrn.atad.Atad.VerifiquePresente");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiquePresenteParserRuleCall_0());
+		}
+		this_VerifiquePresente_0=ruleVerifiquePresente
+		{
+			$current = $this_VerifiquePresente_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
 		{
 			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueNaoPresenteParserRuleCall_1());

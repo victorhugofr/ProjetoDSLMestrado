@@ -1258,11 +1258,11 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandosValidadores"
-    // InternalAtad.g:517:1: ruleComandosValidadores returns [EObject current=null] : ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) ;
+    // InternalAtad.g:517:1: ruleComandosValidadores returns [EObject current=null] : (this_VerifiquePresente_0= ruleVerifiquePresente | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) ;
     public final EObject ruleComandosValidadores() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_verifique_0_0 = null;
+        EObject this_VerifiquePresente_0 = null;
 
         EObject this_VerifiqueNaoPresente_1 = null;
 
@@ -1271,10 +1271,10 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:523:2: ( ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) )
-            // InternalAtad.g:524:2: ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
+            // InternalAtad.g:523:2: ( (this_VerifiquePresente_0= ruleVerifiquePresente | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) )
+            // InternalAtad.g:524:2: (this_VerifiquePresente_0= ruleVerifiquePresente | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
             {
-            // InternalAtad.g:524:2: ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
+            // InternalAtad.g:524:2: (this_VerifiquePresente_0= ruleVerifiquePresente | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1342,44 +1342,25 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalAtad.g:525:3: ( (lv_verifique_0_0= ruleVerifiquePresente ) )
-                    {
-                    // InternalAtad.g:525:3: ( (lv_verifique_0_0= ruleVerifiquePresente ) )
-                    // InternalAtad.g:526:4: (lv_verifique_0_0= ruleVerifiquePresente )
-                    {
-                    // InternalAtad.g:526:4: (lv_verifique_0_0= ruleVerifiquePresente )
-                    // InternalAtad.g:527:5: lv_verifique_0_0= ruleVerifiquePresente
+                    // InternalAtad.g:525:3: this_VerifiquePresente_0= ruleVerifiquePresente
                     {
 
-                    					newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0());
-                    				
+                    			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiquePresenteParserRuleCall_0());
+                    		
                     pushFollow(FOLLOW_2);
-                    lv_verifique_0_0=ruleVerifiquePresente();
+                    this_VerifiquePresente_0=ruleVerifiquePresente();
 
                     state._fsp--;
 
 
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
-                    					}
-                    					set(
-                    						current,
-                    						"verifique",
-                    						lv_verifique_0_0,
-                    						"com.ufrn.atad.Atad.VerifiquePresente");
-                    					afterParserOrEnumRuleCall();
-                    				
-
-                    }
-
-
-                    }
-
+                    			current = this_VerifiquePresente_0;
+                    			afterParserOrEnumRuleCall();
+                    		
 
                     }
                     break;
                 case 2 :
-                    // InternalAtad.g:545:3: this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente
+                    // InternalAtad.g:534:3: this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente
                     {
 
                     			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueNaoPresenteParserRuleCall_1());
@@ -1419,7 +1400,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAdicaoComando"
-    // InternalAtad.g:557:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
+    // InternalAtad.g:546:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
     public final EObject entryRuleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
@@ -1427,8 +1408,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:557:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
-            // InternalAtad.g:558:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
+            // InternalAtad.g:546:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
+            // InternalAtad.g:547:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
             {
              newCompositeNode(grammarAccess.getAdicaoComandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1455,7 +1436,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdicaoComando"
-    // InternalAtad.g:564:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) ;
+    // InternalAtad.g:553:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) ;
     public final EObject ruleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
@@ -1467,21 +1448,21 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:570:2: ( (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) )
-            // InternalAtad.g:571:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
+            // InternalAtad.g:559:2: ( (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) )
+            // InternalAtad.g:560:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
             {
-            // InternalAtad.g:571:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
-            // InternalAtad.g:572:3: otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) )
+            // InternalAtad.g:560:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
+            // InternalAtad.g:561:3: otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) )
             {
             otherlv_0=(Token)match(input,23,FOLLOW_14); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
             		
-            // InternalAtad.g:576:3: ( (lv_comando_1_0= ruleComandosAcao ) )
-            // InternalAtad.g:577:4: (lv_comando_1_0= ruleComandosAcao )
+            // InternalAtad.g:565:3: ( (lv_comando_1_0= ruleComandosAcao ) )
+            // InternalAtad.g:566:4: (lv_comando_1_0= ruleComandosAcao )
             {
-            // InternalAtad.g:577:4: (lv_comando_1_0= ruleComandosAcao )
-            // InternalAtad.g:578:5: lv_comando_1_0= ruleComandosAcao
+            // InternalAtad.g:566:4: (lv_comando_1_0= ruleComandosAcao )
+            // InternalAtad.g:567:5: lv_comando_1_0= ruleComandosAcao
             {
 
             					newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0());
@@ -1531,7 +1512,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQuando"
-    // InternalAtad.g:599:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
+    // InternalAtad.g:588:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
     public final EObject entryRuleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1539,8 +1520,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:599:47: (iv_ruleQuando= ruleQuando EOF )
-            // InternalAtad.g:600:2: iv_ruleQuando= ruleQuando EOF
+            // InternalAtad.g:588:47: (iv_ruleQuando= ruleQuando EOF )
+            // InternalAtad.g:589:2: iv_ruleQuando= ruleQuando EOF
             {
              newCompositeNode(grammarAccess.getQuandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1567,7 +1548,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuando"
-    // InternalAtad.g:606:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
+    // InternalAtad.g:595:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
     public final EObject ruleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1579,11 +1560,11 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:612:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
-            // InternalAtad.g:613:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:601:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
+            // InternalAtad.g:602:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
             {
-            // InternalAtad.g:613:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
-            // InternalAtad.g:614:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
+            // InternalAtad.g:602:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:603:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
             {
             otherlv_0=(Token)match(input,24,FOLLOW_14); 
 

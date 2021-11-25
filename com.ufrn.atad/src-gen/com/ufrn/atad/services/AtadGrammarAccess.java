@@ -288,23 +288,19 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	public class ComandosValidadoresElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosValidadores");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cVerifiqueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cVerifiqueVerifiquePresenteParserRuleCall_0_0 = (RuleCall)cVerifiqueAssignment_0.eContents().get(0);
+		private final RuleCall cVerifiquePresenteParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cVerifiqueNaoPresenteParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ComandosValidadores:
-		//    verifique=VerifiquePresente | VerifiqueNaoPresente
+		//    VerifiquePresente | VerifiqueNaoPresente
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//verifique=VerifiquePresente | VerifiqueNaoPresente
+		//VerifiquePresente | VerifiqueNaoPresente
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//verifique=VerifiquePresente
-		public Assignment getVerifiqueAssignment_0() { return cVerifiqueAssignment_0; }
-		
 		//VerifiquePresente
-		public RuleCall getVerifiqueVerifiquePresenteParserRuleCall_0_0() { return cVerifiqueVerifiquePresenteParserRuleCall_0_0; }
+		public RuleCall getVerifiquePresenteParserRuleCall_0() { return cVerifiquePresenteParserRuleCall_0; }
 		
 		//VerifiqueNaoPresente
 		public RuleCall getVerifiqueNaoPresenteParserRuleCall_1() { return cVerifiqueNaoPresenteParserRuleCall_1; }
@@ -504,7 +500,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//ComandosValidadores:
-	//    verifique=VerifiquePresente | VerifiqueNaoPresente
+	//    VerifiquePresente | VerifiqueNaoPresente
 	//;
 	public ComandosValidadoresElements getComandosValidadoresAccess() {
 		return pComandosValidadores;

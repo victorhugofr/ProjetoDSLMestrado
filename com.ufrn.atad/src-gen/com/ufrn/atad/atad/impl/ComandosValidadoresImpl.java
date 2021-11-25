@@ -5,13 +5,10 @@ package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.ComandosValidadores;
-import com.ufrn.atad.atad.VerifiquePresente;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -23,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl#getVerifique <em>Verifique</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComandosValidadoresImpl extends ComandoImpl implements ComandosValidadores
 {
   /**
-   * The cached value of the '{@link #getVerifique() <em>Verifique</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVerifique()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected VerifiquePresente verifique;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +74,9 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * @generated
    */
   @Override
-  public VerifiquePresente getVerifique()
+  public String getName()
   {
-    return verifique;
+    return name;
   }
 
   /**
@@ -77,54 +84,13 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVerifique(VerifiquePresente newVerifique, NotificationChain msgs)
+  @Override
+  public void setName(String newName)
   {
-    VerifiquePresente oldVerifique = verifique;
-    verifique = newVerifique;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE, oldVerifique, newVerifique);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setVerifique(VerifiquePresente newVerifique)
-  {
-    if (newVerifique != verifique)
-    {
-      NotificationChain msgs = null;
-      if (verifique != null)
-        msgs = ((InternalEObject)verifique).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE, null, msgs);
-      if (newVerifique != null)
-        msgs = ((InternalEObject)newVerifique).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE, null, msgs);
-      msgs = basicSetVerifique(newVerifique, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE, newVerifique, newVerifique));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        return basicSetVerifique(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_VALIDADORES__NAME, oldName, name));
   }
 
   /**
@@ -137,8 +103,8 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        return getVerifique();
+      case AtadPackage.COMANDOS_VALIDADORES__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +119,8 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        setVerifique((VerifiquePresente)newValue);
+      case AtadPackage.COMANDOS_VALIDADORES__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +136,8 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        setVerifique((VerifiquePresente)null);
+      case AtadPackage.COMANDOS_VALIDADORES__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -187,10 +153,27 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        return verifique != null;
+      case AtadPackage.COMANDOS_VALIDADORES__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComandosValidadoresImpl

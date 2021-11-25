@@ -7,7 +7,6 @@ import com.google.inject.Inject;
 import com.ufrn.atad.atad.AdicaoComando;
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.Clicar;
-import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
 import com.ufrn.atad.atad.Escrever;
 import com.ufrn.atad.atad.Navegar;
@@ -44,9 +43,6 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AtadPackage.CLICAR:
 				sequence_Clicar(context, (Clicar) semanticObject); 
-				return; 
-			case AtadPackage.COMANDOS_VALIDADORES:
-				sequence_ComandosValidadores(context, (ComandosValidadores) semanticObject); 
 				return; 
 			case AtadPackage.DECLARA_COMANDO:
 				sequence_DeclaraComando(context, (DeclaraComando) semanticObject); 
@@ -107,25 +103,6 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getClicarAccess().getTipoLocalizadorIDTerminalRuleCall_2_0(), semanticObject.getTipoLocalizador());
 		feeder.accept(grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Comando returns ComandosValidadores
-	 *     ComandosValidadores returns ComandosValidadores
-	 *
-	 * Constraint:
-	 *     verifique=VerifiquePresente
-	 */
-	protected void sequence_ComandosValidadores(ISerializationContext context, ComandosValidadores semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__VERIFIQUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__VERIFIQUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0(), semanticObject.getVerifique());
 		feeder.finish();
 	}
 	
@@ -201,8 +178,8 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_VerifiqueNaoPresente(ISerializationContext context, VerifiqueNaoPresente semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.VERIFIQUE_NAO_PRESENTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.VERIFIQUE_NAO_PRESENTE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVerifiqueNaoPresenteAccess().getNameSTRINGTerminalRuleCall_4_0(), semanticObject.getName());
@@ -212,15 +189,17 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Comando returns VerifiquePresente
 	 *     VerifiquePresente returns VerifiquePresente
+	 *     ComandosValidadores returns VerifiquePresente
 	 *
 	 * Constraint:
 	 *     name=STRING
 	 */
 	protected void sequence_VerifiquePresente(ISerializationContext context, VerifiquePresente semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.VERIFIQUE_PRESENTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.VERIFIQUE_PRESENTE__NAME));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_VALIDADORES__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVerifiquePresenteAccess().getNameSTRINGTerminalRuleCall_4_0(), semanticObject.getName());

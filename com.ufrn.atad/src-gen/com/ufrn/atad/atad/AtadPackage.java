@@ -244,6 +244,34 @@ public interface AtadPackage extends EPackage
   int ESCREVER_FEATURE_COUNT = COMANDOS_ACAO_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.ComandosValidadoresImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosValidadores()
+   * @generated
+   */
+  int COMANDOS_VALIDADORES = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDOS_VALIDADORES__NAME = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comandos Validadores</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDOS_VALIDADORES_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.VerifiquePresenteImpl <em>Verifique Presente</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -260,7 +288,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFIQUE_PRESENTE__NAME = 0;
+  int VERIFIQUE_PRESENTE__NAME = COMANDOS_VALIDADORES__NAME;
 
   /**
    * The number of structural features of the '<em>Verifique Presente</em>' class.
@@ -269,35 +297,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFIQUE_PRESENTE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.ufrn.atad.atad.impl.ComandosValidadoresImpl
-   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosValidadores()
-   * @generated
-   */
-  int COMANDOS_VALIDADORES = 8;
-
-  /**
-   * The feature id for the '<em><b>Verifique</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDOS_VALIDADORES__VERIFIQUE = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comandos Validadores</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDOS_VALIDADORES_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+  int VERIFIQUE_PRESENTE_FEATURE_COUNT = COMANDOS_VALIDADORES_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl <em>Verifique Nao Presente</em>}' class.
@@ -310,22 +310,13 @@ public interface AtadPackage extends EPackage
   int VERIFIQUE_NAO_PRESENTE = 7;
 
   /**
-   * The feature id for the '<em><b>Verifique</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERIFIQUE_NAO_PRESENTE__VERIFIQUE = COMANDOS_VALIDADORES__VERIFIQUE;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFIQUE_NAO_PRESENTE__NAME = COMANDOS_VALIDADORES_FEATURE_COUNT + 0;
+  int VERIFIQUE_NAO_PRESENTE__NAME = COMANDOS_VALIDADORES__NAME;
 
   /**
    * The number of structural features of the '<em>Verifique Nao Presente</em>' class.
@@ -334,7 +325,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFIQUE_NAO_PRESENTE_FEATURE_COUNT = COMANDOS_VALIDADORES_FEATURE_COUNT + 1;
+  int VERIFIQUE_NAO_PRESENTE_FEATURE_COUNT = COMANDOS_VALIDADORES_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.AdicaoComandoImpl <em>Adicao Comando</em>}' class.
@@ -510,17 +501,6 @@ public interface AtadPackage extends EPackage
   EClass getVerifiquePresente();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.VerifiquePresente#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.VerifiquePresente#getName()
-   * @see #getVerifiquePresente()
-   * @generated
-   */
-  EAttribute getVerifiquePresente_Name();
-
-  /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.VerifiqueNaoPresente <em>Verifique Nao Presente</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -529,17 +509,6 @@ public interface AtadPackage extends EPackage
    * @generated
    */
   EClass getVerifiqueNaoPresente();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.VerifiqueNaoPresente#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.VerifiqueNaoPresente#getName()
-   * @see #getVerifiqueNaoPresente()
-   * @generated
-   */
-  EAttribute getVerifiqueNaoPresente_Name();
 
   /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.ComandosValidadores <em>Comandos Validadores</em>}'.
@@ -552,15 +521,15 @@ public interface AtadPackage extends EPackage
   EClass getComandosValidadores();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}'.
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.ComandosValidadores#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Verifique</em>'.
-   * @see com.ufrn.atad.atad.ComandosValidadores#getVerifique()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ufrn.atad.atad.ComandosValidadores#getName()
    * @see #getComandosValidadores()
    * @generated
    */
-  EReference getComandosValidadores_Verifique();
+  EAttribute getComandosValidadores_Name();
 
   /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.AdicaoComando <em>Adicao Comando</em>}'.
@@ -727,14 +696,6 @@ public interface AtadPackage extends EPackage
     EClass VERIFIQUE_PRESENTE = eINSTANCE.getVerifiquePresente();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERIFIQUE_PRESENTE__NAME = eINSTANCE.getVerifiquePresente_Name();
-
-    /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl <em>Verifique Nao Presente</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -743,14 +704,6 @@ public interface AtadPackage extends EPackage
      * @generated
      */
     EClass VERIFIQUE_NAO_PRESENTE = eINSTANCE.getVerifiqueNaoPresente();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VERIFIQUE_NAO_PRESENTE__NAME = eINSTANCE.getVerifiqueNaoPresente_Name();
 
     /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.
@@ -763,12 +716,12 @@ public interface AtadPackage extends EPackage
     EClass COMANDOS_VALIDADORES = eINSTANCE.getComandosValidadores();
 
     /**
-     * The meta object literal for the '<em><b>Verifique</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMANDOS_VALIDADORES__VERIFIQUE = eINSTANCE.getComandosValidadores_Verifique();
+    EAttribute COMANDOS_VALIDADORES__NAME = eINSTANCE.getComandosValidadores_Name();
 
     /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.AdicaoComandoImpl <em>Adicao Comando</em>}' class.

@@ -21,14 +21,10 @@
     <genClasses ecoreClass="Atad.ecore#//ComandosAcao">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//ComandosAcao/name"/>
     </genClasses>
-    <genClasses ecoreClass="Atad.ecore#//VerifiquePresente">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//VerifiquePresente/name"/>
-    </genClasses>
-    <genClasses ecoreClass="Atad.ecore#//VerifiqueNaoPresente">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//VerifiqueNaoPresente/name"/>
-    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//VerifiquePresente"/>
+    <genClasses ecoreClass="Atad.ecore#//VerifiqueNaoPresente"/>
     <genClasses ecoreClass="Atad.ecore#//ComandosValidadores">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//ComandosValidadores/verifique"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//ComandosValidadores/name"/>
     </genClasses>
     <genClasses ecoreClass="Atad.ecore#//AdicaoComando">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//AdicaoComando/comando"/>

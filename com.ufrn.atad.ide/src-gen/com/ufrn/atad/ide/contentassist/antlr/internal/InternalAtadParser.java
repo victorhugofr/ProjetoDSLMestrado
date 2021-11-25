@@ -1188,13 +1188,13 @@ public class InternalAtadParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComandosValidadores__Alternatives"
-    // InternalAtad.g:387:1: rule__ComandosValidadores__Alternatives : ( ( ( rule__ComandosValidadores__VerifiqueAssignment_0 ) ) | ( ruleVerifiqueNaoPresente ) );
+    // InternalAtad.g:387:1: rule__ComandosValidadores__Alternatives : ( ( ruleVerifiquePresente ) | ( ruleVerifiqueNaoPresente ) );
     public final void rule__ComandosValidadores__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAtad.g:391:1: ( ( ( rule__ComandosValidadores__VerifiqueAssignment_0 ) ) | ( ruleVerifiqueNaoPresente ) )
+            // InternalAtad.g:391:1: ( ( ruleVerifiquePresente ) | ( ruleVerifiqueNaoPresente ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1213,11 +1213,11 @@ public class InternalAtadParser extends AbstractInternalContentAssistParser {
                             if ( (LA4_4==RULE_STRING) ) {
                                 int LA4_5 = input.LA(6);
 
-                                if ( (LA4_5==20) ) {
-                                    alt4=1;
-                                }
-                                else if ( (LA4_5==22) ) {
+                                if ( (LA4_5==22) ) {
                                     alt4=2;
+                                }
+                                else if ( (LA4_5==20) ) {
+                                    alt4=1;
                                 }
                                 else {
                                     NoViableAltException nvae =
@@ -1262,24 +1262,18 @@ public class InternalAtadParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalAtad.g:392:2: ( ( rule__ComandosValidadores__VerifiqueAssignment_0 ) )
+                    // InternalAtad.g:392:2: ( ruleVerifiquePresente )
                     {
-                    // InternalAtad.g:392:2: ( ( rule__ComandosValidadores__VerifiqueAssignment_0 ) )
-                    // InternalAtad.g:393:3: ( rule__ComandosValidadores__VerifiqueAssignment_0 )
+                    // InternalAtad.g:392:2: ( ruleVerifiquePresente )
+                    // InternalAtad.g:393:3: ruleVerifiquePresente
                     {
-                     before(grammarAccess.getComandosValidadoresAccess().getVerifiqueAssignment_0()); 
-                    // InternalAtad.g:394:3: ( rule__ComandosValidadores__VerifiqueAssignment_0 )
-                    // InternalAtad.g:394:4: rule__ComandosValidadores__VerifiqueAssignment_0
-                    {
+                     before(grammarAccess.getComandosValidadoresAccess().getVerifiquePresenteParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    rule__ComandosValidadores__VerifiqueAssignment_0();
+                    ruleVerifiquePresente();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getComandosValidadoresAccess().getVerifiqueAssignment_0()); 
+                     after(grammarAccess.getComandosValidadoresAccess().getVerifiquePresenteParserRuleCall_0()); 
 
                     }
 
@@ -3968,59 +3962,18 @@ public class InternalAtadParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__VerifiqueNaoPresente__NameAssignment_4"
 
 
-    // $ANTLR start "rule__ComandosValidadores__VerifiqueAssignment_0"
-    // InternalAtad.g:1353:1: rule__ComandosValidadores__VerifiqueAssignment_0 : ( ruleVerifiquePresente ) ;
-    public final void rule__ComandosValidadores__VerifiqueAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalAtad.g:1357:1: ( ( ruleVerifiquePresente ) )
-            // InternalAtad.g:1358:2: ( ruleVerifiquePresente )
-            {
-            // InternalAtad.g:1358:2: ( ruleVerifiquePresente )
-            // InternalAtad.g:1359:3: ruleVerifiquePresente
-            {
-             before(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_2);
-            ruleVerifiquePresente();
-
-            state._fsp--;
-
-             after(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__ComandosValidadores__VerifiqueAssignment_0"
-
-
     // $ANTLR start "rule__AdicaoComando__ComandoAssignment_1"
-    // InternalAtad.g:1368:1: rule__AdicaoComando__ComandoAssignment_1 : ( ruleComandosAcao ) ;
+    // InternalAtad.g:1353:1: rule__AdicaoComando__ComandoAssignment_1 : ( ruleComandosAcao ) ;
     public final void rule__AdicaoComando__ComandoAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalAtad.g:1372:1: ( ( ruleComandosAcao ) )
-            // InternalAtad.g:1373:2: ( ruleComandosAcao )
+            // InternalAtad.g:1357:1: ( ( ruleComandosAcao ) )
+            // InternalAtad.g:1358:2: ( ruleComandosAcao )
             {
-            // InternalAtad.g:1373:2: ( ruleComandosAcao )
-            // InternalAtad.g:1374:3: ruleComandosAcao
+            // InternalAtad.g:1358:2: ( ruleComandosAcao )
+            // InternalAtad.g:1359:3: ruleComandosAcao
             {
              before(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);

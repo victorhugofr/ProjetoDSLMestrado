@@ -310,31 +310,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getVerifiquePresente_Name()
-  {
-    return (EAttribute)verifiquePresenteEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getVerifiqueNaoPresente()
   {
     return verifiqueNaoPresenteEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getVerifiqueNaoPresente_Name()
-  {
-    return (EAttribute)verifiqueNaoPresenteEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -354,9 +332,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EReference getComandosValidadores_Verifique()
+  public EAttribute getComandosValidadores_Name()
   {
-    return (EReference)comandosValidadoresEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)comandosValidadoresEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -441,13 +419,11 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     createEAttribute(comandosAcaoEClass, COMANDOS_ACAO__NAME);
 
     verifiquePresenteEClass = createEClass(VERIFIQUE_PRESENTE);
-    createEAttribute(verifiquePresenteEClass, VERIFIQUE_PRESENTE__NAME);
 
     verifiqueNaoPresenteEClass = createEClass(VERIFIQUE_NAO_PRESENTE);
-    createEAttribute(verifiqueNaoPresenteEClass, VERIFIQUE_NAO_PRESENTE__NAME);
 
     comandosValidadoresEClass = createEClass(COMANDOS_VALIDADORES);
-    createEReference(comandosValidadoresEClass, COMANDOS_VALIDADORES__VERIFIQUE);
+    createEAttribute(comandosValidadoresEClass, COMANDOS_VALIDADORES__NAME);
 
     adicaoComandoEClass = createEClass(ADICAO_COMANDO);
     createEReference(adicaoComandoEClass, ADICAO_COMANDO__COMANDO);
@@ -489,6 +465,7 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     escreverEClass.getESuperTypes().add(this.getComandosAcao());
     comandosAcaoEClass.getESuperTypes().add(this.getComando());
     comandosAcaoEClass.getESuperTypes().add(this.getQuando());
+    verifiquePresenteEClass.getESuperTypes().add(this.getComandosValidadores());
     verifiqueNaoPresenteEClass.getESuperTypes().add(this.getComandosValidadores());
     comandosValidadoresEClass.getESuperTypes().add(this.getComando());
     adicaoComandoEClass.getESuperTypes().add(this.getComando());
@@ -513,13 +490,11 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     initEAttribute(getComandosAcao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifiquePresenteEClass, VerifiquePresente.class, "VerifiquePresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerifiquePresente_Name(), ecorePackage.getEString(), "name", null, 0, 1, VerifiquePresente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifiqueNaoPresenteEClass, VerifiqueNaoPresente.class, "VerifiqueNaoPresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerifiqueNaoPresente_Name(), ecorePackage.getEString(), "name", null, 0, 1, VerifiqueNaoPresente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosValidadoresEClass, ComandosValidadores.class, "ComandosValidadores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandosValidadores_Verifique(), this.getVerifiquePresente(), null, "verifique", null, 0, 1, ComandosValidadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComandosValidadores_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosValidadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(adicaoComandoEClass, AdicaoComando.class, "AdicaoComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdicaoComando_Comando(), this.getComandosAcao(), null, "comando", null, 0, 1, AdicaoComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

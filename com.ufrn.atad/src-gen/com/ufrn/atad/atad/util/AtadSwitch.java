@@ -130,6 +130,8 @@ public class AtadSwitch<T> extends Switch<T>
       {
         VerifiquePresente verifiquePresente = (VerifiquePresente)theEObject;
         T result = caseVerifiquePresente(verifiquePresente);
+        if (result == null) result = caseComandosValidadores(verifiquePresente);
+        if (result == null) result = caseComando(verifiquePresente);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
