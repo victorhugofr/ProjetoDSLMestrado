@@ -78,13 +78,22 @@ public interface AtadFactory extends EFactory
   ComandosAcao createComandosAcao();
 
   /**
-   * Returns a new object of class '<em>Verifique</em>'.
+   * Returns a new object of class '<em>Verifique Presente</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Verifique</em>'.
+   * @return a new object of class '<em>Verifique Presente</em>'.
    * @generated
    */
-  Verifique createVerifique();
+  VerifiquePresente createVerifiquePresente();
+
+  /**
+   * Returns a new object of class '<em>Verifique Nao Presente</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Verifique Nao Presente</em>'.
+   * @generated
+   */
+  VerifiqueNaoPresente createVerifiqueNaoPresente();
 
   /**
    * Returns a new object of class '<em>Comandos Validadores</em>'.

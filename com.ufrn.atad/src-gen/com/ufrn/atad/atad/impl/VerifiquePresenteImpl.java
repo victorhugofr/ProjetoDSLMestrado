@@ -4,7 +4,7 @@
 package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
-import com.ufrn.atad.atad.Verifique;
+import com.ufrn.atad.atad.VerifiquePresente;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Verifique</b></em>'.
+ * An implementation of the model object '<em><b>Verifique Presente</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.VerifiqueImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.VerifiquePresenteImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verifique
+public class VerifiquePresenteImpl extends MinimalEObjectImpl.Container implements VerifiquePresente
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,7 +53,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VerifiqueImpl()
+  protected VerifiquePresenteImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
   @Override
   protected EClass eStaticClass()
   {
-    return AtadPackage.Literals.VERIFIQUE;
+    return AtadPackage.Literals.VERIFIQUE_PRESENTE;
   }
 
   /**
@@ -91,7 +91,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.VERIFIQUE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.VERIFIQUE_PRESENTE__NAME, oldName, name));
   }
 
   /**
@@ -104,7 +104,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
   {
     switch (featureID)
     {
-      case AtadPackage.VERIFIQUE__NAME:
+      case AtadPackage.VERIFIQUE_PRESENTE__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
   {
     switch (featureID)
     {
-      case AtadPackage.VERIFIQUE__NAME:
+      case AtadPackage.VERIFIQUE_PRESENTE__NAME:
         setName((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
   {
     switch (featureID)
     {
-      case AtadPackage.VERIFIQUE__NAME:
+      case AtadPackage.VERIFIQUE_PRESENTE__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
   {
     switch (featureID)
     {
-      case AtadPackage.VERIFIQUE__NAME:
+      case AtadPackage.VERIFIQUE_PRESENTE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class VerifiqueImpl extends MinimalEObjectImpl.Container implements Verif
     return result.toString();
   }
 
-} //VerifiqueImpl
+} //VerifiquePresenteImpl

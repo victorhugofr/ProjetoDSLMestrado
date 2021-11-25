@@ -70,15 +70,17 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClicarKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cEmKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cTipoLocalizadorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTipoLocalizadorIDTerminalRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//Clicar:
-		//    'clicar' 'em' name=STRING
+		//    'clicar' 'em' tipoLocalizador=ID name=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'clicar' 'em' name=STRING
+		//'clicar' 'em' tipoLocalizador=ID name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'clicar'
@@ -87,11 +89,17 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'em'
 		public Keyword getEmKeyword_1() { return cEmKeyword_1; }
 		
+		//tipoLocalizador=ID
+		public Assignment getTipoLocalizadorAssignment_2() { return cTipoLocalizadorAssignment_2; }
+		
+		//ID
+		public RuleCall getTipoLocalizadorIDTerminalRuleCall_2_0() { return cTipoLocalizadorIDTerminalRuleCall_2_0; }
+		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
 	}
 	public class NavegarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Navegar");
@@ -121,68 +129,88 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Escrever");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEscreverKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cNoKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTipoLocalizadorAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTipoLocalizadorIDTerminalRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Assignment cConteudoAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cConteudoSTRINGTerminalRuleCall_4_0 = (RuleCall)cConteudoAssignment_4.eContents().get(0);
 		
 		//Escrever:
-		//    'escrever' name=STRING
+		//    'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'escrever' name=STRING
+		//'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'escrever'
 		public Keyword getEscreverKeyword_0() { return cEscreverKeyword_0; }
 		
+		//'no'
+		public Keyword getNoKeyword_1() { return cNoKeyword_1; }
+		
+		//tipoLocalizador=ID
+		public Assignment getTipoLocalizadorAssignment_2() { return cTipoLocalizadorAssignment_2; }
+		
+		//ID
+		public RuleCall getTipoLocalizadorIDTerminalRuleCall_2_0() { return cTipoLocalizadorIDTerminalRuleCall_2_0; }
+		
 		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_3_0() { return cNameSTRINGTerminalRuleCall_3_0; }
+		
+		//conteudo=STRING
+		public Assignment getConteudoAssignment_4() { return cConteudoAssignment_4; }
+		
+		//STRING
+		public RuleCall getConteudoSTRINGTerminalRuleCall_4_0() { return cConteudoSTRINGTerminalRuleCall_4_0; }
 	}
 	public class ComandosAcaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosAcao");
-		private final Assignment cComandoAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cComandoAlternatives_0 = (Alternatives)cComandoAssignment.eContents().get(0);
-		private final RuleCall cComandoClicarParserRuleCall_0_0 = (RuleCall)cComandoAlternatives_0.eContents().get(0);
-		private final RuleCall cComandoNavegarParserRuleCall_0_1 = (RuleCall)cComandoAlternatives_0.eContents().get(1);
-		private final RuleCall cComandoEscreverParserRuleCall_0_2 = (RuleCall)cComandoAlternatives_0.eContents().get(2);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cClicarParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cNavegarParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEscreverParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ComandosAcao:
-		//    comando=(Clicar|Navegar|Escrever)
+		//    Clicar|Navegar|Escrever
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//comando=(Clicar|Navegar|Escrever)
-		public Assignment getComandoAssignment() { return cComandoAssignment; }
-		
-		//(Clicar|Navegar|Escrever)
-		public Alternatives getComandoAlternatives_0() { return cComandoAlternatives_0; }
+		//Clicar|Navegar|Escrever
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Clicar
-		public RuleCall getComandoClicarParserRuleCall_0_0() { return cComandoClicarParserRuleCall_0_0; }
+		public RuleCall getClicarParserRuleCall_0() { return cClicarParserRuleCall_0; }
 		
 		//Navegar
-		public RuleCall getComandoNavegarParserRuleCall_0_1() { return cComandoNavegarParserRuleCall_0_1; }
+		public RuleCall getNavegarParserRuleCall_1() { return cNavegarParserRuleCall_1; }
 		
 		//Escrever
-		public RuleCall getComandoEscreverParserRuleCall_0_2() { return cComandoEscreverParserRuleCall_0_2; }
+		public RuleCall getEscreverParserRuleCall_2() { return cEscreverParserRuleCall_2; }
 	}
-	public class VerifiqueElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Verifique");
+	public class VerifiquePresenteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.VerifiquePresente");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cVerifiqueKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cQueKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cTextoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameSTRINGTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
+		private final Keyword cEstaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cPresenteKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Verifique:
-		//    'Verifique' 'que' name=STRING
+		//VerifiquePresente:
+		//    'Verifique' 'que' 'o' 'texto' name=STRING 'esta' 'presente'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Verifique' 'que' name=STRING
+		//'Verifique' 'que' 'o' 'texto' name=STRING 'esta' 'presente'
 		public Group getGroup() { return cGroup; }
 		
 		//'Verifique'
@@ -191,27 +219,95 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'que'
 		public Keyword getQueKeyword_1() { return cQueKeyword_1; }
 		
+		//'o'
+		public Keyword getOKeyword_2() { return cOKeyword_2; }
+		
+		//'texto'
+		public Keyword getTextoKeyword_3() { return cTextoKeyword_3; }
+		
 		//name=STRING
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
-	}
-	public class ComandosValidadoresElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosValidadores");
-		private final Assignment cVerifiqueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cVerifiqueVerifiqueParserRuleCall_0 = (RuleCall)cVerifiqueAssignment.eContents().get(0);
+		public RuleCall getNameSTRINGTerminalRuleCall_4_0() { return cNameSTRINGTerminalRuleCall_4_0; }
 		
-		//ComandosValidadores:
-		//    verifique=Verifique
+		//'esta'
+		public Keyword getEstaKeyword_5() { return cEstaKeyword_5; }
+		
+		//'presente'
+		public Keyword getPresenteKeyword_6() { return cPresenteKeyword_6; }
+	}
+	public class VerifiqueNaoPresenteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.VerifiqueNaoPresente");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cVerifiqueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cQueKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cOKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cTextoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameSTRINGTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
+		private final Keyword cNaoKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEstaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cPresenteKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//VerifiqueNaoPresente:
+		//    'Verifique' 'que' 'o' 'texto' name=STRING 'nao' 'esta' 'presente'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//verifique=Verifique
-		public Assignment getVerifiqueAssignment() { return cVerifiqueAssignment; }
+		//'Verifique' 'que' 'o' 'texto' name=STRING 'nao' 'esta' 'presente'
+		public Group getGroup() { return cGroup; }
 		
-		//Verifique
-		public RuleCall getVerifiqueVerifiqueParserRuleCall_0() { return cVerifiqueVerifiqueParserRuleCall_0; }
+		//'Verifique'
+		public Keyword getVerifiqueKeyword_0() { return cVerifiqueKeyword_0; }
+		
+		//'que'
+		public Keyword getQueKeyword_1() { return cQueKeyword_1; }
+		
+		//'o'
+		public Keyword getOKeyword_2() { return cOKeyword_2; }
+		
+		//'texto'
+		public Keyword getTextoKeyword_3() { return cTextoKeyword_3; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_4_0() { return cNameSTRINGTerminalRuleCall_4_0; }
+		
+		//'nao'
+		public Keyword getNaoKeyword_5() { return cNaoKeyword_5; }
+		
+		//'esta'
+		public Keyword getEstaKeyword_6() { return cEstaKeyword_6; }
+		
+		//'presente'
+		public Keyword getPresenteKeyword_7() { return cPresenteKeyword_7; }
+	}
+	public class ComandosValidadoresElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.ComandosValidadores");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cVerifiqueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cVerifiqueVerifiquePresenteParserRuleCall_0_0 = (RuleCall)cVerifiqueAssignment_0.eContents().get(0);
+		private final RuleCall cVerifiqueNaoPresenteParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ComandosValidadores:
+		//    verifique=VerifiquePresente | VerifiqueNaoPresente
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//verifique=VerifiquePresente | VerifiqueNaoPresente
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//verifique=VerifiquePresente
+		public Assignment getVerifiqueAssignment_0() { return cVerifiqueAssignment_0; }
+		
+		//VerifiquePresente
+		public RuleCall getVerifiqueVerifiquePresenteParserRuleCall_0_0() { return cVerifiqueVerifiquePresenteParserRuleCall_0_0; }
+		
+		//VerifiqueNaoPresente
+		public RuleCall getVerifiqueNaoPresenteParserRuleCall_1() { return cVerifiqueNaoPresenteParserRuleCall_1; }
 	}
 	public class AdicaoComandoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.AdicaoComando");
@@ -265,7 +361,8 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final NavegarElements pNavegar;
 	private final EscreverElements pEscrever;
 	private final ComandosAcaoElements pComandosAcao;
-	private final VerifiqueElements pVerifique;
+	private final VerifiquePresenteElements pVerifiquePresente;
+	private final VerifiqueNaoPresenteElements pVerifiqueNaoPresente;
 	private final ComandosValidadoresElements pComandosValidadores;
 	private final AdicaoComandoElements pAdicaoComando;
 	private final QuandoElements pQuando;
@@ -285,7 +382,8 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pNavegar = new NavegarElements();
 		this.pEscrever = new EscreverElements();
 		this.pComandosAcao = new ComandosAcaoElements();
-		this.pVerifique = new VerifiqueElements();
+		this.pVerifiquePresente = new VerifiquePresenteElements();
+		this.pVerifiqueNaoPresente = new VerifiqueNaoPresenteElements();
 		this.pComandosValidadores = new ComandosValidadoresElements();
 		this.pAdicaoComando = new AdicaoComandoElements();
 		this.pQuando = new QuandoElements();
@@ -340,7 +438,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Clicar:
-	//    'clicar' 'em' name=STRING
+	//    'clicar' 'em' tipoLocalizador=ID name=STRING
 	//;
 	public ClicarElements getClicarAccess() {
 		return pClicar;
@@ -362,7 +460,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Escrever:
-	//    'escrever' name=STRING
+	//    'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
 	//;
 	public EscreverElements getEscreverAccess() {
 		return pEscrever;
@@ -373,7 +471,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//ComandosAcao:
-	//    comando=(Clicar|Navegar|Escrever)
+	//    Clicar|Navegar|Escrever
 	//;
 	public ComandosAcaoElements getComandosAcaoAccess() {
 		return pComandosAcao;
@@ -383,19 +481,30 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getComandosAcaoAccess().getRule();
 	}
 	
-	//Verifique:
-	//    'Verifique' 'que' name=STRING
+	//VerifiquePresente:
+	//    'Verifique' 'que' 'o' 'texto' name=STRING 'esta' 'presente'
 	//;
-	public VerifiqueElements getVerifiqueAccess() {
-		return pVerifique;
+	public VerifiquePresenteElements getVerifiquePresenteAccess() {
+		return pVerifiquePresente;
 	}
 	
-	public ParserRule getVerifiqueRule() {
-		return getVerifiqueAccess().getRule();
+	public ParserRule getVerifiquePresenteRule() {
+		return getVerifiquePresenteAccess().getRule();
+	}
+	
+	//VerifiqueNaoPresente:
+	//    'Verifique' 'que' 'o' 'texto' name=STRING 'nao' 'esta' 'presente'
+	//;
+	public VerifiqueNaoPresenteElements getVerifiqueNaoPresenteAccess() {
+		return pVerifiqueNaoPresente;
+	}
+	
+	public ParserRule getVerifiqueNaoPresenteRule() {
+		return getVerifiqueNaoPresenteAccess().getRule();
 	}
 	
 	//ComandosValidadores:
-	//    verifique=Verifique
+	//    verifique=VerifiquePresente | VerifiqueNaoPresente
 	//;
 	public ComandosValidadoresElements getComandosValidadoresAccess() {
 		return pComandosValidadores;

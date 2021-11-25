@@ -11,19 +11,21 @@
     </genClasses>
     <genClasses ecoreClass="Atad.ecore#//Comando"/>
     <genClasses ecoreClass="Atad.ecore#//Clicar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Clicar/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Clicar/tipoLocalizador"/>
     </genClasses>
-    <genClasses ecoreClass="Atad.ecore#//Navegar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Navegar/name"/>
-    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//Navegar"/>
     <genClasses ecoreClass="Atad.ecore#//Escrever">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Escrever/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Escrever/tipoLocalizador"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Escrever/conteudo"/>
     </genClasses>
     <genClasses ecoreClass="Atad.ecore#//ComandosAcao">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//ComandosAcao/comando"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//ComandosAcao/name"/>
     </genClasses>
-    <genClasses ecoreClass="Atad.ecore#//Verifique">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Verifique/name"/>
+    <genClasses ecoreClass="Atad.ecore#//VerifiquePresente">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//VerifiquePresente/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//VerifiqueNaoPresente">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//VerifiqueNaoPresente/name"/>
     </genClasses>
     <genClasses ecoreClass="Atad.ecore#//ComandosValidadores">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//ComandosValidadores/verifique"/>

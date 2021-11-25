@@ -51,9 +51,9 @@ public class AtadSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'Quando'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) comando=Clicar
-	 *     (rule start) (ambiguity) comando=Escrever
-	 *     (rule start) (ambiguity) comando=Navegar
+	 *     (rule start) (ambiguity) 'clicar' 'em' tipoLocalizador=ID
+	 *     (rule start) (ambiguity) 'escrever' 'no' tipoLocalizador=ID
+	 *     (rule start) (ambiguity) 'navegar' name=STRING
 	 */
 	protected void emit_Quando_QuandoKeyword_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

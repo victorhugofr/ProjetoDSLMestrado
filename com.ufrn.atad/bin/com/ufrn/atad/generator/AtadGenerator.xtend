@@ -3,19 +3,13 @@
  */
 package com.ufrn.atad.generator
 
+import com.ufrn.atad.atad.Clicar
+import com.ufrn.atad.atad.Escrever
+import com.ufrn.atad.atad.Navegar
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import com.ufrn.atad.atad.Quando
-import com.ufrn.atad.atad.Navegar
-import com.ufrn.atad.atad.Escrever
-import com.ufrn.atad.atad.Clicar
-import com.ufrn.atad.atad.Verifique
-import com.ufrn.atad.atad.ComandosAcao
-import com.ufrn.atad.atad.Comando
-import org.eclipse.core.runtime.QualifiedName
-import com.ufrn.atad.atad.AdicaoComando
 
 /**
  * Generates code from your model files on save.
@@ -25,18 +19,59 @@ import com.ufrn.atad.atad.AdicaoComando
 class AtadGenerator extends AbstractGenerator {
 
 	 override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-	 	
-//        for (e : resource.allContents.toIterable.filter(typeof(ComandosAcao))) {
-//            fsa.generateFile("Teste.java", resource.filter)
-//
-//        }
+		var a="";
+		a+=buildTestPre() 
         for (e : resource.allContents.toIterable) {
-        	if(e instanceof ComandosAcao)
-        	 	fsa.generateFile("Teste.java", e.comando +"<clicou<")
-        	 else if(e instanceof Verifique)
-        	 	fsa.generateFile("Teste.java", e.name+"bla")
-//        	fsa.generateFile("Teste.java",e)
+        	if(e instanceof Clicar)
+        		a+=comandoClicar(e)
+        	else if(e instanceof Navegar)
+        	 	a+=comandoNavegar(e)
+        	 else if(e instanceof VerifiquePresente)
+        	 	a+=comandoVerifique(e)
+        	 else if(e instanceof VerifiqueNaoPresente)
+        	 	a+=comandoNaoVerifique(e)
+        	  else if(e instanceof Escrever)
+        	 	a+=comandoEscrever(e)
         }
+        a+=buildTestPos()
+        	fsa.generateFile("Teste.java", a)
     }
+    
+    private def buildTestPre()'''
+    import org.junit.Test;
+    import org.openqa.selenium.By;
+    import org.junit.jupiter.api.Assertions.assertTrue;
+    public class Teste{
+    	protected WebDriver driver;
+    		
+    	@Test
+    	public void teste() throws InterruptedException{
+    		driver.manage().window.maximize();
+   '''
+   
+   private def buildTestPos()'''
+    	}
+    }
+   '''
+    
+    private def comandoClicar(Clicar c)'''
+    		driver.findElement(By.«c.tipoLocalizador»("«c.name»")).click();
+   '''
+   
+    private def comandoVerifique(VerifiquePresente v)'''
+    		assertTrue(driver.getPageSource().contains("«v.name»"));
+   '''
+   
+   private def comandoNaoVerifique(VerifiqueNaoPresente v)'''
+    		assertTrue(!driver.getPageSource().contains("«v.name»"));
+   '''
+   
+   private def comandoNavegar(Navegar n)'''
+    		driver.get("«n.name»");
+   '''
+   
+    private def comandoEscrever(Escrever e)'''
+    		driver.findElement(By.«e.tipoLocalizador»("«e.name»")).sendKeys("«e.conteudo»");
+   '''
 
 }

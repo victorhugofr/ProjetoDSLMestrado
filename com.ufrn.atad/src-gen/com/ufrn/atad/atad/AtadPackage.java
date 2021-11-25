@@ -105,6 +105,34 @@ public interface AtadPackage extends EPackage
   int COMANDO_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosAcaoImpl <em>Comandos Acao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.ComandosAcaoImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosAcao()
+   * @generated
+   */
+  int COMANDOS_ACAO = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDOS_ACAO__NAME = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Comandos Acao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMANDOS_ACAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.ClicarImpl <em>Clicar</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,7 +149,16 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLICAR__NAME = 0;
+  int CLICAR__NAME = COMANDOS_ACAO__NAME;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CLICAR__TIPO_LOCALIZADOR = COMANDOS_ACAO_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Clicar</em>' class.
@@ -130,7 +167,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLICAR_FEATURE_COUNT = 1;
+  int CLICAR_FEATURE_COUNT = COMANDOS_ACAO_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.NavegarImpl <em>Navegar</em>}' class.
@@ -149,7 +186,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAVEGAR__NAME = 0;
+  int NAVEGAR__NAME = COMANDOS_ACAO__NAME;
 
   /**
    * The number of structural features of the '<em>Navegar</em>' class.
@@ -158,7 +195,7 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAVEGAR_FEATURE_COUNT = 1;
+  int NAVEGAR_FEATURE_COUNT = COMANDOS_ACAO_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.EscreverImpl <em>Escrever</em>}' class.
@@ -177,7 +214,25 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESCREVER__NAME = 0;
+  int ESCREVER__NAME = COMANDOS_ACAO__NAME;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCREVER__TIPO_LOCALIZADOR = COMANDOS_ACAO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Conteudo</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESCREVER__CONTEUDO = COMANDOS_ACAO_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Escrever</em>' class.
@@ -186,45 +241,17 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESCREVER_FEATURE_COUNT = 1;
+  int ESCREVER_FEATURE_COUNT = COMANDOS_ACAO_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosAcaoImpl <em>Comandos Acao</em>}' class.
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.VerifiquePresenteImpl <em>Verifique Presente</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.ufrn.atad.atad.impl.ComandosAcaoImpl
-   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosAcao()
+   * @see com.ufrn.atad.atad.impl.VerifiquePresenteImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiquePresente()
    * @generated
    */
-  int COMANDOS_ACAO = 5;
-
-  /**
-   * The feature id for the '<em><b>Comando</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDOS_ACAO__COMANDO = COMANDO_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Comandos Acao</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMANDOS_ACAO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.ufrn.atad.atad.impl.VerifiqueImpl <em>Verifique</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.ufrn.atad.atad.impl.VerifiqueImpl
-   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifique()
-   * @generated
-   */
-  int VERIFIQUE = 6;
+  int VERIFIQUE_PRESENTE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -233,16 +260,16 @@ public interface AtadPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFIQUE__NAME = 0;
+  int VERIFIQUE_PRESENTE__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Verifique</em>' class.
+   * The number of structural features of the '<em>Verifique Presente</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFIQUE_FEATURE_COUNT = 1;
+  int VERIFIQUE_PRESENTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.
@@ -252,7 +279,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosValidadores()
    * @generated
    */
-  int COMANDOS_VALIDADORES = 7;
+  int COMANDOS_VALIDADORES = 8;
 
   /**
    * The feature id for the '<em><b>Verifique</b></em>' containment reference.
@@ -273,6 +300,43 @@ public interface AtadPackage extends EPackage
   int COMANDOS_VALIDADORES_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl <em>Verifique Nao Presente</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiqueNaoPresente()
+   * @generated
+   */
+  int VERIFIQUE_NAO_PRESENTE = 7;
+
+  /**
+   * The feature id for the '<em><b>Verifique</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFIQUE_NAO_PRESENTE__VERIFIQUE = COMANDOS_VALIDADORES__VERIFIQUE;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFIQUE_NAO_PRESENTE__NAME = COMANDOS_VALIDADORES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Verifique Nao Presente</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VERIFIQUE_NAO_PRESENTE_FEATURE_COUNT = COMANDOS_VALIDADORES_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.AdicaoComandoImpl <em>Adicao Comando</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -280,7 +344,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getAdicaoComando()
    * @generated
    */
-  int ADICAO_COMANDO = 8;
+  int ADICAO_COMANDO = 9;
 
   /**
    * The feature id for the '<em><b>Comando</b></em>' containment reference.
@@ -308,7 +372,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getQuando()
    * @generated
    */
-  int QUANDO = 9;
+  int QUANDO = 10;
 
   /**
    * The number of structural features of the '<em>Quando</em>' class.
@@ -362,15 +426,15 @@ public interface AtadPackage extends EPackage
   EClass getClicar();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Clicar#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Clicar#getTipoLocalizador <em>Tipo Localizador</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.Clicar#getName()
+   * @return the meta object for the attribute '<em>Tipo Localizador</em>'.
+   * @see com.ufrn.atad.atad.Clicar#getTipoLocalizador()
    * @see #getClicar()
    * @generated
    */
-  EAttribute getClicar_Name();
+  EAttribute getClicar_TipoLocalizador();
 
   /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.Navegar <em>Navegar</em>}'.
@@ -383,17 +447,6 @@ public interface AtadPackage extends EPackage
   EClass getNavegar();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Navegar#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.Navegar#getName()
-   * @see #getNavegar()
-   * @generated
-   */
-  EAttribute getNavegar_Name();
-
-  /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.Escrever <em>Escrever</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -404,15 +457,26 @@ public interface AtadPackage extends EPackage
   EClass getEscrever();
 
   /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Escrever#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Escrever#getTipoLocalizador <em>Tipo Localizador</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.Escrever#getName()
+   * @return the meta object for the attribute '<em>Tipo Localizador</em>'.
+   * @see com.ufrn.atad.atad.Escrever#getTipoLocalizador()
    * @see #getEscrever()
    * @generated
    */
-  EAttribute getEscrever_Name();
+  EAttribute getEscrever_TipoLocalizador();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Escrever#getConteudo <em>Conteudo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conteudo</em>'.
+   * @see com.ufrn.atad.atad.Escrever#getConteudo()
+   * @see #getEscrever()
+   * @generated
+   */
+  EAttribute getEscrever_Conteudo();
 
   /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.ComandosAcao <em>Comandos Acao</em>}'.
@@ -425,36 +489,57 @@ public interface AtadPackage extends EPackage
   EClass getComandosAcao();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.ufrn.atad.atad.ComandosAcao#getComando <em>Comando</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Comando</em>'.
-   * @see com.ufrn.atad.atad.ComandosAcao#getComando()
-   * @see #getComandosAcao()
-   * @generated
-   */
-  EReference getComandosAcao_Comando();
-
-  /**
-   * Returns the meta object for class '{@link com.ufrn.atad.atad.Verifique <em>Verifique</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Verifique</em>'.
-   * @see com.ufrn.atad.atad.Verifique
-   * @generated
-   */
-  EClass getVerifique();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Verifique#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.ComandosAcao#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.ufrn.atad.atad.Verifique#getName()
-   * @see #getVerifique()
+   * @see com.ufrn.atad.atad.ComandosAcao#getName()
+   * @see #getComandosAcao()
    * @generated
    */
-  EAttribute getVerifique_Name();
+  EAttribute getComandosAcao_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.VerifiquePresente <em>Verifique Presente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Verifique Presente</em>'.
+   * @see com.ufrn.atad.atad.VerifiquePresente
+   * @generated
+   */
+  EClass getVerifiquePresente();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.VerifiquePresente#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ufrn.atad.atad.VerifiquePresente#getName()
+   * @see #getVerifiquePresente()
+   * @generated
+   */
+  EAttribute getVerifiquePresente_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.VerifiqueNaoPresente <em>Verifique Nao Presente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Verifique Nao Presente</em>'.
+   * @see com.ufrn.atad.atad.VerifiqueNaoPresente
+   * @generated
+   */
+  EClass getVerifiqueNaoPresente();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.VerifiqueNaoPresente#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ufrn.atad.atad.VerifiqueNaoPresente#getName()
+   * @see #getVerifiqueNaoPresente()
+   * @generated
+   */
+  EAttribute getVerifiqueNaoPresente_Name();
 
   /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.ComandosValidadores <em>Comandos Validadores</em>}'.
@@ -570,12 +655,12 @@ public interface AtadPackage extends EPackage
     EClass CLICAR = eINSTANCE.getClicar();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo Localizador</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CLICAR__NAME = eINSTANCE.getClicar_Name();
+    EAttribute CLICAR__TIPO_LOCALIZADOR = eINSTANCE.getClicar_TipoLocalizador();
 
     /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.NavegarImpl <em>Navegar</em>}' class.
@@ -588,14 +673,6 @@ public interface AtadPackage extends EPackage
     EClass NAVEGAR = eINSTANCE.getNavegar();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute NAVEGAR__NAME = eINSTANCE.getNavegar_Name();
-
-    /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.EscreverImpl <em>Escrever</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -606,12 +683,20 @@ public interface AtadPackage extends EPackage
     EClass ESCREVER = eINSTANCE.getEscrever();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tipo Localizador</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ESCREVER__NAME = eINSTANCE.getEscrever_Name();
+    EAttribute ESCREVER__TIPO_LOCALIZADOR = eINSTANCE.getEscrever_TipoLocalizador();
+
+    /**
+     * The meta object literal for the '<em><b>Conteudo</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESCREVER__CONTEUDO = eINSTANCE.getEscrever_Conteudo();
 
     /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.ComandosAcaoImpl <em>Comandos Acao</em>}' class.
@@ -624,22 +709,22 @@ public interface AtadPackage extends EPackage
     EClass COMANDOS_ACAO = eINSTANCE.getComandosAcao();
 
     /**
-     * The meta object literal for the '<em><b>Comando</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMANDOS_ACAO__COMANDO = eINSTANCE.getComandosAcao_Comando();
+    EAttribute COMANDOS_ACAO__NAME = eINSTANCE.getComandosAcao_Name();
 
     /**
-     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.VerifiqueImpl <em>Verifique</em>}' class.
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.VerifiquePresenteImpl <em>Verifique Presente</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.ufrn.atad.atad.impl.VerifiqueImpl
-     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifique()
+     * @see com.ufrn.atad.atad.impl.VerifiquePresenteImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiquePresente()
      * @generated
      */
-    EClass VERIFIQUE = eINSTANCE.getVerifique();
+    EClass VERIFIQUE_PRESENTE = eINSTANCE.getVerifiquePresente();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -647,7 +732,25 @@ public interface AtadPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VERIFIQUE__NAME = eINSTANCE.getVerifique_Name();
+    EAttribute VERIFIQUE_PRESENTE__NAME = eINSTANCE.getVerifiquePresente_Name();
+
+    /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl <em>Verifique Nao Presente</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiqueNaoPresente()
+     * @generated
+     */
+    EClass VERIFIQUE_NAO_PRESENTE = eINSTANCE.getVerifiqueNaoPresente();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VERIFIQUE_NAO_PRESENTE__NAME = eINSTANCE.getVerifiqueNaoPresente_Name();
 
     /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.

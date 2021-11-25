@@ -14,7 +14,8 @@ import com.ufrn.atad.atad.DeclaraComando;
 import com.ufrn.atad.atad.Escrever;
 import com.ufrn.atad.atad.Navegar;
 import com.ufrn.atad.atad.Quando;
-import com.ufrn.atad.atad.Verifique;
+import com.ufrn.atad.atad.VerifiqueNaoPresente;
+import com.ufrn.atad.atad.VerifiquePresente;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -78,7 +79,14 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass verifiqueEClass = null;
+  private EClass verifiquePresenteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass verifiqueNaoPresenteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -214,7 +222,7 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getClicar_Name()
+  public EAttribute getClicar_TipoLocalizador()
   {
     return (EAttribute)clicarEClass.getEStructuralFeatures().get(0);
   }
@@ -236,17 +244,6 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getNavegar_Name()
-  {
-    return (EAttribute)navegarEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getEscrever()
   {
     return escreverEClass;
@@ -258,9 +255,20 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getEscrever_Name()
+  public EAttribute getEscrever_TipoLocalizador()
   {
     return (EAttribute)escreverEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEscrever_Conteudo()
+  {
+    return (EAttribute)escreverEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -280,9 +288,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EReference getComandosAcao_Comando()
+  public EAttribute getComandosAcao_Name()
   {
-    return (EReference)comandosAcaoEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)comandosAcaoEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -291,9 +299,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EClass getVerifique()
+  public EClass getVerifiquePresente()
   {
-    return verifiqueEClass;
+    return verifiquePresenteEClass;
   }
 
   /**
@@ -302,9 +310,31 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
-  public EAttribute getVerifique_Name()
+  public EAttribute getVerifiquePresente_Name()
   {
-    return (EAttribute)verifiqueEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)verifiquePresenteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVerifiqueNaoPresente()
+  {
+    return verifiqueNaoPresenteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVerifiqueNaoPresente_Name()
+  {
+    return (EAttribute)verifiqueNaoPresenteEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,19 +429,22 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     comandoEClass = createEClass(COMANDO);
 
     clicarEClass = createEClass(CLICAR);
-    createEAttribute(clicarEClass, CLICAR__NAME);
+    createEAttribute(clicarEClass, CLICAR__TIPO_LOCALIZADOR);
 
     navegarEClass = createEClass(NAVEGAR);
-    createEAttribute(navegarEClass, NAVEGAR__NAME);
 
     escreverEClass = createEClass(ESCREVER);
-    createEAttribute(escreverEClass, ESCREVER__NAME);
+    createEAttribute(escreverEClass, ESCREVER__TIPO_LOCALIZADOR);
+    createEAttribute(escreverEClass, ESCREVER__CONTEUDO);
 
     comandosAcaoEClass = createEClass(COMANDOS_ACAO);
-    createEReference(comandosAcaoEClass, COMANDOS_ACAO__COMANDO);
+    createEAttribute(comandosAcaoEClass, COMANDOS_ACAO__NAME);
 
-    verifiqueEClass = createEClass(VERIFIQUE);
-    createEAttribute(verifiqueEClass, VERIFIQUE__NAME);
+    verifiquePresenteEClass = createEClass(VERIFIQUE_PRESENTE);
+    createEAttribute(verifiquePresenteEClass, VERIFIQUE_PRESENTE__NAME);
+
+    verifiqueNaoPresenteEClass = createEClass(VERIFIQUE_NAO_PRESENTE);
+    createEAttribute(verifiqueNaoPresenteEClass, VERIFIQUE_NAO_PRESENTE__NAME);
 
     comandosValidadoresEClass = createEClass(COMANDOS_VALIDADORES);
     createEReference(comandosValidadoresEClass, COMANDOS_VALIDADORES__VERIFIQUE);
@@ -451,8 +484,12 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    clicarEClass.getESuperTypes().add(this.getComandosAcao());
+    navegarEClass.getESuperTypes().add(this.getComandosAcao());
+    escreverEClass.getESuperTypes().add(this.getComandosAcao());
     comandosAcaoEClass.getESuperTypes().add(this.getComando());
     comandosAcaoEClass.getESuperTypes().add(this.getQuando());
+    verifiqueNaoPresenteEClass.getESuperTypes().add(this.getComandosValidadores());
     comandosValidadoresEClass.getESuperTypes().add(this.getComando());
     adicaoComandoEClass.getESuperTypes().add(this.getComando());
     quandoEClass.getESuperTypes().add(this.getComando());
@@ -464,22 +501,25 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     initEClass(comandoEClass, Comando.class, "Comando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(clicarEClass, Clicar.class, "Clicar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClicar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clicar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClicar_TipoLocalizador(), ecorePackage.getEString(), "tipoLocalizador", null, 0, 1, Clicar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(navegarEClass, Navegar.class, "Navegar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNavegar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Navegar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(escreverEClass, Escrever.class, "Escrever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEscrever_Name(), ecorePackage.getEString(), "name", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEscrever_TipoLocalizador(), ecorePackage.getEString(), "tipoLocalizador", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEscrever_Conteudo(), ecorePackage.getEString(), "conteudo", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosAcaoEClass, ComandosAcao.class, "ComandosAcao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandosAcao_Comando(), ecorePackage.getEObject(), null, "comando", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComandosAcao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(verifiqueEClass, Verifique.class, "Verifique", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVerifique_Name(), ecorePackage.getEString(), "name", null, 0, 1, Verifique.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(verifiquePresenteEClass, VerifiquePresente.class, "VerifiquePresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVerifiquePresente_Name(), ecorePackage.getEString(), "name", null, 0, 1, VerifiquePresente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(verifiqueNaoPresenteEClass, VerifiqueNaoPresente.class, "VerifiqueNaoPresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVerifiqueNaoPresente_Name(), ecorePackage.getEString(), "name", null, 0, 1, VerifiqueNaoPresente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosValidadoresEClass, ComandosValidadores.class, "ComandosValidadores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComandosValidadores_Verifique(), this.getVerifique(), null, "verifique", null, 0, 1, ComandosValidadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComandosValidadores_Verifique(), this.getVerifiquePresente(), null, "verifique", null, 0, 1, ComandosValidadores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(adicaoComandoEClass, AdicaoComando.class, "AdicaoComando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdicaoComando_Comando(), this.getComandosAcao(), null, "comando", null, 0, 1, AdicaoComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

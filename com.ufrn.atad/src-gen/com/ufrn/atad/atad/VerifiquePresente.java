@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Verifique</b></em>'.
+ * A representation of the model object '<em><b>Verifique Presente</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.Verifique#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.VerifiquePresente#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see com.ufrn.atad.atad.AtadPackage#getVerifique()
+ * @see com.ufrn.atad.atad.AtadPackage#getVerifiquePresente()
  * @model
  * @generated
  */
-public interface Verifique extends EObject
+public interface VerifiquePresente extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface Verifique extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.ufrn.atad.atad.AtadPackage#getVerifique_Name()
+   * @see com.ufrn.atad.atad.AtadPackage#getVerifiquePresente_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.Verifique#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.VerifiquePresente#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -45,4 +45,4 @@ public interface Verifique extends EObject
    */
   void setName(String value);
 
-} // Verifique
+} // VerifiquePresente

@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,32 +20,53 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.EscreverImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.EscreverImpl#getTipoLocalizador <em>Tipo Localizador</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.EscreverImpl#getConteudo <em>Conteudo</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrever
+public class EscreverImpl extends ComandosAcaoImpl implements Escrever
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTipoLocalizador()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String TIPO_LOCALIZADOR_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getTipoLocalizador()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String tipoLocalizador = TIPO_LOCALIZADOR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getConteudo() <em>Conteudo</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConteudo()
+   * @generated
+   * @ordered
+   */
+  protected static final String CONTEUDO_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getConteudo() <em>Conteudo</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConteudo()
+   * @generated
+   * @ordered
+   */
+  protected String conteudo = CONTEUDO_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +95,9 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
    * @generated
    */
   @Override
-  public String getName()
+  public String getTipoLocalizador()
   {
-    return name;
+    return tipoLocalizador;
   }
 
   /**
@@ -86,12 +106,37 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public void setTipoLocalizador(String newTipoLocalizador)
   {
-    String oldName = name;
-    name = newName;
+    String oldTipoLocalizador = tipoLocalizador;
+    tipoLocalizador = newTipoLocalizador;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESCREVER__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESCREVER__TIPO_LOCALIZADOR, oldTipoLocalizador, tipoLocalizador));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getConteudo()
+  {
+    return conteudo;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setConteudo(String newConteudo)
+  {
+    String oldConteudo = conteudo;
+    conteudo = newConteudo;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESCREVER__CONTEUDO, oldConteudo, conteudo));
   }
 
   /**
@@ -104,8 +149,10 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__NAME:
-        return getName();
+      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+        return getTipoLocalizador();
+      case AtadPackage.ESCREVER__CONTEUDO:
+        return getConteudo();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +167,11 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__NAME:
-        setName((String)newValue);
+      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+        setTipoLocalizador((String)newValue);
+        return;
+      case AtadPackage.ESCREVER__CONTEUDO:
+        setConteudo((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +187,11 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__NAME:
-        setName(NAME_EDEFAULT);
+      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+        setTipoLocalizador(TIPO_LOCALIZADOR_EDEFAULT);
+        return;
+      case AtadPackage.ESCREVER__CONTEUDO:
+        setConteudo(CONTEUDO_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +207,10 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+        return TIPO_LOCALIZADOR_EDEFAULT == null ? tipoLocalizador != null : !TIPO_LOCALIZADOR_EDEFAULT.equals(tipoLocalizador);
+      case AtadPackage.ESCREVER__CONTEUDO:
+        return CONTEUDO_EDEFAULT == null ? conteudo != null : !CONTEUDO_EDEFAULT.equals(conteudo);
     }
     return super.eIsSet(featureID);
   }
@@ -171,8 +226,10 @@ public class EscreverImpl extends MinimalEObjectImpl.Container implements Escrev
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (tipoLocalizador: ");
+    result.append(tipoLocalizador);
+    result.append(", conteudo: ");
+    result.append(conteudo);
     result.append(')');
     return result.toString();
   }

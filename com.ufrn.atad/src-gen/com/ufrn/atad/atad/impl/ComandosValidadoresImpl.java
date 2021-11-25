@@ -5,7 +5,7 @@ package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.ComandosValidadores;
-import com.ufrn.atad.atad.Verifique;
+import com.ufrn.atad.atad.VerifiquePresente;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -38,7 +38,7 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * @generated
    * @ordered
    */
-  protected Verifique verifique;
+  protected VerifiquePresente verifique;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,7 +67,7 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * @generated
    */
   @Override
-  public Verifique getVerifique()
+  public VerifiquePresente getVerifique()
   {
     return verifique;
   }
@@ -77,9 +77,9 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVerifique(Verifique newVerifique, NotificationChain msgs)
+  public NotificationChain basicSetVerifique(VerifiquePresente newVerifique, NotificationChain msgs)
   {
-    Verifique oldVerifique = verifique;
+    VerifiquePresente oldVerifique = verifique;
     verifique = newVerifique;
     if (eNotificationRequired())
     {
@@ -95,7 +95,7 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
    * @generated
    */
   @Override
-  public void setVerifique(Verifique newVerifique)
+  public void setVerifique(VerifiquePresente newVerifique)
   {
     if (newVerifique != verifique)
     {
@@ -154,7 +154,7 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
     switch (featureID)
     {
       case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        setVerifique((Verifique)newValue);
+        setVerifique((VerifiquePresente)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,7 +171,7 @@ public class ComandosValidadoresImpl extends ComandoImpl implements ComandosVali
     switch (featureID)
     {
       case AtadPackage.COMANDOS_VALIDADORES__VERIFIQUE:
-        setVerifique((Verifique)null);
+        setVerifique((VerifiquePresente)null);
         return;
     }
     super.eUnset(featureID);

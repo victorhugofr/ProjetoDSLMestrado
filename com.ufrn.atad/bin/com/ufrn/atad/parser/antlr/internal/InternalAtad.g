@@ -176,9 +176,27 @@ ruleClicar returns [EObject current=null]
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_tipoLocalizador_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getClicarAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClicarRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tipoLocalizador",
+						lv_tipoLocalizador_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_3_0=RULE_STRING
+				{
+					newLeafNode(lv_name_3_0, grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -187,7 +205,7 @@ ruleClicar returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -256,11 +274,33 @@ ruleEscrever returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEscreverAccess().getEscreverKeyword_0());
 		}
+		otherlv_1='no'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEscreverAccess().getNoKeyword_1());
+		}
 		(
 			(
-				lv_name_1_0=RULE_STRING
+				lv_tipoLocalizador_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getEscreverAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEscreverRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"tipoLocalizador",
+						lv_tipoLocalizador_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		(
+			(
+				lv_name_3_0=RULE_STRING
+				{
+					newLeafNode(lv_name_3_0, grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -269,7 +309,25 @@ ruleEscrever returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_conteudo_4_0=RULE_STRING
+				{
+					newLeafNode(lv_conteudo_4_0, grammarAccess.getEscreverAccess().getConteudoSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEscreverRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"conteudo",
+						lv_conteudo_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -293,69 +351,44 @@ ruleComandosAcao returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoClicarParserRuleCall_0_0());
-				}
-				lv_comando_0_1=ruleClicar
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-					}
-					set(
-						$current,
-						"comando",
-						lv_comando_0_1,
-						"com.ufrn.atad.Atad.Clicar");
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoNavegarParserRuleCall_0_1());
-				}
-				lv_comando_0_2=ruleNavegar
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-					}
-					set(
-						$current,
-						"comando",
-						lv_comando_0_2,
-						"com.ufrn.atad.Atad.Navegar");
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				{
-					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoEscreverParserRuleCall_0_2());
-				}
-				lv_comando_0_3=ruleEscrever
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-					}
-					set(
-						$current,
-						"comando",
-						lv_comando_0_3,
-						"com.ufrn.atad.Atad.Escrever");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getComandosAcaoAccess().getClicarParserRuleCall_0());
+		}
+		this_Clicar_0=ruleClicar
+		{
+			$current = $this_Clicar_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandosAcaoAccess().getNavegarParserRuleCall_1());
+		}
+		this_Navegar_1=ruleNavegar
+		{
+			$current = $this_Navegar_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandosAcaoAccess().getEscreverParserRuleCall_2());
+		}
+		this_Escrever_2=ruleEscrever
+		{
+			$current = $this_Escrever_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
-// Entry rule entryRuleVerifique
-entryRuleVerifique returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVerifiqueRule()); }
-	iv_ruleVerifique=ruleVerifique
-	{ $current=$iv_ruleVerifique.current; }
+// Entry rule entryRuleVerifiquePresente
+entryRuleVerifiquePresente returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVerifiquePresenteRule()); }
+	iv_ruleVerifiquePresente=ruleVerifiquePresente
+	{ $current=$iv_ruleVerifiquePresente.current; }
 	EOF;
 
-// Rule Verifique
-ruleVerifique returns [EObject current=null]
+// Rule VerifiquePresente
+ruleVerifiquePresente returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -365,30 +398,111 @@ ruleVerifique returns [EObject current=null]
 	(
 		otherlv_0='Verifique'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getVerifiquePresenteAccess().getVerifiqueKeyword_0());
 		}
 		otherlv_1='que'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getVerifiqueAccess().getQueKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getVerifiquePresenteAccess().getQueKeyword_1());
+		}
+		otherlv_2='o'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVerifiquePresenteAccess().getOKeyword_2());
+		}
+		otherlv_3='texto'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVerifiquePresenteAccess().getTextoKeyword_3());
 		}
 		(
 			(
-				lv_name_2_0=RULE_STRING
+				lv_name_4_0=RULE_STRING
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getVerifiqueAccess().getNameSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_name_4_0, grammarAccess.getVerifiquePresenteAccess().getNameSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVerifiqueRule());
+						$current = createModelElement(grammarAccess.getVerifiquePresenteRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_4_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
+		otherlv_5='esta'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getVerifiquePresenteAccess().getEstaKeyword_5());
+		}
+		otherlv_6='presente'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getVerifiquePresenteAccess().getPresenteKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleVerifiqueNaoPresente
+entryRuleVerifiqueNaoPresente returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVerifiqueNaoPresenteRule()); }
+	iv_ruleVerifiqueNaoPresente=ruleVerifiqueNaoPresente
+	{ $current=$iv_ruleVerifiqueNaoPresente.current; }
+	EOF;
+
+// Rule VerifiqueNaoPresente
+ruleVerifiqueNaoPresente returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Verifique'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getVerifiqueNaoPresenteAccess().getVerifiqueKeyword_0());
+		}
+		otherlv_1='que'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getVerifiqueNaoPresenteAccess().getQueKeyword_1());
+		}
+		otherlv_2='o'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVerifiqueNaoPresenteAccess().getOKeyword_2());
+		}
+		otherlv_3='texto'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getVerifiqueNaoPresenteAccess().getTextoKeyword_3());
+		}
+		(
+			(
+				lv_name_4_0=RULE_STRING
+				{
+					newLeafNode(lv_name_4_0, grammarAccess.getVerifiqueNaoPresenteAccess().getNameSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getVerifiqueNaoPresenteRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_5='nao'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getVerifiqueNaoPresenteAccess().getNaoKeyword_5());
+		}
+		otherlv_6='esta'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getVerifiqueNaoPresenteAccess().getEstaKeyword_6());
+		}
+		otherlv_7='presente'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getVerifiqueNaoPresenteAccess().getPresenteKeyword_7());
+		}
 	)
 ;
 
@@ -409,22 +523,33 @@ ruleComandosValidadores returns [EObject current=null]
 }:
 	(
 		(
-			{
-				newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiqueParserRuleCall_0());
-			}
-			lv_verifique_0_0=ruleVerifique
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0());
 				}
-				set(
-					$current,
-					"verifique",
-					lv_verifique_0_0,
-					"com.ufrn.atad.Atad.Verifique");
-				afterParserOrEnumRuleCall();
-			}
+				lv_verifique_0_0=ruleVerifiquePresente
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
+					}
+					set(
+						$current,
+						"verifique",
+						lv_verifique_0_0,
+						"com.ufrn.atad.Atad.VerifiquePresente");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueNaoPresenteParserRuleCall_1());
+		}
+		this_VerifiqueNaoPresente_1=ruleVerifiqueNaoPresente
+		{
+			$current = $this_VerifiqueNaoPresente_1.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 

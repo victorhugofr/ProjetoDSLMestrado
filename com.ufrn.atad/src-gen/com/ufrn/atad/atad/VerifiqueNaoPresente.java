@@ -6,21 +6,21 @@ package com.ufrn.atad.atad;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Comandos Acao</b></em>'.
+ * A representation of the model object '<em><b>Verifique Nao Presente</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.ComandosAcao#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.VerifiqueNaoPresente#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see com.ufrn.atad.atad.AtadPackage#getComandosAcao()
+ * @see com.ufrn.atad.atad.AtadPackage#getVerifiqueNaoPresente()
  * @model
  * @generated
  */
-public interface ComandosAcao extends Comando, Quando
+public interface VerifiqueNaoPresente extends ComandosValidadores
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -28,14 +28,14 @@ public interface ComandosAcao extends Comando, Quando
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.ufrn.atad.atad.AtadPackage#getComandosAcao_Name()
+   * @see com.ufrn.atad.atad.AtadPackage#getVerifiqueNaoPresente_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.ComandosAcao#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.VerifiqueNaoPresente#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -44,4 +44,4 @@ public interface ComandosAcao extends Comando, Quando
    */
   void setName(String value);
 
-} // ComandosAcao
+} // VerifiqueNaoPresente

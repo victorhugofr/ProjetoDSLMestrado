@@ -10,7 +10,7 @@ Comando:
 ;
 	
 Clicar:
-	'clicar' 'em' name=STRING
+	'clicar' 'em' tipoLocalizador=ID name=STRING
 ;
 
 Navegar:
@@ -18,19 +18,24 @@ Navegar:
 ;
 
 Escrever:
-	'escrever' name=STRING
+	'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
 ;
 
 ComandosAcao:
-	comando=(Clicar|Navegar|Escrever)	
+	Clicar|Navegar|Escrever	
 ;
 
-Verifique:
-	'Verifique' 'que' name=STRING 
+VerifiquePresente:
+	'Verifique' 'que' 'o' 'texto' name=STRING 'esta' 'presente'
 ;
+
+VerifiqueNaoPresente:
+	'Verifique' 'que' 'o' 'texto' name=STRING 'nao' 'esta' 'presente'
+;
+
 
 ComandosValidadores:
-	verifique=Verifique 
+	verifique=VerifiquePresente | VerifiqueNaoPresente
 ;
 
 AdicaoComando:

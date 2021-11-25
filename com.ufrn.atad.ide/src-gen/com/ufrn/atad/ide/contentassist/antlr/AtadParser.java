@@ -32,20 +32,25 @@ public class AtadParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, AtadGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getComandoAccess().getAlternatives(), "rule__Comando__Alternatives");
-			builder.put(grammarAccess.getComandosAcaoAccess().getComandoAlternatives_0(), "rule__ComandosAcao__ComandoAlternatives_0");
+			builder.put(grammarAccess.getComandosAcaoAccess().getAlternatives(), "rule__ComandosAcao__Alternatives");
+			builder.put(grammarAccess.getComandosValidadoresAccess().getAlternatives(), "rule__ComandosValidadores__Alternatives");
 			builder.put(grammarAccess.getClicarAccess().getGroup(), "rule__Clicar__Group__0");
 			builder.put(grammarAccess.getNavegarAccess().getGroup(), "rule__Navegar__Group__0");
 			builder.put(grammarAccess.getEscreverAccess().getGroup(), "rule__Escrever__Group__0");
-			builder.put(grammarAccess.getVerifiqueAccess().getGroup(), "rule__Verifique__Group__0");
+			builder.put(grammarAccess.getVerifiquePresenteAccess().getGroup(), "rule__VerifiquePresente__Group__0");
+			builder.put(grammarAccess.getVerifiqueNaoPresenteAccess().getGroup(), "rule__VerifiqueNaoPresente__Group__0");
 			builder.put(grammarAccess.getAdicaoComandoAccess().getGroup(), "rule__AdicaoComando__Group__0");
 			builder.put(grammarAccess.getQuandoAccess().getGroup(), "rule__Quando__Group__0");
 			builder.put(grammarAccess.getDeclaraComandoAccess().getComandosAssignment(), "rule__DeclaraComando__ComandosAssignment");
-			builder.put(grammarAccess.getClicarAccess().getNameAssignment_2(), "rule__Clicar__NameAssignment_2");
+			builder.put(grammarAccess.getClicarAccess().getTipoLocalizadorAssignment_2(), "rule__Clicar__TipoLocalizadorAssignment_2");
+			builder.put(grammarAccess.getClicarAccess().getNameAssignment_3(), "rule__Clicar__NameAssignment_3");
 			builder.put(grammarAccess.getNavegarAccess().getNameAssignment_1(), "rule__Navegar__NameAssignment_1");
-			builder.put(grammarAccess.getEscreverAccess().getNameAssignment_1(), "rule__Escrever__NameAssignment_1");
-			builder.put(grammarAccess.getComandosAcaoAccess().getComandoAssignment(), "rule__ComandosAcao__ComandoAssignment");
-			builder.put(grammarAccess.getVerifiqueAccess().getNameAssignment_2(), "rule__Verifique__NameAssignment_2");
-			builder.put(grammarAccess.getComandosValidadoresAccess().getVerifiqueAssignment(), "rule__ComandosValidadores__VerifiqueAssignment");
+			builder.put(grammarAccess.getEscreverAccess().getTipoLocalizadorAssignment_2(), "rule__Escrever__TipoLocalizadorAssignment_2");
+			builder.put(grammarAccess.getEscreverAccess().getNameAssignment_3(), "rule__Escrever__NameAssignment_3");
+			builder.put(grammarAccess.getEscreverAccess().getConteudoAssignment_4(), "rule__Escrever__ConteudoAssignment_4");
+			builder.put(grammarAccess.getVerifiquePresenteAccess().getNameAssignment_4(), "rule__VerifiquePresente__NameAssignment_4");
+			builder.put(grammarAccess.getVerifiqueNaoPresenteAccess().getNameAssignment_4(), "rule__VerifiqueNaoPresente__NameAssignment_4");
+			builder.put(grammarAccess.getComandosValidadoresAccess().getVerifiqueAssignment_0(), "rule__ComandosValidadores__VerifiqueAssignment_0");
 			builder.put(grammarAccess.getAdicaoComandoAccess().getComandoAssignment_1(), "rule__AdicaoComando__ComandoAssignment_1");
 		}
 	}

@@ -71,7 +71,8 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
       case AtadPackage.NAVEGAR: return createNavegar();
       case AtadPackage.ESCREVER: return createEscrever();
       case AtadPackage.COMANDOS_ACAO: return createComandosAcao();
-      case AtadPackage.VERIFIQUE: return createVerifique();
+      case AtadPackage.VERIFIQUE_PRESENTE: return createVerifiquePresente();
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE: return createVerifiqueNaoPresente();
       case AtadPackage.COMANDOS_VALIDADORES: return createComandosValidadores();
       case AtadPackage.ADICAO_COMANDO: return createAdicaoComando();
       case AtadPackage.QUANDO: return createQuando();
@@ -158,10 +159,22 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
    * @generated
    */
   @Override
-  public Verifique createVerifique()
+  public VerifiquePresente createVerifiquePresente()
   {
-    VerifiqueImpl verifique = new VerifiqueImpl();
-    return verifique;
+    VerifiquePresenteImpl verifiquePresente = new VerifiquePresenteImpl();
+    return verifiquePresente;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VerifiqueNaoPresente createVerifiqueNaoPresente()
+  {
+    VerifiqueNaoPresenteImpl verifiqueNaoPresente = new VerifiqueNaoPresenteImpl();
+    return verifiqueNaoPresente;
   }
 
   /**

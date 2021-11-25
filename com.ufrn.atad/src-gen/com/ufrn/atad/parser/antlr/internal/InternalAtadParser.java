@@ -21,24 +21,30 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAtadParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'clicar'", "'em'", "'navegar'", "'escrever'", "'Verifique'", "'que'", "'E'", "'Quando'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'clicar'", "'em'", "'navegar'", "'escrever'", "'no'", "'Verifique'", "'que'", "'o'", "'texto'", "'esta'", "'presente'", "'nao'", "'E'", "'Quando'"
     };
-    public static final int RULE_ID=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_STRING=4;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
-    public static final int RULE_INT=6;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int RULE_ML_COMMENT=7;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int RULE_ID=4;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_INT=6;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -136,7 +142,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11||(LA1_0>=13 && LA1_0<=15)||(LA1_0>=17 && LA1_0<=18)) ) {
+                if ( (LA1_0==11||(LA1_0>=13 && LA1_0<=14)||LA1_0==16||(LA1_0>=23 && LA1_0<=24)) ) {
                     alt1=1;
                 }
 
@@ -265,17 +271,17 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
                 alt2=1;
                 }
                 break;
-            case 15:
+            case 16:
                 {
                 alt2=2;
                 }
                 break;
-            case 17:
+            case 23:
                 {
                 alt2=3;
                 }
                 break;
-            case 18:
+            case 24:
                 {
                 alt2=4;
                 }
@@ -419,23 +425,24 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClicar"
-    // InternalAtad.g:161:1: ruleClicar returns [EObject current=null] : (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:161:1: ruleClicar returns [EObject current=null] : (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ) ;
     public final EObject ruleClicar() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
+        Token lv_tipoLocalizador_2_0=null;
+        Token lv_name_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:167:2: ( (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:167:2: ( (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) ) )
-            // InternalAtad.g:169:3: otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:168:2: (otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) )
+            // InternalAtad.g:169:3: otherlv_0= 'clicar' otherlv_1= 'em' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -445,15 +452,41 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getClicarAccess().getEmKeyword_1());
             		
-            // InternalAtad.g:177:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAtad.g:178:4: (lv_name_2_0= RULE_STRING )
+            // InternalAtad.g:177:3: ( (lv_tipoLocalizador_2_0= RULE_ID ) )
+            // InternalAtad.g:178:4: (lv_tipoLocalizador_2_0= RULE_ID )
             {
-            // InternalAtad.g:178:4: (lv_name_2_0= RULE_STRING )
-            // InternalAtad.g:179:5: lv_name_2_0= RULE_STRING
+            // InternalAtad.g:178:4: (lv_tipoLocalizador_2_0= RULE_ID )
+            // InternalAtad.g:179:5: lv_tipoLocalizador_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            lv_tipoLocalizador_2_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getClicarAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getClicarRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"tipoLocalizador",
+            						lv_tipoLocalizador_2_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAtad.g:195:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalAtad.g:196:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalAtad.g:196:4: (lv_name_3_0= RULE_STRING )
+            // InternalAtad.g:197:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -462,7 +495,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -494,7 +527,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNavegar"
-    // InternalAtad.g:199:1: entryRuleNavegar returns [EObject current=null] : iv_ruleNavegar= ruleNavegar EOF ;
+    // InternalAtad.g:217:1: entryRuleNavegar returns [EObject current=null] : iv_ruleNavegar= ruleNavegar EOF ;
     public final EObject entryRuleNavegar() throws RecognitionException {
         EObject current = null;
 
@@ -502,8 +535,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:199:48: (iv_ruleNavegar= ruleNavegar EOF )
-            // InternalAtad.g:200:2: iv_ruleNavegar= ruleNavegar EOF
+            // InternalAtad.g:217:48: (iv_ruleNavegar= ruleNavegar EOF )
+            // InternalAtad.g:218:2: iv_ruleNavegar= ruleNavegar EOF
             {
              newCompositeNode(grammarAccess.getNavegarRule()); 
             pushFollow(FOLLOW_1);
@@ -530,7 +563,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNavegar"
-    // InternalAtad.g:206:1: ruleNavegar returns [EObject current=null] : (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:224:1: ruleNavegar returns [EObject current=null] : (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleNavegar() throws RecognitionException {
         EObject current = null;
 
@@ -541,21 +574,21 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:212:2: ( (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:213:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:230:2: ( (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:231:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:213:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
-            // InternalAtad.g:214:3: otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:231:2: (otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:232:3: otherlv_0= 'navegar' ( (lv_name_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_5); 
+            otherlv_0=(Token)match(input,13,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNavegarAccess().getNavegarKeyword_0());
             		
-            // InternalAtad.g:218:3: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalAtad.g:219:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:236:3: ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:237:4: (lv_name_1_0= RULE_STRING )
             {
-            // InternalAtad.g:219:4: (lv_name_1_0= RULE_STRING )
-            // InternalAtad.g:220:5: lv_name_1_0= RULE_STRING
+            // InternalAtad.g:237:4: (lv_name_1_0= RULE_STRING )
+            // InternalAtad.g:238:5: lv_name_1_0= RULE_STRING
             {
             lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -600,7 +633,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEscrever"
-    // InternalAtad.g:240:1: entryRuleEscrever returns [EObject current=null] : iv_ruleEscrever= ruleEscrever EOF ;
+    // InternalAtad.g:258:1: entryRuleEscrever returns [EObject current=null] : iv_ruleEscrever= ruleEscrever EOF ;
     public final EObject entryRuleEscrever() throws RecognitionException {
         EObject current = null;
 
@@ -608,8 +641,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:240:49: (iv_ruleEscrever= ruleEscrever EOF )
-            // InternalAtad.g:241:2: iv_ruleEscrever= ruleEscrever EOF
+            // InternalAtad.g:258:49: (iv_ruleEscrever= ruleEscrever EOF )
+            // InternalAtad.g:259:2: iv_ruleEscrever= ruleEscrever EOF
             {
              newCompositeNode(grammarAccess.getEscreverRule()); 
             pushFollow(FOLLOW_1);
@@ -636,36 +669,69 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEscrever"
-    // InternalAtad.g:247:1: ruleEscrever returns [EObject current=null] : (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) ;
+    // InternalAtad.g:265:1: ruleEscrever returns [EObject current=null] : (otherlv_0= 'escrever' otherlv_1= 'no' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ( (lv_conteudo_4_0= RULE_STRING ) ) ) ;
     public final EObject ruleEscrever() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token otherlv_1=null;
+        Token lv_tipoLocalizador_2_0=null;
+        Token lv_name_3_0=null;
+        Token lv_conteudo_4_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:253:2: ( (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:254:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
+            // InternalAtad.g:271:2: ( (otherlv_0= 'escrever' otherlv_1= 'no' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ( (lv_conteudo_4_0= RULE_STRING ) ) ) )
+            // InternalAtad.g:272:2: (otherlv_0= 'escrever' otherlv_1= 'no' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ( (lv_conteudo_4_0= RULE_STRING ) ) )
             {
-            // InternalAtad.g:254:2: (otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) ) )
-            // InternalAtad.g:255:3: otherlv_0= 'escrever' ( (lv_name_1_0= RULE_STRING ) )
+            // InternalAtad.g:272:2: (otherlv_0= 'escrever' otherlv_1= 'no' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ( (lv_conteudo_4_0= RULE_STRING ) ) )
+            // InternalAtad.g:273:3: otherlv_0= 'escrever' otherlv_1= 'no' ( (lv_tipoLocalizador_2_0= RULE_ID ) ) ( (lv_name_3_0= RULE_STRING ) ) ( (lv_conteudo_4_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_5); 
+            otherlv_0=(Token)match(input,14,FOLLOW_7); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEscreverAccess().getEscreverKeyword_0());
             		
-            // InternalAtad.g:259:3: ( (lv_name_1_0= RULE_STRING ) )
-            // InternalAtad.g:260:4: (lv_name_1_0= RULE_STRING )
-            {
-            // InternalAtad.g:260:4: (lv_name_1_0= RULE_STRING )
-            // InternalAtad.g:261:5: lv_name_1_0= RULE_STRING
-            {
-            lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            otherlv_1=(Token)match(input,15,FOLLOW_5); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_1_0());
+            			newLeafNode(otherlv_1, grammarAccess.getEscreverAccess().getNoKeyword_1());
+            		
+            // InternalAtad.g:281:3: ( (lv_tipoLocalizador_2_0= RULE_ID ) )
+            // InternalAtad.g:282:4: (lv_tipoLocalizador_2_0= RULE_ID )
+            {
+            // InternalAtad.g:282:4: (lv_tipoLocalizador_2_0= RULE_ID )
+            // InternalAtad.g:283:5: lv_tipoLocalizador_2_0= RULE_ID
+            {
+            lv_tipoLocalizador_2_0=(Token)match(input,RULE_ID,FOLLOW_6); 
+
+            					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getEscreverAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEscreverRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"tipoLocalizador",
+            						lv_tipoLocalizador_2_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalAtad.g:299:3: ( (lv_name_3_0= RULE_STRING ) )
+            // InternalAtad.g:300:4: (lv_name_3_0= RULE_STRING )
+            {
+            // InternalAtad.g:300:4: (lv_name_3_0= RULE_STRING )
+            // InternalAtad.g:301:5: lv_name_3_0= RULE_STRING
+            {
+            lv_name_3_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
+
+            					newLeafNode(lv_name_3_0, grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_3_0());
             				
 
             					if (current==null) {
@@ -674,7 +740,33 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_1_0,
+            						lv_name_3_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalAtad.g:317:3: ( (lv_conteudo_4_0= RULE_STRING ) )
+            // InternalAtad.g:318:4: (lv_conteudo_4_0= RULE_STRING )
+            {
+            // InternalAtad.g:318:4: (lv_conteudo_4_0= RULE_STRING )
+            // InternalAtad.g:319:5: lv_conteudo_4_0= RULE_STRING
+            {
+            lv_conteudo_4_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_conteudo_4_0, grammarAccess.getEscreverAccess().getConteudoSTRINGTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getEscreverRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"conteudo",
+            						lv_conteudo_4_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -706,7 +798,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComandosAcao"
-    // InternalAtad.g:281:1: entryRuleComandosAcao returns [EObject current=null] : iv_ruleComandosAcao= ruleComandosAcao EOF ;
+    // InternalAtad.g:339:1: entryRuleComandosAcao returns [EObject current=null] : iv_ruleComandosAcao= ruleComandosAcao EOF ;
     public final EObject entryRuleComandosAcao() throws RecognitionException {
         EObject current = null;
 
@@ -714,8 +806,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:281:53: (iv_ruleComandosAcao= ruleComandosAcao EOF )
-            // InternalAtad.g:282:2: iv_ruleComandosAcao= ruleComandosAcao EOF
+            // InternalAtad.g:339:53: (iv_ruleComandosAcao= ruleComandosAcao EOF )
+            // InternalAtad.g:340:2: iv_ruleComandosAcao= ruleComandosAcao EOF
             {
              newCompositeNode(grammarAccess.getComandosAcaoRule()); 
             pushFollow(FOLLOW_1);
@@ -742,31 +834,25 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandosAcao"
-    // InternalAtad.g:288:1: ruleComandosAcao returns [EObject current=null] : ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) ) ;
+    // InternalAtad.g:346:1: ruleComandosAcao returns [EObject current=null] : (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever ) ;
     public final EObject ruleComandosAcao() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_comando_0_1 = null;
+        EObject this_Clicar_0 = null;
 
-        EObject lv_comando_0_2 = null;
+        EObject this_Navegar_1 = null;
 
-        EObject lv_comando_0_3 = null;
+        EObject this_Escrever_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:294:2: ( ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) ) )
-            // InternalAtad.g:295:2: ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) )
+            // InternalAtad.g:352:2: ( (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever ) )
+            // InternalAtad.g:353:2: (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever )
             {
-            // InternalAtad.g:295:2: ( ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) ) )
-            // InternalAtad.g:296:3: ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) )
-            {
-            // InternalAtad.g:296:3: ( (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever ) )
-            // InternalAtad.g:297:4: (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever )
-            {
-            // InternalAtad.g:297:4: (lv_comando_0_1= ruleClicar | lv_comando_0_2= ruleNavegar | lv_comando_0_3= ruleEscrever )
+            // InternalAtad.g:353:2: (this_Clicar_0= ruleClicar | this_Navegar_1= ruleNavegar | this_Escrever_2= ruleEscrever )
             int alt3=3;
             switch ( input.LA(1) ) {
             case 11:
@@ -793,86 +879,59 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalAtad.g:298:5: lv_comando_0_1= ruleClicar
+                    // InternalAtad.g:354:3: this_Clicar_0= ruleClicar
                     {
 
-                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoClicarParserRuleCall_0_0());
-                    				
+                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getClicarParserRuleCall_0());
+                    		
                     pushFollow(FOLLOW_2);
-                    lv_comando_0_1=ruleClicar();
+                    this_Clicar_0=ruleClicar();
 
                     state._fsp--;
 
 
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-                    					}
-                    					set(
-                    						current,
-                    						"comando",
-                    						lv_comando_0_1,
-                    						"com.ufrn.atad.Atad.Clicar");
-                    					afterParserOrEnumRuleCall();
-                    				
+                    			current = this_Clicar_0;
+                    			afterParserOrEnumRuleCall();
+                    		
 
                     }
                     break;
                 case 2 :
-                    // InternalAtad.g:314:5: lv_comando_0_2= ruleNavegar
+                    // InternalAtad.g:363:3: this_Navegar_1= ruleNavegar
                     {
 
-                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoNavegarParserRuleCall_0_1());
-                    				
+                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getNavegarParserRuleCall_1());
+                    		
                     pushFollow(FOLLOW_2);
-                    lv_comando_0_2=ruleNavegar();
+                    this_Navegar_1=ruleNavegar();
 
                     state._fsp--;
 
 
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-                    					}
-                    					set(
-                    						current,
-                    						"comando",
-                    						lv_comando_0_2,
-                    						"com.ufrn.atad.Atad.Navegar");
-                    					afterParserOrEnumRuleCall();
-                    				
+                    			current = this_Navegar_1;
+                    			afterParserOrEnumRuleCall();
+                    		
 
                     }
                     break;
                 case 3 :
-                    // InternalAtad.g:330:5: lv_comando_0_3= ruleEscrever
+                    // InternalAtad.g:372:3: this_Escrever_2= ruleEscrever
                     {
 
-                    					newCompositeNode(grammarAccess.getComandosAcaoAccess().getComandoEscreverParserRuleCall_0_2());
-                    				
+                    			newCompositeNode(grammarAccess.getComandosAcaoAccess().getEscreverParserRuleCall_2());
+                    		
                     pushFollow(FOLLOW_2);
-                    lv_comando_0_3=ruleEscrever();
+                    this_Escrever_2=ruleEscrever();
 
                     state._fsp--;
 
 
-                    					if (current==null) {
-                    						current = createModelElementForParent(grammarAccess.getComandosAcaoRule());
-                    					}
-                    					set(
-                    						current,
-                    						"comando",
-                    						lv_comando_0_3,
-                    						"com.ufrn.atad.Atad.Escrever");
-                    					afterParserOrEnumRuleCall();
-                    				
+                    			current = this_Escrever_2;
+                    			afterParserOrEnumRuleCall();
+                    		
 
                     }
                     break;
-
-            }
-
-
-            }
-
 
             }
 
@@ -895,25 +954,25 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleComandosAcao"
 
 
-    // $ANTLR start "entryRuleVerifique"
-    // InternalAtad.g:351:1: entryRuleVerifique returns [EObject current=null] : iv_ruleVerifique= ruleVerifique EOF ;
-    public final EObject entryRuleVerifique() throws RecognitionException {
+    // $ANTLR start "entryRuleVerifiquePresente"
+    // InternalAtad.g:384:1: entryRuleVerifiquePresente returns [EObject current=null] : iv_ruleVerifiquePresente= ruleVerifiquePresente EOF ;
+    public final EObject entryRuleVerifiquePresente() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVerifique = null;
+        EObject iv_ruleVerifiquePresente = null;
 
 
         try {
-            // InternalAtad.g:351:50: (iv_ruleVerifique= ruleVerifique EOF )
-            // InternalAtad.g:352:2: iv_ruleVerifique= ruleVerifique EOF
+            // InternalAtad.g:384:58: (iv_ruleVerifiquePresente= ruleVerifiquePresente EOF )
+            // InternalAtad.g:385:2: iv_ruleVerifiquePresente= ruleVerifiquePresente EOF
             {
-             newCompositeNode(grammarAccess.getVerifiqueRule()); 
+             newCompositeNode(grammarAccess.getVerifiquePresenteRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleVerifique=ruleVerifique();
+            iv_ruleVerifiquePresente=ruleVerifiquePresente();
 
             state._fsp--;
 
-             current =iv_ruleVerifique; 
+             current =iv_ruleVerifiquePresente; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -928,54 +987,66 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleVerifique"
+    // $ANTLR end "entryRuleVerifiquePresente"
 
 
-    // $ANTLR start "ruleVerifique"
-    // InternalAtad.g:358:1: ruleVerifique returns [EObject current=null] : (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) ;
-    public final EObject ruleVerifique() throws RecognitionException {
+    // $ANTLR start "ruleVerifiquePresente"
+    // InternalAtad.g:391:1: ruleVerifiquePresente returns [EObject current=null] : (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'esta' otherlv_6= 'presente' ) ;
+    public final EObject ruleVerifiquePresente() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
-        Token lv_name_2_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_name_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:364:2: ( (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) ) )
-            // InternalAtad.g:365:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
+            // InternalAtad.g:397:2: ( (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'esta' otherlv_6= 'presente' ) )
+            // InternalAtad.g:398:2: (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'esta' otherlv_6= 'presente' )
             {
-            // InternalAtad.g:365:2: (otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) ) )
-            // InternalAtad.g:366:3: otherlv_0= 'Verifique' otherlv_1= 'que' ( (lv_name_2_0= RULE_STRING ) )
+            // InternalAtad.g:398:2: (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'esta' otherlv_6= 'presente' )
+            // InternalAtad.g:399:3: otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'esta' otherlv_6= 'presente'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_6); 
+            otherlv_0=(Token)match(input,16,FOLLOW_8); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getVerifiqueAccess().getVerifiqueKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getVerifiquePresenteAccess().getVerifiqueKeyword_0());
             		
-            otherlv_1=(Token)match(input,16,FOLLOW_5); 
+            otherlv_1=(Token)match(input,17,FOLLOW_9); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getVerifiqueAccess().getQueKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getVerifiquePresenteAccess().getQueKeyword_1());
             		
-            // InternalAtad.g:374:3: ( (lv_name_2_0= RULE_STRING ) )
-            // InternalAtad.g:375:4: (lv_name_2_0= RULE_STRING )
-            {
-            // InternalAtad.g:375:4: (lv_name_2_0= RULE_STRING )
-            // InternalAtad.g:376:5: lv_name_2_0= RULE_STRING
-            {
-            lv_name_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            otherlv_2=(Token)match(input,18,FOLLOW_10); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getVerifiqueAccess().getNameSTRINGTerminalRuleCall_2_0());
+            			newLeafNode(otherlv_2, grammarAccess.getVerifiquePresenteAccess().getOKeyword_2());
+            		
+            otherlv_3=(Token)match(input,19,FOLLOW_6); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getVerifiquePresenteAccess().getTextoKeyword_3());
+            		
+            // InternalAtad.g:415:3: ( (lv_name_4_0= RULE_STRING ) )
+            // InternalAtad.g:416:4: (lv_name_4_0= RULE_STRING )
+            {
+            // InternalAtad.g:416:4: (lv_name_4_0= RULE_STRING )
+            // InternalAtad.g:417:5: lv_name_4_0= RULE_STRING
+            {
+            lv_name_4_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
+
+            					newLeafNode(lv_name_4_0, grammarAccess.getVerifiquePresenteAccess().getNameSTRINGTerminalRuleCall_4_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getVerifiqueRule());
+            						current = createModelElement(grammarAccess.getVerifiquePresenteRule());
             					}
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_4_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -984,6 +1055,14 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_5=(Token)match(input,20,FOLLOW_12); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getVerifiquePresenteAccess().getEstaKeyword_5());
+            		
+            otherlv_6=(Token)match(input,21,FOLLOW_2); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getVerifiquePresenteAccess().getPresenteKeyword_6());
+            		
 
             }
 
@@ -1003,11 +1082,147 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleVerifique"
+    // $ANTLR end "ruleVerifiquePresente"
+
+
+    // $ANTLR start "entryRuleVerifiqueNaoPresente"
+    // InternalAtad.g:445:1: entryRuleVerifiqueNaoPresente returns [EObject current=null] : iv_ruleVerifiqueNaoPresente= ruleVerifiqueNaoPresente EOF ;
+    public final EObject entryRuleVerifiqueNaoPresente() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleVerifiqueNaoPresente = null;
+
+
+        try {
+            // InternalAtad.g:445:61: (iv_ruleVerifiqueNaoPresente= ruleVerifiqueNaoPresente EOF )
+            // InternalAtad.g:446:2: iv_ruleVerifiqueNaoPresente= ruleVerifiqueNaoPresente EOF
+            {
+             newCompositeNode(grammarAccess.getVerifiqueNaoPresenteRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleVerifiqueNaoPresente=ruleVerifiqueNaoPresente();
+
+            state._fsp--;
+
+             current =iv_ruleVerifiqueNaoPresente; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVerifiqueNaoPresente"
+
+
+    // $ANTLR start "ruleVerifiqueNaoPresente"
+    // InternalAtad.g:452:1: ruleVerifiqueNaoPresente returns [EObject current=null] : (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'nao' otherlv_6= 'esta' otherlv_7= 'presente' ) ;
+    public final EObject ruleVerifiqueNaoPresente() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token lv_name_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalAtad.g:458:2: ( (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'nao' otherlv_6= 'esta' otherlv_7= 'presente' ) )
+            // InternalAtad.g:459:2: (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'nao' otherlv_6= 'esta' otherlv_7= 'presente' )
+            {
+            // InternalAtad.g:459:2: (otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'nao' otherlv_6= 'esta' otherlv_7= 'presente' )
+            // InternalAtad.g:460:3: otherlv_0= 'Verifique' otherlv_1= 'que' otherlv_2= 'o' otherlv_3= 'texto' ( (lv_name_4_0= RULE_STRING ) ) otherlv_5= 'nao' otherlv_6= 'esta' otherlv_7= 'presente'
+            {
+            otherlv_0=(Token)match(input,16,FOLLOW_8); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getVerifiqueNaoPresenteAccess().getVerifiqueKeyword_0());
+            		
+            otherlv_1=(Token)match(input,17,FOLLOW_9); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getVerifiqueNaoPresenteAccess().getQueKeyword_1());
+            		
+            otherlv_2=(Token)match(input,18,FOLLOW_10); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getVerifiqueNaoPresenteAccess().getOKeyword_2());
+            		
+            otherlv_3=(Token)match(input,19,FOLLOW_6); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getVerifiqueNaoPresenteAccess().getTextoKeyword_3());
+            		
+            // InternalAtad.g:476:3: ( (lv_name_4_0= RULE_STRING ) )
+            // InternalAtad.g:477:4: (lv_name_4_0= RULE_STRING )
+            {
+            // InternalAtad.g:477:4: (lv_name_4_0= RULE_STRING )
+            // InternalAtad.g:478:5: lv_name_4_0= RULE_STRING
+            {
+            lv_name_4_0=(Token)match(input,RULE_STRING,FOLLOW_13); 
+
+            					newLeafNode(lv_name_4_0, grammarAccess.getVerifiqueNaoPresenteAccess().getNameSTRINGTerminalRuleCall_4_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getVerifiqueNaoPresenteRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_4_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,22,FOLLOW_11); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getVerifiqueNaoPresenteAccess().getNaoKeyword_5());
+            		
+            otherlv_6=(Token)match(input,20,FOLLOW_12); 
+
+            			newLeafNode(otherlv_6, grammarAccess.getVerifiqueNaoPresenteAccess().getEstaKeyword_6());
+            		
+            otherlv_7=(Token)match(input,21,FOLLOW_2); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getVerifiqueNaoPresenteAccess().getPresenteKeyword_7());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVerifiqueNaoPresente"
 
 
     // $ANTLR start "entryRuleComandosValidadores"
-    // InternalAtad.g:396:1: entryRuleComandosValidadores returns [EObject current=null] : iv_ruleComandosValidadores= ruleComandosValidadores EOF ;
+    // InternalAtad.g:510:1: entryRuleComandosValidadores returns [EObject current=null] : iv_ruleComandosValidadores= ruleComandosValidadores EOF ;
     public final EObject entryRuleComandosValidadores() throws RecognitionException {
         EObject current = null;
 
@@ -1015,8 +1230,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:396:60: (iv_ruleComandosValidadores= ruleComandosValidadores EOF )
-            // InternalAtad.g:397:2: iv_ruleComandosValidadores= ruleComandosValidadores EOF
+            // InternalAtad.g:510:60: (iv_ruleComandosValidadores= ruleComandosValidadores EOF )
+            // InternalAtad.g:511:2: iv_ruleComandosValidadores= ruleComandosValidadores EOF
             {
              newCompositeNode(grammarAccess.getComandosValidadoresRule()); 
             pushFollow(FOLLOW_1);
@@ -1043,48 +1258,144 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComandosValidadores"
-    // InternalAtad.g:403:1: ruleComandosValidadores returns [EObject current=null] : ( (lv_verifique_0_0= ruleVerifique ) ) ;
+    // InternalAtad.g:517:1: ruleComandosValidadores returns [EObject current=null] : ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) ;
     public final EObject ruleComandosValidadores() throws RecognitionException {
         EObject current = null;
 
         EObject lv_verifique_0_0 = null;
+
+        EObject this_VerifiqueNaoPresente_1 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalAtad.g:409:2: ( ( (lv_verifique_0_0= ruleVerifique ) ) )
-            // InternalAtad.g:410:2: ( (lv_verifique_0_0= ruleVerifique ) )
+            // InternalAtad.g:523:2: ( ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente ) )
+            // InternalAtad.g:524:2: ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
             {
-            // InternalAtad.g:410:2: ( (lv_verifique_0_0= ruleVerifique ) )
-            // InternalAtad.g:411:3: (lv_verifique_0_0= ruleVerifique )
-            {
-            // InternalAtad.g:411:3: (lv_verifique_0_0= ruleVerifique )
-            // InternalAtad.g:412:4: lv_verifique_0_0= ruleVerifique
-            {
+            // InternalAtad.g:524:2: ( ( (lv_verifique_0_0= ruleVerifiquePresente ) ) | this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            				newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiqueParserRuleCall_0());
-            			
-            pushFollow(FOLLOW_2);
-            lv_verifique_0_0=ruleVerifique();
+            if ( (LA4_0==16) ) {
+                int LA4_1 = input.LA(2);
 
-            state._fsp--;
+                if ( (LA4_1==17) ) {
+                    int LA4_2 = input.LA(3);
 
+                    if ( (LA4_2==18) ) {
+                        int LA4_3 = input.LA(4);
 
-            				if (current==null) {
-            					current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
-            				}
-            				set(
-            					current,
-            					"verifique",
-            					lv_verifique_0_0,
-            					"com.ufrn.atad.Atad.Verifique");
-            				afterParserOrEnumRuleCall();
-            			
+                        if ( (LA4_3==19) ) {
+                            int LA4_4 = input.LA(5);
 
+                            if ( (LA4_4==RULE_STRING) ) {
+                                int LA4_5 = input.LA(6);
+
+                                if ( (LA4_5==20) ) {
+                                    alt4=1;
+                                }
+                                else if ( (LA4_5==22) ) {
+                                    alt4=2;
+                                }
+                                else {
+                                    NoViableAltException nvae =
+                                        new NoViableAltException("", 4, 5, input);
+
+                                    throw nvae;
+                                }
+                            }
+                            else {
+                                NoViableAltException nvae =
+                                    new NoViableAltException("", 4, 4, input);
+
+                                throw nvae;
+                            }
+                        }
+                        else {
+                            NoViableAltException nvae =
+                                new NoViableAltException("", 4, 3, input);
+
+                            throw nvae;
+                        }
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 4, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 1, input);
+
+                    throw nvae;
+                }
             }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 4, 0, input);
 
+                throw nvae;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalAtad.g:525:3: ( (lv_verifique_0_0= ruleVerifiquePresente ) )
+                    {
+                    // InternalAtad.g:525:3: ( (lv_verifique_0_0= ruleVerifiquePresente ) )
+                    // InternalAtad.g:526:4: (lv_verifique_0_0= ruleVerifiquePresente )
+                    {
+                    // InternalAtad.g:526:4: (lv_verifique_0_0= ruleVerifiquePresente )
+                    // InternalAtad.g:527:5: lv_verifique_0_0= ruleVerifiquePresente
+                    {
+
+                    					newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueVerifiquePresenteParserRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_verifique_0_0=ruleVerifiquePresente();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getComandosValidadoresRule());
+                    					}
+                    					set(
+                    						current,
+                    						"verifique",
+                    						lv_verifique_0_0,
+                    						"com.ufrn.atad.Atad.VerifiquePresente");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalAtad.g:545:3: this_VerifiqueNaoPresente_1= ruleVerifiqueNaoPresente
+                    {
+
+                    			newCompositeNode(grammarAccess.getComandosValidadoresAccess().getVerifiqueNaoPresenteParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_VerifiqueNaoPresente_1=ruleVerifiqueNaoPresente();
+
+                    state._fsp--;
+
+
+                    			current = this_VerifiqueNaoPresente_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
 
             }
 
@@ -1108,7 +1419,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAdicaoComando"
-    // InternalAtad.g:432:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
+    // InternalAtad.g:557:1: entryRuleAdicaoComando returns [EObject current=null] : iv_ruleAdicaoComando= ruleAdicaoComando EOF ;
     public final EObject entryRuleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
@@ -1116,8 +1427,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:432:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
-            // InternalAtad.g:433:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
+            // InternalAtad.g:557:54: (iv_ruleAdicaoComando= ruleAdicaoComando EOF )
+            // InternalAtad.g:558:2: iv_ruleAdicaoComando= ruleAdicaoComando EOF
             {
              newCompositeNode(grammarAccess.getAdicaoComandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1144,7 +1455,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAdicaoComando"
-    // InternalAtad.g:439:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) ;
+    // InternalAtad.g:564:1: ruleAdicaoComando returns [EObject current=null] : (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) ;
     public final EObject ruleAdicaoComando() throws RecognitionException {
         EObject current = null;
 
@@ -1156,21 +1467,21 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:445:2: ( (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) )
-            // InternalAtad.g:446:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
+            // InternalAtad.g:570:2: ( (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) ) )
+            // InternalAtad.g:571:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
             {
-            // InternalAtad.g:446:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
-            // InternalAtad.g:447:3: otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) )
+            // InternalAtad.g:571:2: (otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) ) )
+            // InternalAtad.g:572:3: otherlv_0= 'E' ( (lv_comando_1_0= ruleComandosAcao ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_7); 
+            otherlv_0=(Token)match(input,23,FOLLOW_14); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAdicaoComandoAccess().getEKeyword_0());
             		
-            // InternalAtad.g:451:3: ( (lv_comando_1_0= ruleComandosAcao ) )
-            // InternalAtad.g:452:4: (lv_comando_1_0= ruleComandosAcao )
+            // InternalAtad.g:576:3: ( (lv_comando_1_0= ruleComandosAcao ) )
+            // InternalAtad.g:577:4: (lv_comando_1_0= ruleComandosAcao )
             {
-            // InternalAtad.g:452:4: (lv_comando_1_0= ruleComandosAcao )
-            // InternalAtad.g:453:5: lv_comando_1_0= ruleComandosAcao
+            // InternalAtad.g:577:4: (lv_comando_1_0= ruleComandosAcao )
+            // InternalAtad.g:578:5: lv_comando_1_0= ruleComandosAcao
             {
 
             					newCompositeNode(grammarAccess.getAdicaoComandoAccess().getComandoComandosAcaoParserRuleCall_1_0());
@@ -1220,7 +1531,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQuando"
-    // InternalAtad.g:474:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
+    // InternalAtad.g:599:1: entryRuleQuando returns [EObject current=null] : iv_ruleQuando= ruleQuando EOF ;
     public final EObject entryRuleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1228,8 +1539,8 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalAtad.g:474:47: (iv_ruleQuando= ruleQuando EOF )
-            // InternalAtad.g:475:2: iv_ruleQuando= ruleQuando EOF
+            // InternalAtad.g:599:47: (iv_ruleQuando= ruleQuando EOF )
+            // InternalAtad.g:600:2: iv_ruleQuando= ruleQuando EOF
             {
              newCompositeNode(grammarAccess.getQuandoRule()); 
             pushFollow(FOLLOW_1);
@@ -1256,7 +1567,7 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQuando"
-    // InternalAtad.g:481:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
+    // InternalAtad.g:606:1: ruleQuando returns [EObject current=null] : (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) ;
     public final EObject ruleQuando() throws RecognitionException {
         EObject current = null;
 
@@ -1268,13 +1579,13 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalAtad.g:487:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
-            // InternalAtad.g:488:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:612:2: ( (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao ) )
+            // InternalAtad.g:613:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
             {
-            // InternalAtad.g:488:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
-            // InternalAtad.g:489:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
+            // InternalAtad.g:613:2: (otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao )
+            // InternalAtad.g:614:3: otherlv_0= 'Quando' this_ComandosAcao_1= ruleComandosAcao
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_7); 
+            otherlv_0=(Token)match(input,24,FOLLOW_14); 
 
             			newLeafNode(otherlv_0, grammarAccess.getQuandoAccess().getQuandoKeyword_0());
             		
@@ -1318,10 +1629,17 @@ public class InternalAtadParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x000000000006E802L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000001816802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006800L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000006800L});
 
 }

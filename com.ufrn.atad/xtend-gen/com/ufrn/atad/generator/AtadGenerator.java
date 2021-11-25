@@ -3,14 +3,14 @@
  */
 package com.ufrn.atad.generator;
 
-import com.ufrn.atad.atad.ComandosAcao;
-import com.ufrn.atad.atad.Verifique;
-import org.eclipse.emf.ecore.EObject;
+import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.Escrever;
+import com.ufrn.atad.atad.Navegar;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -21,19 +21,98 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 public class AtadGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(resource.getAllContents());
-    for (final EObject e : _iterable) {
-      if ((e instanceof ComandosAcao)) {
-        EObject _comando = ((ComandosAcao)e).getComando();
-        String _plus = (_comando + "<clicou<");
-        fsa.generateFile("Teste.java", _plus);
-      } else {
-        if ((e instanceof Verifique)) {
-          String _name = ((Verifique)e).getName();
-          String _plus_1 = (_name + "bla");
-          fsa.generateFile("Teste.java", _plus_1);
-        }
-      }
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nVerifiquePresente cannot be resolved to a type."
+      + "\nVerifiqueNaoPresente cannot be resolved to a type."
+      + "\nUnreachable code: The if condition can never match. It is already handled by a previous condition."
+      + "\nUnreachable code: The if condition can never match. It is already handled by a previous condition."
+      + "\nThe method comandoVerifique(VerifiquePresente) from the type AtadGenerator refers to the missing type VerifiquePresente"
+      + "\nThe method comandoNaoVerifique(VerifiqueNaoPresente) from the type AtadGenerator refers to the missing type VerifiqueNaoPresente");
+  }
+  
+  private CharSequence buildTestPre() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("import org.junit.Test;");
+    _builder.newLine();
+    _builder.append("import org.openqa.selenium.By;");
+    _builder.newLine();
+    _builder.append("import org.junit.jupiter.api.Assertions.assertTrue;");
+    _builder.newLine();
+    _builder.append("public class Teste{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("protected WebDriver driver;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Test");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void teste() throws InterruptedException{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("driver.manage().window.maximize();");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  private CharSequence buildTestPos() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  private CharSequence comandoClicar(final Clicar c) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("driver.findElement(By.");
+    String _tipoLocalizador = c.getTipoLocalizador();
+    _builder.append(_tipoLocalizador);
+    _builder.append("(\"");
+    String _name = c.getName();
+    _builder.append(_name);
+    _builder.append("\")).click();");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  private CharSequence comandoVerifique(final /* VerifiquePresente */Object v) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nname cannot be resolved");
+  }
+  
+  private CharSequence comandoNaoVerifique(final /* VerifiqueNaoPresente */Object v) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nname cannot be resolved");
+  }
+  
+  private CharSequence comandoNavegar(final Navegar n) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("driver.get(\"");
+    String _name = n.getName();
+    _builder.append(_name);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  private CharSequence comandoEscrever(final Escrever e) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("driver.findElement(By.");
+    String _tipoLocalizador = e.getTipoLocalizador();
+    _builder.append(_tipoLocalizador);
+    _builder.append("(\"");
+    String _name = e.getName();
+    _builder.append(_name);
+    _builder.append("\")).sendKeys(\"");
+    String _conteudo = e.getConteudo();
+    _builder.append(_conteudo);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
 }

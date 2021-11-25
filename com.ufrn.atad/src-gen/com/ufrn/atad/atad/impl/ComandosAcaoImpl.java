@@ -7,11 +7,8 @@ import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.ComandosAcao;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -23,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.ComandosAcaoImpl#getComando <em>Comando</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.ComandosAcaoImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
 {
   /**
-   * The cached value of the '{@link #getComando() <em>Comando</em>}' containment reference.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComando()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected EObject comando;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +74,9 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
    * @generated
    */
   @Override
-  public EObject getComando()
+  public String getName()
   {
-    return comando;
+    return name;
   }
 
   /**
@@ -77,54 +84,13 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetComando(EObject newComando, NotificationChain msgs)
+  @Override
+  public void setName(String newName)
   {
-    EObject oldComando = comando;
-    comando = newComando;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_ACAO__COMANDO, oldComando, newComando);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setComando(EObject newComando)
-  {
-    if (newComando != comando)
-    {
-      NotificationChain msgs = null;
-      if (comando != null)
-        msgs = ((InternalEObject)comando).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AtadPackage.COMANDOS_ACAO__COMANDO, null, msgs);
-      if (newComando != null)
-        msgs = ((InternalEObject)newComando).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AtadPackage.COMANDOS_ACAO__COMANDO, null, msgs);
-      msgs = basicSetComando(newComando, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_ACAO__COMANDO, newComando, newComando));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case AtadPackage.COMANDOS_ACAO__COMANDO:
-        return basicSetComando(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.COMANDOS_ACAO__NAME, oldName, name));
   }
 
   /**
@@ -137,8 +103,8 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_ACAO__COMANDO:
-        return getComando();
+      case AtadPackage.COMANDOS_ACAO__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +119,8 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_ACAO__COMANDO:
-        setComando((EObject)newValue);
+      case AtadPackage.COMANDOS_ACAO__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +136,8 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_ACAO__COMANDO:
-        setComando((EObject)null);
+      case AtadPackage.COMANDOS_ACAO__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -187,10 +153,27 @@ public class ComandosAcaoImpl extends ComandoImpl implements ComandosAcao
   {
     switch (featureID)
     {
-      case AtadPackage.COMANDOS_ACAO__COMANDO:
-        return comando != null;
+      case AtadPackage.COMANDOS_ACAO__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(')');
+    return result.toString();
   }
 
 } //ComandosAcaoImpl

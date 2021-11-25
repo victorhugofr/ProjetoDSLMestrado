@@ -91,6 +91,9 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Clicar clicar = (Clicar)theEObject;
         T result = caseClicar(clicar);
+        if (result == null) result = caseComandosAcao(clicar);
+        if (result == null) result = caseQuando(clicar);
+        if (result == null) result = caseComando(clicar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,6 +101,9 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Navegar navegar = (Navegar)theEObject;
         T result = caseNavegar(navegar);
+        if (result == null) result = caseComandosAcao(navegar);
+        if (result == null) result = caseQuando(navegar);
+        if (result == null) result = caseComando(navegar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -105,6 +111,9 @@ public class AtadSwitch<T> extends Switch<T>
       {
         Escrever escrever = (Escrever)theEObject;
         T result = caseEscrever(escrever);
+        if (result == null) result = caseComandosAcao(escrever);
+        if (result == null) result = caseQuando(escrever);
+        if (result == null) result = caseComando(escrever);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -117,10 +126,19 @@ public class AtadSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AtadPackage.VERIFIQUE:
+      case AtadPackage.VERIFIQUE_PRESENTE:
       {
-        Verifique verifique = (Verifique)theEObject;
-        T result = caseVerifique(verifique);
+        VerifiquePresente verifiquePresente = (VerifiquePresente)theEObject;
+        T result = caseVerifiquePresente(verifiquePresente);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE:
+      {
+        VerifiqueNaoPresente verifiqueNaoPresente = (VerifiqueNaoPresente)theEObject;
+        T result = caseVerifiqueNaoPresente(verifiqueNaoPresente);
+        if (result == null) result = caseComandosValidadores(verifiqueNaoPresente);
+        if (result == null) result = caseComando(verifiqueNaoPresente);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,17 +267,33 @@ public class AtadSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Verifique</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Verifique Presente</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Verifique</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Verifique Presente</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVerifique(Verifique object)
+  public T caseVerifiquePresente(VerifiquePresente object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Verifique Nao Presente</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Verifique Nao Presente</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVerifiqueNaoPresente(VerifiqueNaoPresente object)
   {
     return null;
   }

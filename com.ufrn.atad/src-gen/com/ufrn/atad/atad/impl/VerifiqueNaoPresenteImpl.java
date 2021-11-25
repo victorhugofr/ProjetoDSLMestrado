@@ -4,7 +4,7 @@
 package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
-import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.VerifiqueNaoPresente;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,45 +14,45 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Clicar</b></em>'.
+ * An implementation of the model object '<em><b>Verifique Nao Presente</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.ClicarImpl#getTipoLocalizador <em>Tipo Localizador</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.VerifiqueNaoPresenteImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ClicarImpl extends ComandosAcaoImpl implements Clicar
+public class VerifiqueNaoPresenteImpl extends ComandosValidadoresImpl implements VerifiqueNaoPresente
 {
   /**
-   * The default value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTipoLocalizador()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String TIPO_LOCALIZADOR_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTipoLocalizador()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String tipoLocalizador = TIPO_LOCALIZADOR_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClicarImpl()
+  protected VerifiqueNaoPresenteImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
   @Override
   protected EClass eStaticClass()
   {
-    return AtadPackage.Literals.CLICAR;
+    return AtadPackage.Literals.VERIFIQUE_NAO_PRESENTE;
   }
 
   /**
@@ -74,9 +74,9 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    */
   @Override
-  public String getTipoLocalizador()
+  public String getName()
   {
-    return tipoLocalizador;
+    return name;
   }
 
   /**
@@ -85,12 +85,12 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    */
   @Override
-  public void setTipoLocalizador(String newTipoLocalizador)
+  public void setName(String newName)
   {
-    String oldTipoLocalizador = tipoLocalizador;
-    tipoLocalizador = newTipoLocalizador;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.CLICAR__TIPO_LOCALIZADOR, oldTipoLocalizador, tipoLocalizador));
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.VERIFIQUE_NAO_PRESENTE__NAME, oldName, name));
   }
 
   /**
@@ -103,8 +103,8 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
   {
     switch (featureID)
     {
-      case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        return getTipoLocalizador();
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
   {
     switch (featureID)
     {
-      case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        setTipoLocalizador((String)newValue);
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
   {
     switch (featureID)
     {
-      case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        setTipoLocalizador(TIPO_LOCALIZADOR_EDEFAULT);
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
   {
     switch (featureID)
     {
-      case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        return TIPO_LOCALIZADOR_EDEFAULT == null ? tipoLocalizador != null : !TIPO_LOCALIZADOR_EDEFAULT.equals(tipoLocalizador);
+      case AtadPackage.VERIFIQUE_NAO_PRESENTE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -170,10 +170,10 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (tipoLocalizador: ");
-    result.append(tipoLocalizador);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //ClicarImpl
+} //VerifiqueNaoPresenteImpl

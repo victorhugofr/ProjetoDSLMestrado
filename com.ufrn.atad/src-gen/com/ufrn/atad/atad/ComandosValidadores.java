@@ -27,12 +27,12 @@ public interface ComandosValidadores extends Comando
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Verifique</em>' containment reference.
-   * @see #setVerifique(Verifique)
+   * @see #setVerifique(VerifiquePresente)
    * @see com.ufrn.atad.atad.AtadPackage#getComandosValidadores_Verifique()
    * @model containment="true"
    * @generated
    */
-  Verifique getVerifique();
+  VerifiquePresente getVerifique();
 
   /**
    * Sets the value of the '{@link com.ufrn.atad.atad.ComandosValidadores#getVerifique <em>Verifique</em>}' containment reference.
@@ -42,6 +42,6 @@ public interface ComandosValidadores extends Comando
    * @see #getVerifique()
    * @generated
    */
-  void setVerifique(Verifique value);
+  void setVerifique(VerifiquePresente value);
 
 } // ComandosValidadores

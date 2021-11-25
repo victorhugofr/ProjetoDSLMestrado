@@ -106,9 +106,14 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
         return createComandosAcaoAdapter();
       }
       @Override
-      public Adapter caseVerifique(Verifique object)
+      public Adapter caseVerifiquePresente(VerifiquePresente object)
       {
-        return createVerifiqueAdapter();
+        return createVerifiquePresenteAdapter();
+      }
+      @Override
+      public Adapter caseVerifiqueNaoPresente(VerifiqueNaoPresente object)
+      {
+        return createVerifiqueNaoPresenteAdapter();
       }
       @Override
       public Adapter caseComandosValidadores(ComandosValidadores object)
@@ -238,16 +243,31 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Verifique <em>Verifique</em>}'.
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.VerifiquePresente <em>Verifique Presente</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.ufrn.atad.atad.Verifique
+   * @see com.ufrn.atad.atad.VerifiquePresente
    * @generated
    */
-  public Adapter createVerifiqueAdapter()
+  public Adapter createVerifiquePresenteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.VerifiqueNaoPresente <em>Verifique Nao Presente</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.VerifiqueNaoPresente
+   * @generated
+   */
+  public Adapter createVerifiqueNaoPresenteAdapter()
   {
     return null;
   }

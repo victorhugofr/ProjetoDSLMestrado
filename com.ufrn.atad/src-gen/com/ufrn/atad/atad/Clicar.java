@@ -3,7 +3,6 @@
  */
 package com.ufrn.atad.atad;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,35 +13,35 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.Clicar#getName <em>Name</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.Clicar#getTipoLocalizador <em>Tipo Localizador</em>}</li>
  * </ul>
  *
  * @see com.ufrn.atad.atad.AtadPackage#getClicar()
  * @model
  * @generated
  */
-public interface Clicar extends EObject
+public interface Clicar extends ComandosAcao
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Tipo Localizador</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.ufrn.atad.atad.AtadPackage#getClicar_Name()
+   * @return the value of the '<em>Tipo Localizador</em>' attribute.
+   * @see #setTipoLocalizador(String)
+   * @see com.ufrn.atad.atad.AtadPackage#getClicar_TipoLocalizador()
    * @model
    * @generated
    */
-  String getName();
+  String getTipoLocalizador();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.Clicar#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.Clicar#getTipoLocalizador <em>Tipo Localizador</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Tipo Localizador</em>' attribute.
+   * @see #getTipoLocalizador()
    * @generated
    */
-  void setName(String value);
+  void setTipoLocalizador(String value);
 
 } // Clicar
