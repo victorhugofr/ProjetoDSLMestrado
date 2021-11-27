@@ -26,6 +26,10 @@ Os testes automatizados web por vezes é muito verboso e inelegível, de difíci
 
 ##### Observações Relevantes
 
+A sintaxe da DSL está localizada em ```com.ufrn.atad/src/com/atad/Atad.xtext```
+
+O gerador de código está localizado em ```com.ufrn.atad/src/com/atad/generator/Atad.xtext```
+
 Esta linguagem gera o script de teste automatizado, sendo apenas necessário o desenvolvedor:
 
 - Mudar o nome do caso de teste (não será necessário em novas atualizações)
