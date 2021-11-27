@@ -5,6 +5,7 @@ package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.Clicar;
+import com.ufrn.atad.atad.TipoLocalizadores;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -35,7 +36,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    * @ordered
    */
-  protected static final String TIPO_LOCALIZADOR_EDEFAULT = null;
+  protected static final TipoLocalizadores TIPO_LOCALIZADOR_EDEFAULT = TipoLocalizadores.XPATH;
 
   /**
    * The cached value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
@@ -45,7 +46,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    * @ordered
    */
-  protected String tipoLocalizador = TIPO_LOCALIZADOR_EDEFAULT;
+  protected TipoLocalizadores tipoLocalizador = TIPO_LOCALIZADOR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +75,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    */
   @Override
-  public String getTipoLocalizador()
+  public TipoLocalizadores getTipoLocalizador()
   {
     return tipoLocalizador;
   }
@@ -85,10 +86,10 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
    * @generated
    */
   @Override
-  public void setTipoLocalizador(String newTipoLocalizador)
+  public void setTipoLocalizador(TipoLocalizadores newTipoLocalizador)
   {
-    String oldTipoLocalizador = tipoLocalizador;
-    tipoLocalizador = newTipoLocalizador;
+    TipoLocalizadores oldTipoLocalizador = tipoLocalizador;
+    tipoLocalizador = newTipoLocalizador == null ? TIPO_LOCALIZADOR_EDEFAULT : newTipoLocalizador;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.CLICAR__TIPO_LOCALIZADOR, oldTipoLocalizador, tipoLocalizador));
   }
@@ -120,7 +121,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
     switch (featureID)
     {
       case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        setTipoLocalizador((String)newValue);
+        setTipoLocalizador((TipoLocalizadores)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +155,7 @@ public class ClicarImpl extends ComandosAcaoImpl implements Clicar
     switch (featureID)
     {
       case AtadPackage.CLICAR__TIPO_LOCALIZADOR:
-        return TIPO_LOCALIZADOR_EDEFAULT == null ? tipoLocalizador != null : !TIPO_LOCALIZADOR_EDEFAULT.equals(tipoLocalizador);
+        return tipoLocalizador != TIPO_LOCALIZADOR_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

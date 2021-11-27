@@ -5,6 +5,7 @@ package com.ufrn.atad.atad;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -244,6 +245,154 @@ public interface AtadPackage extends EPackage
   int ESCREVER_FEATURE_COUNT = COMANDOS_ACAO_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.EsperaImpl <em>Espera</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.EsperaImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEspera()
+   * @generated
+   */
+  int ESPERA = 6;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA__TIPO_LOCALIZADOR = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA__NAME = COMANDO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Espera</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.EsperaPresenteImpl <em>Espera Presente</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.EsperaPresenteImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaPresente()
+   * @generated
+   */
+  int ESPERA_PRESENTE = 7;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_PRESENTE__TIPO_LOCALIZADOR = ESPERA__TIPO_LOCALIZADOR;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_PRESENTE__NAME = ESPERA__NAME;
+
+  /**
+   * The number of structural features of the '<em>Espera Presente</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_PRESENTE_FEATURE_COUNT = ESPERA_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.EsperaVisivelImpl <em>Espera Visivel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.EsperaVisivelImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaVisivel()
+   * @generated
+   */
+  int ESPERA_VISIVEL = 8;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_VISIVEL__TIPO_LOCALIZADOR = ESPERA__TIPO_LOCALIZADOR;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_VISIVEL__NAME = ESPERA__NAME;
+
+  /**
+   * The number of structural features of the '<em>Espera Visivel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_VISIVEL_FEATURE_COUNT = ESPERA_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.impl.EsperaClicavelImpl <em>Espera Clicavel</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.impl.EsperaClicavelImpl
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaClicavel()
+   * @generated
+   */
+  int ESPERA_CLICAVEL = 9;
+
+  /**
+   * The feature id for the '<em><b>Tipo Localizador</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_CLICAVEL__TIPO_LOCALIZADOR = ESPERA__TIPO_LOCALIZADOR;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_CLICAVEL__NAME = ESPERA__NAME;
+
+  /**
+   * The number of structural features of the '<em>Espera Clicavel</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESPERA_CLICAVEL_FEATURE_COUNT = ESPERA_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link com.ufrn.atad.atad.impl.ComandosValidadoresImpl <em>Comandos Validadores</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -251,7 +400,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getComandosValidadores()
    * @generated
    */
-  int COMANDOS_VALIDADORES = 8;
+  int COMANDOS_VALIDADORES = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -279,7 +428,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiquePresente()
    * @generated
    */
-  int VERIFIQUE_PRESENTE = 6;
+  int VERIFIQUE_PRESENTE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -307,7 +456,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getVerifiqueNaoPresente()
    * @generated
    */
-  int VERIFIQUE_NAO_PRESENTE = 7;
+  int VERIFIQUE_NAO_PRESENTE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -335,7 +484,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getAdicaoComando()
    * @generated
    */
-  int ADICAO_COMANDO = 9;
+  int ADICAO_COMANDO = 13;
 
   /**
    * The feature id for the '<em><b>Comando</b></em>' containment reference.
@@ -363,7 +512,7 @@ public interface AtadPackage extends EPackage
    * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getQuando()
    * @generated
    */
-  int QUANDO = 10;
+  int QUANDO = 14;
 
   /**
    * The number of structural features of the '<em>Quando</em>' class.
@@ -373,6 +522,16 @@ public interface AtadPackage extends EPackage
    * @ordered
    */
   int QUANDO_FEATURE_COUNT = COMANDO_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link com.ufrn.atad.atad.TipoLocalizadores <em>Tipo Localizadores</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.ufrn.atad.atad.TipoLocalizadores
+   * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getTipoLocalizadores()
+   * @generated
+   */
+  int TIPO_LOCALIZADORES = 15;
 
 
   /**
@@ -491,6 +650,68 @@ public interface AtadPackage extends EPackage
   EAttribute getComandosAcao_Name();
 
   /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.Espera <em>Espera</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Espera</em>'.
+   * @see com.ufrn.atad.atad.Espera
+   * @generated
+   */
+  EClass getEspera();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Espera#getTipoLocalizador <em>Tipo Localizador</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tipo Localizador</em>'.
+   * @see com.ufrn.atad.atad.Espera#getTipoLocalizador()
+   * @see #getEspera()
+   * @generated
+   */
+  EAttribute getEspera_TipoLocalizador();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.ufrn.atad.atad.Espera#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.ufrn.atad.atad.Espera#getName()
+   * @see #getEspera()
+   * @generated
+   */
+  EAttribute getEspera_Name();
+
+  /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.EsperaPresente <em>Espera Presente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Espera Presente</em>'.
+   * @see com.ufrn.atad.atad.EsperaPresente
+   * @generated
+   */
+  EClass getEsperaPresente();
+
+  /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.EsperaVisivel <em>Espera Visivel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Espera Visivel</em>'.
+   * @see com.ufrn.atad.atad.EsperaVisivel
+   * @generated
+   */
+  EClass getEsperaVisivel();
+
+  /**
+   * Returns the meta object for class '{@link com.ufrn.atad.atad.EsperaClicavel <em>Espera Clicavel</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Espera Clicavel</em>'.
+   * @see com.ufrn.atad.atad.EsperaClicavel
+   * @generated
+   */
+  EClass getEsperaClicavel();
+
+  /**
    * Returns the meta object for class '{@link com.ufrn.atad.atad.VerifiquePresente <em>Verifique Presente</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -561,6 +782,16 @@ public interface AtadPackage extends EPackage
    * @generated
    */
   EClass getQuando();
+
+  /**
+   * Returns the meta object for enum '{@link com.ufrn.atad.atad.TipoLocalizadores <em>Tipo Localizadores</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Tipo Localizadores</em>'.
+   * @see com.ufrn.atad.atad.TipoLocalizadores
+   * @generated
+   */
+  EEnum getTipoLocalizadores();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -686,6 +917,62 @@ public interface AtadPackage extends EPackage
     EAttribute COMANDOS_ACAO__NAME = eINSTANCE.getComandosAcao_Name();
 
     /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.EsperaImpl <em>Espera</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.impl.EsperaImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEspera()
+     * @generated
+     */
+    EClass ESPERA = eINSTANCE.getEspera();
+
+    /**
+     * The meta object literal for the '<em><b>Tipo Localizador</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESPERA__TIPO_LOCALIZADOR = eINSTANCE.getEspera_TipoLocalizador();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESPERA__NAME = eINSTANCE.getEspera_Name();
+
+    /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.EsperaPresenteImpl <em>Espera Presente</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.impl.EsperaPresenteImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaPresente()
+     * @generated
+     */
+    EClass ESPERA_PRESENTE = eINSTANCE.getEsperaPresente();
+
+    /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.EsperaVisivelImpl <em>Espera Visivel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.impl.EsperaVisivelImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaVisivel()
+     * @generated
+     */
+    EClass ESPERA_VISIVEL = eINSTANCE.getEsperaVisivel();
+
+    /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.impl.EsperaClicavelImpl <em>Espera Clicavel</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.impl.EsperaClicavelImpl
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getEsperaClicavel()
+     * @generated
+     */
+    EClass ESPERA_CLICAVEL = eINSTANCE.getEsperaClicavel();
+
+    /**
      * The meta object literal for the '{@link com.ufrn.atad.atad.impl.VerifiquePresenteImpl <em>Verifique Presente</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -750,6 +1037,16 @@ public interface AtadPackage extends EPackage
      * @generated
      */
     EClass QUANDO = eINSTANCE.getQuando();
+
+    /**
+     * The meta object literal for the '{@link com.ufrn.atad.atad.TipoLocalizadores <em>Tipo Localizadores</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.ufrn.atad.atad.TipoLocalizadores
+     * @see com.ufrn.atad.atad.impl.AtadPackageImpl#getTipoLocalizadores()
+     * @generated
+     */
+    EEnum TIPO_LOCALIZADORES = eINSTANCE.getTipoLocalizadores();
 
   }
 

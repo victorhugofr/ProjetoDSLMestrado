@@ -126,6 +126,41 @@ public class AtadSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AtadPackage.ESPERA:
+      {
+        Espera espera = (Espera)theEObject;
+        T result = caseEspera(espera);
+        if (result == null) result = caseComando(espera);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.ESPERA_PRESENTE:
+      {
+        EsperaPresente esperaPresente = (EsperaPresente)theEObject;
+        T result = caseEsperaPresente(esperaPresente);
+        if (result == null) result = caseEspera(esperaPresente);
+        if (result == null) result = caseComando(esperaPresente);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.ESPERA_VISIVEL:
+      {
+        EsperaVisivel esperaVisivel = (EsperaVisivel)theEObject;
+        T result = caseEsperaVisivel(esperaVisivel);
+        if (result == null) result = caseEspera(esperaVisivel);
+        if (result == null) result = caseComando(esperaVisivel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AtadPackage.ESPERA_CLICAVEL:
+      {
+        EsperaClicavel esperaClicavel = (EsperaClicavel)theEObject;
+        T result = caseEsperaClicavel(esperaClicavel);
+        if (result == null) result = caseEspera(esperaClicavel);
+        if (result == null) result = caseComando(esperaClicavel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AtadPackage.VERIFIQUE_PRESENTE:
       {
         VerifiquePresente verifiquePresente = (VerifiquePresente)theEObject;
@@ -264,6 +299,70 @@ public class AtadSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComandosAcao(ComandosAcao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Espera</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Espera</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEspera(Espera object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Espera Presente</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Espera Presente</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEsperaPresente(EsperaPresente object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Espera Visivel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Espera Visivel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEsperaVisivel(EsperaVisivel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Espera Clicavel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Espera Clicavel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEsperaClicavel(EsperaClicavel object)
   {
     return null;
   }

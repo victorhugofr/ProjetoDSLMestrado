@@ -9,6 +9,9 @@ import com.ufrn.atad.atad.AtadPackage;
 import com.ufrn.atad.atad.Clicar;
 import com.ufrn.atad.atad.DeclaraComando;
 import com.ufrn.atad.atad.Escrever;
+import com.ufrn.atad.atad.EsperaClicavel;
+import com.ufrn.atad.atad.EsperaPresente;
+import com.ufrn.atad.atad.EsperaVisivel;
 import com.ufrn.atad.atad.Navegar;
 import com.ufrn.atad.atad.VerifiqueNaoPresente;
 import com.ufrn.atad.atad.VerifiquePresente;
@@ -49,6 +52,15 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case AtadPackage.ESCREVER:
 				sequence_Escrever(context, (Escrever) semanticObject); 
+				return; 
+			case AtadPackage.ESPERA_CLICAVEL:
+				sequence_EsperaClicavel(context, (EsperaClicavel) semanticObject); 
+				return; 
+			case AtadPackage.ESPERA_PRESENTE:
+				sequence_EsperaPresente(context, (EsperaPresente) semanticObject); 
+				return; 
+			case AtadPackage.ESPERA_VISIVEL:
+				sequence_EsperaVisivel(context, (EsperaVisivel) semanticObject); 
 				return; 
 			case AtadPackage.NAVEGAR:
 				sequence_Navegar(context, (Navegar) semanticObject); 
@@ -91,7 +103,7 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Quando returns Clicar
 	 *
 	 * Constraint:
-	 *     (tipoLocalizador=ID name=STRING)
+	 *     (tipoLocalizador=TipoLocalizadores name=STRING)
 	 */
 	protected void sequence_Clicar(ISerializationContext context, Clicar semanticObject) {
 		if (errorAcceptor != null) {
@@ -101,7 +113,7 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.COMANDOS_ACAO__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClicarAccess().getTipoLocalizadorIDTerminalRuleCall_2_0(), semanticObject.getTipoLocalizador());
+		feeder.accept(grammarAccess.getClicarAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0(), semanticObject.getTipoLocalizador());
 		feeder.accept(grammarAccess.getClicarAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.finish();
 	}
@@ -127,7 +139,7 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Quando returns Escrever
 	 *
 	 * Constraint:
-	 *     (tipoLocalizador=ID name=STRING conteudo=STRING)
+	 *     (tipoLocalizador=TipoLocalizadores name=STRING conteudo=STRING)
 	 */
 	protected void sequence_Escrever(ISerializationContext context, Escrever semanticObject) {
 		if (errorAcceptor != null) {
@@ -139,9 +151,78 @@ public class AtadSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESCREVER__CONTEUDO));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEscreverAccess().getTipoLocalizadorIDTerminalRuleCall_2_0(), semanticObject.getTipoLocalizador());
+		feeder.accept(grammarAccess.getEscreverAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0(), semanticObject.getTipoLocalizador());
 		feeder.accept(grammarAccess.getEscreverAccess().getNameSTRINGTerminalRuleCall_3_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getEscreverAccess().getConteudoSTRINGTerminalRuleCall_4_0(), semanticObject.getConteudo());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Comando returns EsperaClicavel
+	 *     Espera returns EsperaClicavel
+	 *     EsperaClicavel returns EsperaClicavel
+	 *
+	 * Constraint:
+	 *     (tipoLocalizador=TipoLocalizadores name=STRING)
+	 */
+	protected void sequence_EsperaClicavel(ISerializationContext context, EsperaClicavel semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEsperaClicavelAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0(), semanticObject.getTipoLocalizador());
+		feeder.accept(grammarAccess.getEsperaClicavelAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Comando returns EsperaPresente
+	 *     Espera returns EsperaPresente
+	 *     EsperaPresente returns EsperaPresente
+	 *
+	 * Constraint:
+	 *     (tipoLocalizador=TipoLocalizadores name=STRING)
+	 */
+	protected void sequence_EsperaPresente(ISerializationContext context, EsperaPresente semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEsperaPresenteAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0(), semanticObject.getTipoLocalizador());
+		feeder.accept(grammarAccess.getEsperaPresenteAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Comando returns EsperaVisivel
+	 *     Espera returns EsperaVisivel
+	 *     EsperaVisivel returns EsperaVisivel
+	 *
+	 * Constraint:
+	 *     (tipoLocalizador=TipoLocalizadores name=STRING)
+	 */
+	protected void sequence_EsperaVisivel(ISerializationContext context, EsperaVisivel semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__TIPO_LOCALIZADOR));
+			if (transientValues.isValueTransient(semanticObject, AtadPackage.Literals.ESPERA__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AtadPackage.Literals.ESPERA__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEsperaVisivelAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0(), semanticObject.getTipoLocalizador());
+		feeder.accept(grammarAccess.getEsperaVisivelAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

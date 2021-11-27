@@ -12,13 +12,19 @@ import com.ufrn.atad.atad.ComandosAcao;
 import com.ufrn.atad.atad.ComandosValidadores;
 import com.ufrn.atad.atad.DeclaraComando;
 import com.ufrn.atad.atad.Escrever;
+import com.ufrn.atad.atad.Espera;
+import com.ufrn.atad.atad.EsperaClicavel;
+import com.ufrn.atad.atad.EsperaPresente;
+import com.ufrn.atad.atad.EsperaVisivel;
 import com.ufrn.atad.atad.Navegar;
 import com.ufrn.atad.atad.Quando;
+import com.ufrn.atad.atad.TipoLocalizadores;
 import com.ufrn.atad.atad.VerifiqueNaoPresente;
 import com.ufrn.atad.atad.VerifiquePresente;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -79,6 +85,34 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass esperaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass esperaPresenteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass esperaVisivelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass esperaClicavelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass verifiquePresenteEClass = null;
 
   /**
@@ -108,6 +142,13 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   private EClass quandoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum tipoLocalizadoresEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -299,6 +340,72 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
+  public EClass getEspera()
+  {
+    return esperaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEspera_TipoLocalizador()
+  {
+    return (EAttribute)esperaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEspera_Name()
+  {
+    return (EAttribute)esperaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEsperaPresente()
+  {
+    return esperaPresenteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEsperaVisivel()
+  {
+    return esperaVisivelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEsperaClicavel()
+  {
+    return esperaClicavelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getVerifiquePresente()
   {
     return verifiquePresenteEClass;
@@ -376,6 +483,17 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
    * @generated
    */
   @Override
+  public EEnum getTipoLocalizadores()
+  {
+    return tipoLocalizadoresEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public AtadFactory getAtadFactory()
   {
     return (AtadFactory)getEFactoryInstance();
@@ -418,6 +536,16 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     comandosAcaoEClass = createEClass(COMANDOS_ACAO);
     createEAttribute(comandosAcaoEClass, COMANDOS_ACAO__NAME);
 
+    esperaEClass = createEClass(ESPERA);
+    createEAttribute(esperaEClass, ESPERA__TIPO_LOCALIZADOR);
+    createEAttribute(esperaEClass, ESPERA__NAME);
+
+    esperaPresenteEClass = createEClass(ESPERA_PRESENTE);
+
+    esperaVisivelEClass = createEClass(ESPERA_VISIVEL);
+
+    esperaClicavelEClass = createEClass(ESPERA_CLICAVEL);
+
     verifiquePresenteEClass = createEClass(VERIFIQUE_PRESENTE);
 
     verifiqueNaoPresenteEClass = createEClass(VERIFIQUE_NAO_PRESENTE);
@@ -429,6 +557,9 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     createEReference(adicaoComandoEClass, ADICAO_COMANDO__COMANDO);
 
     quandoEClass = createEClass(QUANDO);
+
+    // Create enums
+    tipoLocalizadoresEEnum = createEEnum(TIPO_LOCALIZADORES);
   }
 
   /**
@@ -465,6 +596,10 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     escreverEClass.getESuperTypes().add(this.getComandosAcao());
     comandosAcaoEClass.getESuperTypes().add(this.getComando());
     comandosAcaoEClass.getESuperTypes().add(this.getQuando());
+    esperaEClass.getESuperTypes().add(this.getComando());
+    esperaPresenteEClass.getESuperTypes().add(this.getEspera());
+    esperaVisivelEClass.getESuperTypes().add(this.getEspera());
+    esperaClicavelEClass.getESuperTypes().add(this.getEspera());
     verifiquePresenteEClass.getESuperTypes().add(this.getComandosValidadores());
     verifiqueNaoPresenteEClass.getESuperTypes().add(this.getComandosValidadores());
     comandosValidadoresEClass.getESuperTypes().add(this.getComando());
@@ -478,16 +613,26 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     initEClass(comandoEClass, Comando.class, "Comando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(clicarEClass, Clicar.class, "Clicar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getClicar_TipoLocalizador(), ecorePackage.getEString(), "tipoLocalizador", null, 0, 1, Clicar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getClicar_TipoLocalizador(), this.getTipoLocalizadores(), "tipoLocalizador", null, 0, 1, Clicar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(navegarEClass, Navegar.class, "Navegar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(escreverEClass, Escrever.class, "Escrever", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEscrever_TipoLocalizador(), ecorePackage.getEString(), "tipoLocalizador", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEscrever_TipoLocalizador(), this.getTipoLocalizadores(), "tipoLocalizador", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEscrever_Conteudo(), ecorePackage.getEString(), "conteudo", null, 0, 1, Escrever.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(comandosAcaoEClass, ComandosAcao.class, "ComandosAcao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComandosAcao_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComandosAcao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(esperaEClass, Espera.class, "Espera", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEspera_TipoLocalizador(), this.getTipoLocalizadores(), "tipoLocalizador", null, 0, 1, Espera.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEspera_Name(), ecorePackage.getEString(), "name", null, 0, 1, Espera.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(esperaPresenteEClass, EsperaPresente.class, "EsperaPresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(esperaVisivelEClass, EsperaVisivel.class, "EsperaVisivel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(esperaClicavelEClass, EsperaClicavel.class, "EsperaClicavel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(verifiquePresenteEClass, VerifiquePresente.class, "VerifiquePresente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -500,6 +645,14 @@ public class AtadPackageImpl extends EPackageImpl implements AtadPackage
     initEReference(getAdicaoComando_Comando(), this.getComandosAcao(), null, "comando", null, 0, 1, AdicaoComando.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quandoEClass, Quando.class, "Quando", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    // Initialize enums and add enum literals
+    initEEnum(tipoLocalizadoresEEnum, TipoLocalizadores.class, "TipoLocalizadores");
+    addEEnumLiteral(tipoLocalizadoresEEnum, TipoLocalizadores.XPATH);
+    addEEnumLiteral(tipoLocalizadoresEEnum, TipoLocalizadores.ID);
+    addEEnumLiteral(tipoLocalizadoresEEnum, TipoLocalizadores.CSSSELECTOR);
+    addEEnumLiteral(tipoLocalizadoresEEnum, TipoLocalizadores.CLASSNAME);
+    addEEnumLiteral(tipoLocalizadoresEEnum, TipoLocalizadores.LINKTEXT);
 
     // Create resource
     createResource(eNS_URI);

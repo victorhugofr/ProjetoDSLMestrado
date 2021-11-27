@@ -78,6 +78,42 @@ public interface AtadFactory extends EFactory
   ComandosAcao createComandosAcao();
 
   /**
+   * Returns a new object of class '<em>Espera</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Espera</em>'.
+   * @generated
+   */
+  Espera createEspera();
+
+  /**
+   * Returns a new object of class '<em>Espera Presente</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Espera Presente</em>'.
+   * @generated
+   */
+  EsperaPresente createEsperaPresente();
+
+  /**
+   * Returns a new object of class '<em>Espera Visivel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Espera Visivel</em>'.
+   * @generated
+   */
+  EsperaVisivel createEsperaVisivel();
+
+  /**
+   * Returns a new object of class '<em>Espera Clicavel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Espera Clicavel</em>'.
+   * @generated
+   */
+  EsperaClicavel createEsperaClicavel();
+
+  /**
    * Returns a new object of class '<em>Verifique Presente</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

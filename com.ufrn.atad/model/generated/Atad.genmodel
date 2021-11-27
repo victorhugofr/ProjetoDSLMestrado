@@ -6,6 +6,13 @@
     copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Atad" basePackage="com.ufrn.atad" disposableProviderFactory="true"
       fileExtensions="atad" ecorePackage="Atad.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Atad.ecore#//TipoLocalizadores">
+      <genEnumLiterals ecoreEnumLiteral="Atad.ecore#//TipoLocalizadores/XPATH"/>
+      <genEnumLiterals ecoreEnumLiteral="Atad.ecore#//TipoLocalizadores/ID"/>
+      <genEnumLiterals ecoreEnumLiteral="Atad.ecore#//TipoLocalizadores/CSSSELECTOR"/>
+      <genEnumLiterals ecoreEnumLiteral="Atad.ecore#//TipoLocalizadores/CLASSNAME"/>
+      <genEnumLiterals ecoreEnumLiteral="Atad.ecore#//TipoLocalizadores/LINKTEXT"/>
+    </genEnums>
     <genClasses ecoreClass="Atad.ecore#//DeclaraComando">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Atad.ecore#//DeclaraComando/comandos"/>
     </genClasses>
@@ -21,6 +28,13 @@
     <genClasses ecoreClass="Atad.ecore#//ComandosAcao">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//ComandosAcao/name"/>
     </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//Espera">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Espera/tipoLocalizador"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Atad.ecore#//Espera/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Atad.ecore#//EsperaPresente"/>
+    <genClasses ecoreClass="Atad.ecore#//EsperaVisivel"/>
+    <genClasses ecoreClass="Atad.ecore#//EsperaClicavel"/>
     <genClasses ecoreClass="Atad.ecore#//VerifiquePresente"/>
     <genClasses ecoreClass="Atad.ecore#//VerifiqueNaoPresente"/>
     <genClasses ecoreClass="Atad.ecore#//ComandosValidadores">

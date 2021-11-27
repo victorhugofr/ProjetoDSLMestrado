@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -147,6 +148,15 @@ ruleComando returns [EObject current=null]
 			$current = $this_Quando_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getComandoAccess().getEsperaParserRuleCall_4());
+		}
+		this_Espera_4=ruleEspera
+		{
+			$current = $this_Espera_4.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -176,19 +186,20 @@ ruleClicar returns [EObject current=null]
 		}
 		(
 			(
-				lv_tipoLocalizador_2_0=RULE_ID
 				{
-					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getClicarAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getClicarAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0());
 				}
+				lv_tipoLocalizador_2_0=ruleTipoLocalizadores
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getClicarRule());
+						$current = createModelElementForParent(grammarAccess.getClicarRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"tipoLocalizador",
 						lv_tipoLocalizador_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"com.ufrn.atad.Atad.TipoLocalizadores");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -280,19 +291,20 @@ ruleEscrever returns [EObject current=null]
 		}
 		(
 			(
-				lv_tipoLocalizador_2_0=RULE_ID
 				{
-					newLeafNode(lv_tipoLocalizador_2_0, grammarAccess.getEscreverAccess().getTipoLocalizadorIDTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getEscreverAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0());
 				}
+				lv_tipoLocalizador_2_0=ruleTipoLocalizadores
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEscreverRule());
+						$current = createModelElementForParent(grammarAccess.getEscreverRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"tipoLocalizador",
 						lv_tipoLocalizador_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"com.ufrn.atad.Atad.TipoLocalizadores");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -376,6 +388,243 @@ ruleComandosAcao returns [EObject current=null]
 		{
 			$current = $this_Escrever_2.current;
 			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleEspera
+entryRuleEspera returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEsperaRule()); }
+	iv_ruleEspera=ruleEspera
+	{ $current=$iv_ruleEspera.current; }
+	EOF;
+
+// Rule Espera
+ruleEspera returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getEsperaAccess().getEsperaPresenteParserRuleCall_0());
+		}
+		this_EsperaPresente_0=ruleEsperaPresente
+		{
+			$current = $this_EsperaPresente_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEsperaAccess().getEsperaVisivelParserRuleCall_1());
+		}
+		this_EsperaVisivel_1=ruleEsperaVisivel
+		{
+			$current = $this_EsperaVisivel_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEsperaAccess().getEsperaClicavelParserRuleCall_2());
+		}
+		this_EsperaClicavel_2=ruleEsperaClicavel
+		{
+			$current = $this_EsperaClicavel_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleEsperaPresente
+entryRuleEsperaPresente returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEsperaPresenteRule()); }
+	iv_ruleEsperaPresente=ruleEsperaPresente
+	{ $current=$iv_ruleEsperaPresente.current; }
+	EOF;
+
+// Rule EsperaPresente
+ruleEsperaPresente returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Espere'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEsperaPresenteAccess().getEspereKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEsperaPresenteAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0());
+				}
+				lv_tipoLocalizador_1_0=ruleTipoLocalizadores
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEsperaPresenteRule());
+					}
+					set(
+						$current,
+						"tipoLocalizador",
+						lv_tipoLocalizador_1_0,
+						"com.ufrn.atad.Atad.TipoLocalizadores");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getEsperaPresenteAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEsperaPresenteRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='estar presente'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEsperaPresenteAccess().getEstarPresenteKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleEsperaVisivel
+entryRuleEsperaVisivel returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEsperaVisivelRule()); }
+	iv_ruleEsperaVisivel=ruleEsperaVisivel
+	{ $current=$iv_ruleEsperaVisivel.current; }
+	EOF;
+
+// Rule EsperaVisivel
+ruleEsperaVisivel returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Espere'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEsperaVisivelAccess().getEspereKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEsperaVisivelAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0());
+				}
+				lv_tipoLocalizador_1_0=ruleTipoLocalizadores
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEsperaVisivelRule());
+					}
+					set(
+						$current,
+						"tipoLocalizador",
+						lv_tipoLocalizador_1_0,
+						"com.ufrn.atad.Atad.TipoLocalizadores");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getEsperaVisivelAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEsperaVisivelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='estar visivel'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEsperaVisivelAccess().getEstarVisivelKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleEsperaClicavel
+entryRuleEsperaClicavel returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEsperaClicavelRule()); }
+	iv_ruleEsperaClicavel=ruleEsperaClicavel
+	{ $current=$iv_ruleEsperaClicavel.current; }
+	EOF;
+
+// Rule EsperaClicavel
+ruleEsperaClicavel returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Espere'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEsperaClicavelAccess().getEspereKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEsperaClicavelAccess().getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0());
+				}
+				lv_tipoLocalizador_1_0=ruleTipoLocalizadores
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEsperaClicavelRule());
+					}
+					set(
+						$current,
+						"tipoLocalizador",
+						lv_tipoLocalizador_1_0,
+						"com.ufrn.atad.Atad.TipoLocalizadores");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				lv_name_2_0=RULE_STRING
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getEsperaClicavelAccess().getNameSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEsperaClicavelRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_3='estar clicavel'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEsperaClicavelAccess().getEstarClicavelKeyword_3());
 		}
 	)
 ;
@@ -612,6 +861,57 @@ ruleQuando returns [EObject current=null]
 			$current = $this_ComandosAcao_1.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Rule TipoLocalizadores
+ruleTipoLocalizadores returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='xpath'
+			{
+				$current = grammarAccess.getTipoLocalizadoresAccess().getXPATHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getTipoLocalizadoresAccess().getXPATHEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='id'
+			{
+				$current = grammarAccess.getTipoLocalizadoresAccess().getIDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getTipoLocalizadoresAccess().getIDEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='cssSelector'
+			{
+				$current = grammarAccess.getTipoLocalizadoresAccess().getCSSSELECTOREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getTipoLocalizadoresAccess().getCSSSELECTOREnumLiteralDeclaration_2());
+			}
+		)
+		    |
+		(
+			enumLiteral_3='className'
+			{
+				$current = grammarAccess.getTipoLocalizadoresAccess().getCLASSNAMEEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getTipoLocalizadoresAccess().getCLASSNAMEEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='linkText'
+			{
+				$current = grammarAccess.getTipoLocalizadoresAccess().getLINKTEXTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getTipoLocalizadoresAccess().getLINKTEXTEnumLiteralDeclaration_4());
+			}
+		)
 	)
 ;
 

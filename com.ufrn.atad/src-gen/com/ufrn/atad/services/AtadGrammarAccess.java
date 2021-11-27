@@ -8,6 +8,8 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -44,13 +46,14 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cComandosValidadoresParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cAdicaoComandoParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cQuandoParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cEsperaParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Comando:
-		//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+		//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando|Espera
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+		//ComandosAcao|ComandosValidadores|AdicaoComando|Quando|Espera
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ComandosAcao
@@ -64,6 +67,9 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//Quando
 		public RuleCall getQuandoParserRuleCall_3() { return cQuandoParserRuleCall_3; }
+		
+		//Espera
+		public RuleCall getEsperaParserRuleCall_4() { return cEsperaParserRuleCall_4; }
 	}
 	public class ClicarElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Clicar");
@@ -71,16 +77,16 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cClicarKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cEmKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTipoLocalizadorAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTipoLocalizadorIDTerminalRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
+		private final RuleCall cTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//Clicar:
-		//    'clicar' 'em' tipoLocalizador=ID name=STRING
+		//    'clicar' 'em' tipoLocalizador=TipoLocalizadores name=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'clicar' 'em' tipoLocalizador=ID name=STRING
+		//'clicar' 'em' tipoLocalizador=TipoLocalizadores name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'clicar'
@@ -89,11 +95,11 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'em'
 		public Keyword getEmKeyword_1() { return cEmKeyword_1; }
 		
-		//tipoLocalizador=ID
+		//tipoLocalizador=TipoLocalizadores
 		public Assignment getTipoLocalizadorAssignment_2() { return cTipoLocalizadorAssignment_2; }
 		
-		//ID
-		public RuleCall getTipoLocalizadorIDTerminalRuleCall_2_0() { return cTipoLocalizadorIDTerminalRuleCall_2_0; }
+		//TipoLocalizadores
+		public RuleCall getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0() { return cTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0; }
 		
 		//name=STRING
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
@@ -131,18 +137,18 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cEscreverKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cNoKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTipoLocalizadorAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTipoLocalizadorIDTerminalRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
+		private final RuleCall cTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0 = (RuleCall)cTipoLocalizadorAssignment_2.eContents().get(0);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameSTRINGTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Assignment cConteudoAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cConteudoSTRINGTerminalRuleCall_4_0 = (RuleCall)cConteudoAssignment_4.eContents().get(0);
 		
 		//Escrever:
-		//    'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
+		//    'escrever' 'no' tipoLocalizador=TipoLocalizadores name=STRING conteudo=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
+		//'escrever' 'no' tipoLocalizador=TipoLocalizadores name=STRING conteudo=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'escrever'
@@ -151,11 +157,11 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'no'
 		public Keyword getNoKeyword_1() { return cNoKeyword_1; }
 		
-		//tipoLocalizador=ID
+		//tipoLocalizador=TipoLocalizadores
 		public Assignment getTipoLocalizadorAssignment_2() { return cTipoLocalizadorAssignment_2; }
 		
-		//ID
-		public RuleCall getTipoLocalizadorIDTerminalRuleCall_2_0() { return cTipoLocalizadorIDTerminalRuleCall_2_0; }
+		//TipoLocalizadores
+		public RuleCall getTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0() { return cTipoLocalizadorTipoLocalizadoresEnumRuleCall_2_0; }
 		
 		//name=STRING
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
@@ -192,6 +198,138 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//Escrever
 		public RuleCall getEscreverParserRuleCall_2() { return cEscreverParserRuleCall_2; }
+	}
+	public class EsperaElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.Espera");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cEsperaPresenteParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEsperaVisivelParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEsperaClicavelParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//Espera:
+		//    EsperaPresente|EsperaVisivel|EsperaClicavel
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//EsperaPresente|EsperaVisivel|EsperaClicavel
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//EsperaPresente
+		public RuleCall getEsperaPresenteParserRuleCall_0() { return cEsperaPresenteParserRuleCall_0; }
+		
+		//EsperaVisivel
+		public RuleCall getEsperaVisivelParserRuleCall_1() { return cEsperaVisivelParserRuleCall_1; }
+		
+		//EsperaClicavel
+		public RuleCall getEsperaClicavelParserRuleCall_2() { return cEsperaClicavelParserRuleCall_2; }
+	}
+	public class EsperaPresenteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.EsperaPresente");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEspereKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTipoLocalizadorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0 = (RuleCall)cTipoLocalizadorAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cEstarPresenteKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//EsperaPresente:
+		//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar presente'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar presente'
+		public Group getGroup() { return cGroup; }
+		
+		//'Espere'
+		public Keyword getEspereKeyword_0() { return cEspereKeyword_0; }
+		
+		//tipoLocalizador=TipoLocalizadores
+		public Assignment getTipoLocalizadorAssignment_1() { return cTipoLocalizadorAssignment_1; }
+		
+		//TipoLocalizadores
+		public RuleCall getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0() { return cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'estar presente'
+		public Keyword getEstarPresenteKeyword_3() { return cEstarPresenteKeyword_3; }
+	}
+	public class EsperaVisivelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.EsperaVisivel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEspereKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTipoLocalizadorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0 = (RuleCall)cTipoLocalizadorAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cEstarVisivelKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//EsperaVisivel:
+		//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar visivel'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar visivel'
+		public Group getGroup() { return cGroup; }
+		
+		//'Espere'
+		public Keyword getEspereKeyword_0() { return cEspereKeyword_0; }
+		
+		//tipoLocalizador=TipoLocalizadores
+		public Assignment getTipoLocalizadorAssignment_1() { return cTipoLocalizadorAssignment_1; }
+		
+		//TipoLocalizadores
+		public RuleCall getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0() { return cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'estar visivel'
+		public Keyword getEstarVisivelKeyword_3() { return cEstarVisivelKeyword_3; }
+	}
+	public class EsperaClicavelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.EsperaClicavel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEspereKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTipoLocalizadorAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0 = (RuleCall)cTipoLocalizadorAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameSTRINGTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cEstarClicavelKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//EsperaClicavel:
+		//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar clicavel'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar clicavel'
+		public Group getGroup() { return cGroup; }
+		
+		//'Espere'
+		public Keyword getEspereKeyword_0() { return cEspereKeyword_0; }
+		
+		//tipoLocalizador=TipoLocalizadores
+		public Assignment getTipoLocalizadorAssignment_1() { return cTipoLocalizadorAssignment_1; }
+		
+		//TipoLocalizadores
+		public RuleCall getTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0() { return cTipoLocalizadorTipoLocalizadoresEnumRuleCall_1_0; }
+		
+		//name=STRING
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_2_0() { return cNameSTRINGTerminalRuleCall_2_0; }
+		
+		//'estar clicavel'
+		public Keyword getEstarClicavelKeyword_3() { return cEstarClicavelKeyword_3; }
 	}
 	public class VerifiquePresenteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.VerifiquePresente");
@@ -350,6 +488,57 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		public RuleCall getComandosAcaoParserRuleCall_1() { return cComandosAcaoParserRuleCall_1; }
 	}
 	
+	public class TipoLocalizadoresElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.ufrn.atad.Atad.TipoLocalizadores");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cXPATHEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cXPATHXpathKeyword_0_0 = (Keyword)cXPATHEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cIDEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cIDIdKeyword_1_0 = (Keyword)cIDEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cCSSSELECTOREnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cCSSSELECTORCssSelectorKeyword_2_0 = (Keyword)cCSSSELECTOREnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cCLASSNAMEEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cCLASSNAMEClassNameKeyword_3_0 = (Keyword)cCLASSNAMEEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cLINKTEXTEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cLINKTEXTLinkTextKeyword_4_0 = (Keyword)cLINKTEXTEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum TipoLocalizadores:
+		//    XPATH='xpath' | ID='id' | CSSSELECTOR='cssSelector' | CLASSNAME='className'| LINKTEXT='linkText';
+		public EnumRule getRule() { return rule; }
+		
+		//XPATH='xpath' | ID='id' | CSSSELECTOR='cssSelector' | CLASSNAME='className'| LINKTEXT='linkText'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//XPATH='xpath'
+		public EnumLiteralDeclaration getXPATHEnumLiteralDeclaration_0() { return cXPATHEnumLiteralDeclaration_0; }
+		
+		//'xpath'
+		public Keyword getXPATHXpathKeyword_0_0() { return cXPATHXpathKeyword_0_0; }
+		
+		//ID='id'
+		public EnumLiteralDeclaration getIDEnumLiteralDeclaration_1() { return cIDEnumLiteralDeclaration_1; }
+		
+		//'id'
+		public Keyword getIDIdKeyword_1_0() { return cIDIdKeyword_1_0; }
+		
+		//CSSSELECTOR='cssSelector'
+		public EnumLiteralDeclaration getCSSSELECTOREnumLiteralDeclaration_2() { return cCSSSELECTOREnumLiteralDeclaration_2; }
+		
+		//'cssSelector'
+		public Keyword getCSSSELECTORCssSelectorKeyword_2_0() { return cCSSSELECTORCssSelectorKeyword_2_0; }
+		
+		//CLASSNAME='className'
+		public EnumLiteralDeclaration getCLASSNAMEEnumLiteralDeclaration_3() { return cCLASSNAMEEnumLiteralDeclaration_3; }
+		
+		//'className'
+		public Keyword getCLASSNAMEClassNameKeyword_3_0() { return cCLASSNAMEClassNameKeyword_3_0; }
+		
+		//LINKTEXT='linkText'
+		public EnumLiteralDeclaration getLINKTEXTEnumLiteralDeclaration_4() { return cLINKTEXTEnumLiteralDeclaration_4; }
+		
+		//'linkText'
+		public Keyword getLINKTEXTLinkTextKeyword_4_0() { return cLINKTEXTLinkTextKeyword_4_0; }
+	}
 	
 	private final DeclaraComandoElements pDeclaraComando;
 	private final ComandoElements pComando;
@@ -357,11 +546,16 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final NavegarElements pNavegar;
 	private final EscreverElements pEscrever;
 	private final ComandosAcaoElements pComandosAcao;
+	private final EsperaElements pEspera;
+	private final EsperaPresenteElements pEsperaPresente;
+	private final EsperaVisivelElements pEsperaVisivel;
+	private final EsperaClicavelElements pEsperaClicavel;
 	private final VerifiquePresenteElements pVerifiquePresente;
 	private final VerifiqueNaoPresenteElements pVerifiqueNaoPresente;
 	private final ComandosValidadoresElements pComandosValidadores;
 	private final AdicaoComandoElements pAdicaoComando;
 	private final QuandoElements pQuando;
+	private final TipoLocalizadoresElements eTipoLocalizadores;
 	
 	private final Grammar grammar;
 	
@@ -378,11 +572,16 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pNavegar = new NavegarElements();
 		this.pEscrever = new EscreverElements();
 		this.pComandosAcao = new ComandosAcaoElements();
+		this.pEspera = new EsperaElements();
+		this.pEsperaPresente = new EsperaPresenteElements();
+		this.pEsperaVisivel = new EsperaVisivelElements();
+		this.pEsperaClicavel = new EsperaClicavelElements();
 		this.pVerifiquePresente = new VerifiquePresenteElements();
 		this.pVerifiqueNaoPresente = new VerifiqueNaoPresenteElements();
 		this.pComandosValidadores = new ComandosValidadoresElements();
 		this.pAdicaoComando = new AdicaoComandoElements();
 		this.pQuando = new QuandoElements();
+		this.eTipoLocalizadores = new TipoLocalizadoresElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -423,7 +622,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Comando:
-	//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+	//    ComandosAcao|ComandosValidadores|AdicaoComando|Quando|Espera
 	//;
 	public ComandoElements getComandoAccess() {
 		return pComando;
@@ -434,7 +633,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Clicar:
-	//    'clicar' 'em' tipoLocalizador=ID name=STRING
+	//    'clicar' 'em' tipoLocalizador=TipoLocalizadores name=STRING
 	//;
 	public ClicarElements getClicarAccess() {
 		return pClicar;
@@ -456,7 +655,7 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Escrever:
-	//    'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
+	//    'escrever' 'no' tipoLocalizador=TipoLocalizadores name=STRING conteudo=STRING
 	//;
 	public EscreverElements getEscreverAccess() {
 		return pEscrever;
@@ -475,6 +674,50 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getComandosAcaoRule() {
 		return getComandosAcaoAccess().getRule();
+	}
+	
+	//Espera:
+	//    EsperaPresente|EsperaVisivel|EsperaClicavel
+	//;
+	public EsperaElements getEsperaAccess() {
+		return pEspera;
+	}
+	
+	public ParserRule getEsperaRule() {
+		return getEsperaAccess().getRule();
+	}
+	
+	//EsperaPresente:
+	//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar presente'
+	//;
+	public EsperaPresenteElements getEsperaPresenteAccess() {
+		return pEsperaPresente;
+	}
+	
+	public ParserRule getEsperaPresenteRule() {
+		return getEsperaPresenteAccess().getRule();
+	}
+	
+	//EsperaVisivel:
+	//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar visivel'
+	//;
+	public EsperaVisivelElements getEsperaVisivelAccess() {
+		return pEsperaVisivel;
+	}
+	
+	public ParserRule getEsperaVisivelRule() {
+		return getEsperaVisivelAccess().getRule();
+	}
+	
+	//EsperaClicavel:
+	//    'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar clicavel'
+	//;
+	public EsperaClicavelElements getEsperaClicavelAccess() {
+		return pEsperaClicavel;
+	}
+	
+	public ParserRule getEsperaClicavelRule() {
+		return getEsperaClicavelAccess().getRule();
 	}
 	
 	//VerifiquePresente:
@@ -530,6 +773,16 @@ public class AtadGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getQuandoRule() {
 		return getQuandoAccess().getRule();
+	}
+	
+	//enum TipoLocalizadores:
+	//    XPATH='xpath' | ID='id' | CSSSELECTOR='cssSelector' | CLASSNAME='className'| LINKTEXT='linkText';
+	public TipoLocalizadoresElements getTipoLocalizadoresAccess() {
+		return eTipoLocalizadores;
+	}
+	
+	public EnumRule getTipoLocalizadoresRule() {
+		return getTipoLocalizadoresAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

@@ -106,6 +106,26 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
         return createComandosAcaoAdapter();
       }
       @Override
+      public Adapter caseEspera(Espera object)
+      {
+        return createEsperaAdapter();
+      }
+      @Override
+      public Adapter caseEsperaPresente(EsperaPresente object)
+      {
+        return createEsperaPresenteAdapter();
+      }
+      @Override
+      public Adapter caseEsperaVisivel(EsperaVisivel object)
+      {
+        return createEsperaVisivelAdapter();
+      }
+      @Override
+      public Adapter caseEsperaClicavel(EsperaClicavel object)
+      {
+        return createEsperaClicavelAdapter();
+      }
+      @Override
       public Adapter caseVerifiquePresente(VerifiquePresente object)
       {
         return createVerifiquePresenteAdapter();
@@ -238,6 +258,66 @@ public class AtadAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComandosAcaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.Espera <em>Espera</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.Espera
+   * @generated
+   */
+  public Adapter createEsperaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.EsperaPresente <em>Espera Presente</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.EsperaPresente
+   * @generated
+   */
+  public Adapter createEsperaPresenteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.EsperaVisivel <em>Espera Visivel</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.EsperaVisivel
+   * @generated
+   */
+  public Adapter createEsperaVisivelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.ufrn.atad.atad.EsperaClicavel <em>Espera Clicavel</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.ufrn.atad.atad.EsperaClicavel
+   * @generated
+   */
+  public Adapter createEsperaClicavelAdapter()
   {
     return null;
   }

@@ -4,7 +4,7 @@
 package com.ufrn.atad.atad.impl;
 
 import com.ufrn.atad.atad.AtadPackage;
-import com.ufrn.atad.atad.Escrever;
+import com.ufrn.atad.atad.Espera;
 import com.ufrn.atad.atad.TipoLocalizadores;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,19 +15,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Escrever</b></em>'.
+ * An implementation of the model object '<em><b>Espera</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.impl.EscreverImpl#getTipoLocalizador <em>Tipo Localizador</em>}</li>
- *   <li>{@link com.ufrn.atad.atad.impl.EscreverImpl#getConteudo <em>Conteudo</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.EsperaImpl#getTipoLocalizador <em>Tipo Localizador</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.impl.EsperaImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EscreverImpl extends ComandosAcaoImpl implements Escrever
+public class EsperaImpl extends ComandoImpl implements Espera
 {
   /**
    * The default value of the '{@link #getTipoLocalizador() <em>Tipo Localizador</em>}' attribute.
@@ -50,31 +50,31 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   protected TipoLocalizadores tipoLocalizador = TIPO_LOCALIZADOR_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getConteudo() <em>Conteudo</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConteudo()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String CONTEUDO_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getConteudo() <em>Conteudo</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConteudo()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String conteudo = CONTEUDO_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EscreverImpl()
+  protected EsperaImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   @Override
   protected EClass eStaticClass()
   {
-    return AtadPackage.Literals.ESCREVER;
+    return AtadPackage.Literals.ESPERA;
   }
 
   /**
@@ -112,7 +112,7 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
     TipoLocalizadores oldTipoLocalizador = tipoLocalizador;
     tipoLocalizador = newTipoLocalizador == null ? TIPO_LOCALIZADOR_EDEFAULT : newTipoLocalizador;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESCREVER__TIPO_LOCALIZADOR, oldTipoLocalizador, tipoLocalizador));
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESPERA__TIPO_LOCALIZADOR, oldTipoLocalizador, tipoLocalizador));
   }
 
   /**
@@ -121,9 +121,9 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
    * @generated
    */
   @Override
-  public String getConteudo()
+  public String getName()
   {
-    return conteudo;
+    return name;
   }
 
   /**
@@ -132,12 +132,12 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
    * @generated
    */
   @Override
-  public void setConteudo(String newConteudo)
+  public void setName(String newName)
   {
-    String oldConteudo = conteudo;
-    conteudo = newConteudo;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESCREVER__CONTEUDO, oldConteudo, conteudo));
+      eNotify(new ENotificationImpl(this, Notification.SET, AtadPackage.ESPERA__NAME, oldName, name));
   }
 
   /**
@@ -150,10 +150,10 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+      case AtadPackage.ESPERA__TIPO_LOCALIZADOR:
         return getTipoLocalizador();
-      case AtadPackage.ESCREVER__CONTEUDO:
-        return getConteudo();
+      case AtadPackage.ESPERA__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +168,11 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+      case AtadPackage.ESPERA__TIPO_LOCALIZADOR:
         setTipoLocalizador((TipoLocalizadores)newValue);
         return;
-      case AtadPackage.ESCREVER__CONTEUDO:
-        setConteudo((String)newValue);
+      case AtadPackage.ESPERA__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+      case AtadPackage.ESPERA__TIPO_LOCALIZADOR:
         setTipoLocalizador(TIPO_LOCALIZADOR_EDEFAULT);
         return;
-      case AtadPackage.ESCREVER__CONTEUDO:
-        setConteudo(CONTEUDO_EDEFAULT);
+      case AtadPackage.ESPERA__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
   {
     switch (featureID)
     {
-      case AtadPackage.ESCREVER__TIPO_LOCALIZADOR:
+      case AtadPackage.ESPERA__TIPO_LOCALIZADOR:
         return tipoLocalizador != TIPO_LOCALIZADOR_EDEFAULT;
-      case AtadPackage.ESCREVER__CONTEUDO:
-        return CONTEUDO_EDEFAULT == null ? conteudo != null : !CONTEUDO_EDEFAULT.equals(conteudo);
+      case AtadPackage.ESPERA__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -229,10 +229,10 @@ public class EscreverImpl extends ComandosAcaoImpl implements Escrever
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (tipoLocalizador: ");
     result.append(tipoLocalizador);
-    result.append(", conteudo: ");
-    result.append(conteudo);
+    result.append(", name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //EscreverImpl
+} //EsperaImpl

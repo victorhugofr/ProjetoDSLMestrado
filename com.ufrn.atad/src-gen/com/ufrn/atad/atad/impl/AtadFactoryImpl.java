@@ -6,6 +6,7 @@ package com.ufrn.atad.atad.impl;
 import com.ufrn.atad.atad.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,6 +72,10 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
       case AtadPackage.NAVEGAR: return createNavegar();
       case AtadPackage.ESCREVER: return createEscrever();
       case AtadPackage.COMANDOS_ACAO: return createComandosAcao();
+      case AtadPackage.ESPERA: return createEspera();
+      case AtadPackage.ESPERA_PRESENTE: return createEsperaPresente();
+      case AtadPackage.ESPERA_VISIVEL: return createEsperaVisivel();
+      case AtadPackage.ESPERA_CLICAVEL: return createEsperaClicavel();
       case AtadPackage.VERIFIQUE_PRESENTE: return createVerifiquePresente();
       case AtadPackage.VERIFIQUE_NAO_PRESENTE: return createVerifiqueNaoPresente();
       case AtadPackage.COMANDOS_VALIDADORES: return createComandosValidadores();
@@ -78,6 +83,40 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
       case AtadPackage.QUANDO: return createQuando();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case AtadPackage.TIPO_LOCALIZADORES:
+        return createTipoLocalizadoresFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case AtadPackage.TIPO_LOCALIZADORES:
+        return convertTipoLocalizadoresToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -159,6 +198,54 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
    * @generated
    */
   @Override
+  public Espera createEspera()
+  {
+    EsperaImpl espera = new EsperaImpl();
+    return espera;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EsperaPresente createEsperaPresente()
+  {
+    EsperaPresenteImpl esperaPresente = new EsperaPresenteImpl();
+    return esperaPresente;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EsperaVisivel createEsperaVisivel()
+  {
+    EsperaVisivelImpl esperaVisivel = new EsperaVisivelImpl();
+    return esperaVisivel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EsperaClicavel createEsperaClicavel()
+  {
+    EsperaClicavelImpl esperaClicavel = new EsperaClicavelImpl();
+    return esperaClicavel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public VerifiquePresente createVerifiquePresente()
   {
     VerifiquePresenteImpl verifiquePresente = new VerifiquePresenteImpl();
@@ -211,6 +298,28 @@ public class AtadFactoryImpl extends EFactoryImpl implements AtadFactory
   {
     QuandoImpl quando = new QuandoImpl();
     return quando;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TipoLocalizadores createTipoLocalizadoresFromString(EDataType eDataType, String initialValue)
+  {
+    TipoLocalizadores result = TipoLocalizadores.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTipoLocalizadoresToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

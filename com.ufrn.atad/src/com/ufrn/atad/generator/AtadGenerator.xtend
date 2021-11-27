@@ -12,6 +12,9 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import com.ufrn.atad.atad.VerifiquePresente
 import com.ufrn.atad.atad.VerifiqueNaoPresente
+import com.ufrn.atad.atad.EsperaPresente
+import com.ufrn.atad.atad.EsperaVisivel
+import com.ufrn.atad.atad.EsperaClicavel
 
 /**
  * Generates code from your model files on save.
@@ -28,6 +31,12 @@ class AtadGenerator extends AbstractGenerator {
         		a+=comandoClicar(e)
         	else if(e instanceof Navegar)
         	 	a+=comandoNavegar(e)
+        	else if(e instanceof EsperaPresente)
+        	 	a+=comandoEsperaPresente(e)
+        	else if(e instanceof EsperaVisivel)
+        	 	a+=comandoEsperaVisivel(e)
+        	else if(e instanceof EsperaClicavel)
+        	 	a+=comandoEsperaClicavel(e)
         	 else if(e instanceof VerifiquePresente)
         	 	a+=comandoVerifique(e)
         	 else if(e instanceof VerifiqueNaoPresente)
@@ -42,20 +51,37 @@ class AtadGenerator extends AbstractGenerator {
     private def buildTestPre()'''
     import org.junit.Test;
     import org.openqa.selenium.By;
-    import org.junit.jupiter.api.Assertions.assertTrue;
+    import static org.junit.Assert.assertTrue;
+    import org.openqa.selenium.WebDriver;
+    import org.openqa.selenium.support.ui.ExpectedConditions;
+    import org.openqa.selenium.support.ui.WebDriverWait;
+    import org.openqa.selenium.firefox.FirefoxDriver;
+    
     public class Teste{
-    	protected WebDriver driver;
+    	protected WebDriver driver = new FirefoxDriver();
+    	protected WebDriverWait wait = new WebDriverWait(driver,30);
     		
     	@Test
     	public void teste() throws InterruptedException{
-    		driver.manage().window.maximize();
+    		driver.manage().window().maximize();
    '''
    
    private def buildTestPos()'''
     	}
     }
    '''
-    
+    private def comandoEsperaPresente(EsperaPresente ep)'''
+    		wait.until(ExpectedConditions.presenceOfElementLocated(By.«ep.tipoLocalizador»("«ep.name»")));
+   '''
+   
+   private def comandoEsperaVisivel(EsperaVisivel ev)'''
+    		wait.until(ExpectedConditions.visibilityOfElementLocated(By.«ev.tipoLocalizador»("«ev.name»")));
+   '''
+   
+   private def comandoEsperaClicavel(EsperaClicavel ec)'''
+    		wait.until(ExpectedConditions.elementToBeClickable(By.«ec.tipoLocalizador»("«ec.name»")));
+   '''
+   
     private def comandoClicar(Clicar c)'''
     		driver.findElement(By.«c.tipoLocalizador»("«c.name»")).click();
    '''

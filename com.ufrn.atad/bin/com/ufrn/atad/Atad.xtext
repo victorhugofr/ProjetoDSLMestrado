@@ -6,11 +6,11 @@ DeclaraComando:
 	comandos+=Comando*;
 	
 Comando:
-	ComandosAcao|ComandosValidadores|AdicaoComando|Quando
+	ComandosAcao|ComandosValidadores|AdicaoComando|Quando|Espera
 ;
 	
 Clicar:
-	'clicar' 'em' tipoLocalizador=ID name=STRING
+	'clicar' 'em' tipoLocalizador=TipoLocalizadores name=STRING
 ;
 
 Navegar:
@@ -18,11 +18,27 @@ Navegar:
 ;
 
 Escrever:
-	'escrever' 'no' tipoLocalizador=ID name=STRING conteudo=STRING
+	'escrever' 'no' tipoLocalizador=TipoLocalizadores name=STRING conteudo=STRING
 ;
 
 ComandosAcao:
 	Clicar|Navegar|Escrever	
+;
+
+Espera:
+	EsperaPresente|EsperaVisivel|EsperaClicavel	
+;
+
+EsperaPresente:
+	'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar presente'
+;
+
+EsperaVisivel:
+	'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar visivel'
+;
+
+EsperaClicavel:
+	'Espere' tipoLocalizador=TipoLocalizadores name=STRING 'estar clicavel'
 ;
 
 VerifiquePresente:
@@ -45,3 +61,6 @@ AdicaoComando:
 Quando: 
 	'Quando' ComandosAcao
 ;
+
+enum TipoLocalizadores:
+    XPATH='xpath' | ID='id' | CSSSELECTOR='cssSelector' | CLASSNAME='className'| LINKTEXT='linkText';

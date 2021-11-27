@@ -6,22 +6,22 @@ package com.ufrn.atad.atad;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Escrever</b></em>'.
+ * A representation of the model object '<em><b>Espera</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.ufrn.atad.atad.Escrever#getTipoLocalizador <em>Tipo Localizador</em>}</li>
- *   <li>{@link com.ufrn.atad.atad.Escrever#getConteudo <em>Conteudo</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.Espera#getTipoLocalizador <em>Tipo Localizador</em>}</li>
+ *   <li>{@link com.ufrn.atad.atad.Espera#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see com.ufrn.atad.atad.AtadPackage#getEscrever()
+ * @see com.ufrn.atad.atad.AtadPackage#getEspera()
  * @model
  * @generated
  */
-public interface Escrever extends ComandosAcao
+public interface Espera extends Comando
 {
   /**
    * Returns the value of the '<em><b>Tipo Localizador</b></em>' attribute.
@@ -31,14 +31,14 @@ public interface Escrever extends ComandosAcao
    * @return the value of the '<em>Tipo Localizador</em>' attribute.
    * @see com.ufrn.atad.atad.TipoLocalizadores
    * @see #setTipoLocalizador(TipoLocalizadores)
-   * @see com.ufrn.atad.atad.AtadPackage#getEscrever_TipoLocalizador()
+   * @see com.ufrn.atad.atad.AtadPackage#getEspera_TipoLocalizador()
    * @model
    * @generated
    */
   TipoLocalizadores getTipoLocalizador();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.Escrever#getTipoLocalizador <em>Tipo Localizador</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.Espera#getTipoLocalizador <em>Tipo Localizador</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Tipo Localizador</em>' attribute.
@@ -49,25 +49,25 @@ public interface Escrever extends ComandosAcao
   void setTipoLocalizador(TipoLocalizadores value);
 
   /**
-   * Returns the value of the '<em><b>Conteudo</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Conteudo</em>' attribute.
-   * @see #setConteudo(String)
-   * @see com.ufrn.atad.atad.AtadPackage#getEscrever_Conteudo()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see com.ufrn.atad.atad.AtadPackage#getEspera_Name()
    * @model
    * @generated
    */
-  String getConteudo();
+  String getName();
 
   /**
-   * Sets the value of the '{@link com.ufrn.atad.atad.Escrever#getConteudo <em>Conteudo</em>}' attribute.
+   * Sets the value of the '{@link com.ufrn.atad.atad.Espera#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Conteudo</em>' attribute.
-   * @see #getConteudo()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setConteudo(String value);
+  void setName(String value);
 
-} // Escrever
+} // Espera

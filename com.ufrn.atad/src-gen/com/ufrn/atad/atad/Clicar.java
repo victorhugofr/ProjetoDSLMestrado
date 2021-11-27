@@ -24,24 +24,27 @@ public interface Clicar extends ComandosAcao
 {
   /**
    * Returns the value of the '<em><b>Tipo Localizador</b></em>' attribute.
+   * The literals are from the enumeration {@link com.ufrn.atad.atad.TipoLocalizadores}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Tipo Localizador</em>' attribute.
-   * @see #setTipoLocalizador(String)
+   * @see com.ufrn.atad.atad.TipoLocalizadores
+   * @see #setTipoLocalizador(TipoLocalizadores)
    * @see com.ufrn.atad.atad.AtadPackage#getClicar_TipoLocalizador()
    * @model
    * @generated
    */
-  String getTipoLocalizador();
+  TipoLocalizadores getTipoLocalizador();
 
   /**
    * Sets the value of the '{@link com.ufrn.atad.atad.Clicar#getTipoLocalizador <em>Tipo Localizador</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Tipo Localizador</em>' attribute.
+   * @see com.ufrn.atad.atad.TipoLocalizadores
    * @see #getTipoLocalizador()
    * @generated
    */
-  void setTipoLocalizador(String value);
+  void setTipoLocalizador(TipoLocalizadores value);
 
 } // Clicar

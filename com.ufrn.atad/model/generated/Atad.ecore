@@ -7,16 +7,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comando"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clicar" eSuperTypes="#//ComandosAcao">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoLocalizador" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoLocalizador" eType="#//TipoLocalizadores"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Navegar" eSuperTypes="#//ComandosAcao"/>
   <eClassifiers xsi:type="ecore:EClass" name="Escrever" eSuperTypes="#//ComandosAcao">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoLocalizador" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoLocalizador" eType="#//TipoLocalizadores"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="conteudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComandosAcao" eSuperTypes="#//Comando #//Quando">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Espera" eSuperTypes="#//Comando">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoLocalizador" eType="#//TipoLocalizadores"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EsperaPresente" eSuperTypes="#//Espera"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EsperaVisivel" eSuperTypes="#//Espera"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EsperaClicavel" eSuperTypes="#//Espera"/>
   <eClassifiers xsi:type="ecore:EClass" name="VerifiquePresente" eSuperTypes="#//ComandosValidadores"/>
   <eClassifiers xsi:type="ecore:EClass" name="VerifiqueNaoPresente" eSuperTypes="#//ComandosValidadores"/>
   <eClassifiers xsi:type="ecore:EClass" name="ComandosValidadores" eSuperTypes="#//Comando">
@@ -27,4 +34,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Quando" eSuperTypes="#//Comando"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoLocalizadores">
+    <eLiterals name="XPATH" literal="xpath"/>
+    <eLiterals name="ID" value="1" literal="id"/>
+    <eLiterals name="CSSSELECTOR" value="2" literal="cssSelector"/>
+    <eLiterals name="CLASSNAME" value="3" literal="className"/>
+    <eLiterals name="LINKTEXT" value="4" literal="linkText"/>
+  </eClassifiers>
 </ecore:EPackage>
