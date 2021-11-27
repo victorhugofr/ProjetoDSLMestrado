@@ -23,6 +23,27 @@ Os testes automatizados web por vezes é muito verboso e inelegível, de difíci
 3. Crie um projeto e uma file com o nome qualquer.atad
 4. Comece a desfrutar da DSL
 
+### Atualizações futuras
+
+1. Integrar com o framework Cucumber, gerando o arquivo Cucumber e o teste junto.
+2. Declarar de forma mais simples um clique, por exemplo: 
+```
+Quando clicar em id "teste","teste2"
+``` 
+ao invés de  
+```
+Quando clicar em id "teste"  
+Quando clicar em id "teste2"
+```
+3. Inferir um tipo padrão, caso o desenvolvedor não desejar declarar, como:
+```
+Quando clicar em id "teste","teste2"
+``` 
+poderia ser escrito
+```
+Quando clicar em "teste","teste2"
+``` 
+e o sistema interpretaria ID como padrão
 
 ##### Observações Relevantes
 
