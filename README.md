@@ -15,6 +15,21 @@ Os testes automatizados web por vezes é muito verboso e inelegível, de difíci
 - Pode gerar códigos desnecessários
 - Pode precisar de manutenção no código gerado visto que cada teste possui particularidades (colocar um wait a mais, fazer mais uma espera específica etc).
 
+### Exemplo de código ATAD
+
+```
+Quando navegar "https://sigaa.ufrn.br/sigaa/public/home.jsf"
+E clicar em xpath "//a[@title='Clique aqui para logar-se no SIGAA']"
+Espere id "username" estar presente
+E clicar em id "username"
+E escrever no id "username" "teste"
+E clicar em id "password"
+E escrever no id "password" "teste"
+E clicar em className "btn-login"
+Verifique que o texto "Credenciais inválidas" esta presente
+```
+
+
 
 ### Como executar
 
